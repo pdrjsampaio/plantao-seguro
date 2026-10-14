@@ -636,14 +636,15 @@ private fun BoasVindasRota() {
             voltar = { if (passo > 0) passo-- },
             concluir = { depois ->
                 grafo.sirene.pararPrevia()
-                escopo.launch {
-                    grafo.repo.atualizar { d -> d.copy(ajustes = d.ajustes.copy(boasVindasConcluida = true)) }
-                    when (depois) {
-                        DepoisDasBoasVindas.COMECAR_AGORA -> grafo.coordenador.comecarAgora(grafo.repo.dados.value.ajustes.duracaoRapidoMin)
-                        DepoisDasBoasVindas.NOVO_PLANTAO -> MainActivity.destinoPendente = "plantao/novo"
-                        DepoisDasBoasVindas.INICIO -> Unit
+                if (depois == DepoisDasBoasVindas.NOVO_PLANTAO) MainActivity.destinoPendente = "plantao/novo"
+                // Escopo do app, não desta tela: marcar os primeiros passos como
+                // concluídos tira esta tela da composição e cancelaria o escopo dela.
+                grafo.escopo.launch {
+                    if (depois == DepoisDasBoasVindas.COMECAR_AGORA) {
+                        grafo.coordenador.comecarAgora(grafo.repo.dados.value.ajustes.duracaoRapidoMin)
                     }
                     grafo.historico.registrar(TipoEvento.SISTEMA, Nivel.OK, "Primeiros passos concluídos", null)
+                    grafo.repo.atualizar { d -> d.copy(ajustes = d.ajustes.copy(boasVindasConcluida = true)) }
                 }
             }
         )

@@ -58,7 +58,8 @@ class Repositorio(private val arquivoDados: File) {
         val copia = File(arquivoDados.parentFile, "dados.ilegivel-${System.currentTimeMillis()}.json")
         runCatching { arquivoDados.copyTo(copia, overwrite = true) }
         falhaAoLer = "Os dados salvos não puderam ser lidos. Uma cópia foi guardada em ${copia.name}."
-        Log.e("PlantaoSeguro", "Não consegui ler os dados salvos", e)
+        // Só o tipo do erro: a mensagem do leitor de JSON citaria trechos do arquivo.
+        Log.e("PlantaoSeguro", "Não consegui ler os dados salvos: ${e.javaClass.simpleName}")
         Dados()
     }
 

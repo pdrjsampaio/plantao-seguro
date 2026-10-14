@@ -131,7 +131,7 @@ Gravidade: **Crítica** (pode fazer perder um alerta ou expor dados), **Alta**
 | Como perceber a mensagem | Acessibilidade; acesso às notificações | **Acesso às notificações** | API pública feita para isso, funciona com a tela bloqueada, não depende do layout do WhatsApp. |
 | Como alertar | Trocar o som do WhatsApp; tocar som próprio | **Som próprio no canal de alarme** | Toca no silencioso, volume controlado, repetição e confirmação verificáveis. |
 | Parar ao tocar na mensagem | Só o botão do app; observar a remoção da notificação original | **Os dois** | O Android informa o motivo da remoção (`REASON_CLICK`, `REASON_APP_CANCEL`…) a partir do Android 8. Ver limites na seção 6. |
-| Guardar configurações | Room; DataStore; arquivo JSON | **DataStore com JSON** | Poucos dados estruturados, gravação atômica, tolerância a arquivo corrompido e evolução de esquema sem apagar nada. |
+| Guardar configurações | Room; DataStore; arquivo JSON | **Arquivo JSON com gravação atômica (`AtomicFile`)** | Poucos dados estruturados, tolerância a arquivo corrompido e evolução de esquema sem apagar nada. *Mudou durante a implementação:* o plano era DataStore, mas a escuta de notificações pode ser recriada pelo sistema no exato momento em que uma notificação chega, e precisa da configuração na hora. O DataStore só entrega o primeiro valor de forma assíncrona; o `AtomicFile` é lido de forma síncrona uma vez e fica em memória, com a mesma garantia de gravação atômica. |
 | Guardar histórico | Room; arquivo de linhas | **Arquivo de linhas (JSONL) com limite** | Só inserção, até 2.000 eventos, busca em memória é instantânea. Room seria justificado com dezenas de milhares de registros. |
 | Injeção de dependências | Hilt; contêiner manual | **Contêiner manual** | 10 objetos de vida longa. Hilt acrescenta processamento de anotações e tempo de build sem ganho real aqui. |
 | Interface | Views; Compose | **Compose + Material 3** | A 2.5.0 já usa Compose; não há migração a fazer, só redesenho. |
@@ -147,15 +147,15 @@ Prioridade: **P0** entra antes de qualquer release; **P1** entra na 3.0; **P2** 
 |---|---|---|---|---|---|
 | Escuta | P1, P4, P5, P6 | Alta | Núcleo de decisão puro e testável: ignora resumos de grupo, atualizações silenciosas (mesma chave e mesmo horário, ou `FLAG_ONLY_ALERT_ONCE`), serviços e progresso; trata chamada chegando (categoria `call` com tela cheia); ignora mensagens anteriores ao início do plantão. Configuração lida da memória, sem banco por notificação. | Decisão em microssegundos e reproduzível em teste unitário. | P0 |
 | Parar o alerta | P1, P2 | Alta | Para o som quando: a notificação original é tocada (`REASON_CLICK`), dispensada ou fechada pelo app de origem; quando você toca na notificação do Plantão Seguro (para e abre a conversa original); no botão Parar; nos botões de volume na tela da sirene. | Usa somente eventos oficiais do Android. | P0 |
-| Som | P3 | Crítica | Repetição contínua até parar, tempo máximo, número de repetições, volume crescente, vibração (5 padrões), lanterna opcional, trava de CPU, foco de áudio. Um só alarme por vez; novos alertas somam no mesmo. | É a função central do app. | P0 |
+| Som | P3 | Crítica | Repetição contínua até parar, tempo máximo, número de repetições, volume crescente, vibração (6 padrões), lanterna opcional, trava de CPU, foco de áudio. Um só alarme por vez; novos alertas somam no mesmo. | É a função central do app. | P0 |
 | Tela da sirene | P2, P18 | Alta | Tela cheia por cima da tela bloqueada, botão grande, "parar e abrir a conversa". Verificação da permissão de tela cheia no Android 14+. | Uso meio dormindo. | P0 |
 | Religar escuta | P7 | Crítica | `requestRebind` na desconexão, no boot, ao abrir o app e numa verificação a cada 30 min durante o plantão; alerta se continuar desligada. | Única forma oficial de recuperar a escuta. | P0 |
 | Agenda | P11, P12, P13 | Alta | Agenda calculada (dias da semana + horários), sem estado gravado de "em andamento"; Modo Trabalho vira um plantão comum configurável; folga = pular uma ocorrência; ao terminar, o som volta **como estava**. | Resultado igual para o mesmo horário, imune a alarme perdido ou reinício. | P0 |
 | Acessibilidade | P9, P10 | Alta | Remover a automação e o modo de captura de rótulos. | Deixa de ser necessária; elimina o maior risco de privacidade e de quebra. | P0 |
 | Regras | — | — | Regras por app com filtros opcionais por contato/grupo e palavras, exceções, som próprio, prioridade, silenciar por um tempo, valer só no plantão ou sempre. | Pedido do produto. Filtros só leem o texto quando você cria um. | P1 |
 | Confirmação | — | — | Cada alerta fica registrado como confirmado (por quem) ou não confirmado; opção de tocar de novo enquanto a mensagem não for aberta; confirmado não volta a tocar pela mesma mensagem. | Pedido do produto. | P1 |
-| Biblioteca de sons | P17 | Média | 20 sons próprios gerados por síntese (sem direitos de terceiros), em 7 categorias, com prévia; sons do celular; importar arquivo. O MP3 antigo sai por origem desconhecida. | Distribuição legal. | P1 |
-| Dados | P14 | Alta | DataStore com esquema versionado e campos com valor padrão; exportar/importar configurações; importação automática dos plantões da 2.5.0 quando a atualização for por cima. | Atualizar sem perder nada. | P0 |
+| Biblioteca de sons | P17 | Média | 22 sons próprios gerados por síntese (sem direitos de terceiros), em 7 categorias, com prévia; sons do celular; importar arquivo. O MP3 antigo sai por origem desconhecida. | Distribuição legal. | P1 |
+| Dados | P14 | Alta | Arquivo JSON atômico com esquema versionado e campos com valor padrão; exportar/importar configurações; importação automática dos plantões da 2.5.0 quando a atualização for por cima. | Atualizar sem perder nada. | P0 |
 | Diagnóstico | P7, P20 | Alta | Tela de diagnóstico com cada verificação, "testar a escuta" ponta a ponta (o app publica uma notificação de teste e confirma que a escuta percebeu), teste com tela bloqueada, dicas por fabricante. | Pedido do produto; ataca a causa nº 1 de falha (fabricante matando o app). | P1 |
 | Permissões | P16, P18 | Baixa | Remover `READ_MEDIA_AUDIO`, WorkManager e `ACCESS_NETWORK_STATE`; adicionar `USE_FULL_SCREEN_INTENT`, `VIBRATE`, isenção de bateria. | Mínimo necessário. | P0 |
 | Privacidade | P8 | Média | Só os apps escolhidos são considerados; nada do WhatsApp pessoal entra no histórico a menos que você o escolha; política de privacidade no app e no repositório. | Clareza e confiança. | P0 |
@@ -329,7 +329,7 @@ validado em aparelho real**.
 
 1. Núcleo puro (agenda, regras, filtro, alertas) com testes.
 2. Escuta, sirene, tela cheia, notificações, religamento.
-3. Dados (DataStore), migração da 2.5.0, backup.
+3. Dados (arquivo JSON atômico), migração da 2.5.0, backup.
 4. Telas e primeira utilização.
 5. GitHub Actions: compilar, testar, capturas de tela, emulador.
 6. Release 3.0.0 só depois dos testes e da decisão da seção 7.

@@ -10,6 +10,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.plantaoseguro.R
 import com.plantaoseguro.nucleo.AlertaAtivo
+import com.plantaoseguro.servico.EscolhaVolumeActivity
 import com.plantaoseguro.sirene.AcoesReceiver
 import com.plantaoseguro.sirene.AlarmeActivity
 import com.plantaoseguro.sirene.PararActivity
@@ -85,6 +86,13 @@ class Notificador(private val context: Context) {
     private fun pararEAbrir(codigo: Int): PendingIntent {
         val i = Intent(context, PararActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         return PendingIntent.getActivity(context, codigo, i, FLAGS)
+    }
+
+    private fun escolhaVolume(minimo: Int): PendingIntent {
+        val i = Intent(context, EscolhaVolumeActivity::class.java)
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            .putExtra(EscolhaVolumeActivity.EXTRA_MINIMO, minimo)
+        return PendingIntent.getActivity(context, 23, i, FLAGS)
     }
 
     private fun acao(acao: String, codigo: Int, extras: Intent.() -> Unit = {}): PendingIntent {
@@ -203,10 +211,10 @@ class Notificador(private val context: Context) {
             .setContentText("Por quanto tempo manter assim? Depois volta para $volumeMinimo%.")
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
-            .setContentIntent(abrirApp())
+            .setContentIntent(escolhaVolume(volumeMinimo))
             .addAction(0, "30 min", acao(ACAO_VOLUME_30, 20))
             .addAction(0, "1 hora", acao(ACAO_VOLUME_60, 21))
-            .addAction(0, "Voltar agora", acao(ACAO_VOLUME_AGORA, 22))
+            .addAction(0, "Outras opções", escolhaVolume(volumeMinimo))
             .build()
         nm.notify(ID_VOLUME, n)
     }

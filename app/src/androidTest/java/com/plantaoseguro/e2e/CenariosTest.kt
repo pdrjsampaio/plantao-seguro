@@ -114,6 +114,8 @@ class CenariosTest {
             sh("cmd notification allow_dnd $pkg")
             sh("cmd notification allow_listener $servico")
             sh("settings put system screen_off_timeout 1800000")
+            // O emulador vem sem tela de bloqueio; liga o bloqueio por deslizar.
+            sh("locksettings set-disabled false")
             anotar("")
             anotar("| Teste | Resultado | Observado |")
             anotar("|---|---|---|")
@@ -193,6 +195,7 @@ class CenariosTest {
 
     @Before
     fun antes() {
+        sh("cmd notification allow_listener $servico")
         sh("am broadcast -n $SIM/.Comando -f 32 --es acao cancelar_tudo")
         device.wakeUp()
         sh("wm dismiss-keyguard")
@@ -341,16 +344,20 @@ class CenariosTest {
     fun c09_escuta_desligada_e_religada() {
         configurar()
         sh("cmd notification disallow_listener $servico")
-        assertTrue("a escuta desconectou", esperar { !SentinelaService.conectada.value })
-        val diag = Diagnostico.verificar(app, g)
-        assertEquals(Gravidade.ERRO, diag.first { it.titulo == "Acesso às notificações" }.gravidade)
-        naPrincipal { g.coordenador.sincronizar("teste") }
-        val nm = app.getSystemService(NotificationManager::class.java)
-        assertTrue("aviso de problema publicado", esperar { nm.activeNotifications.any { it.id == Notificador.ID_PROBLEMA } })
-        postar(901, "SemEscuta_msg901")
-        Thread.sleep(2_500)
-        assertNull("sem acesso, o app não percebe a mensagem", tocando)
-        sh("cmd notification allow_listener $servico")
+        try {
+            assertTrue("a escuta desconectou", esperar { !SentinelaService.conectada.value })
+            assertTrue("o app percebe que perdeu o acesso", esperar { !SentinelaService.autorizada(app) })
+            val diag = Diagnostico.verificar(app, g)
+            assertEquals(Gravidade.ERRO, diag.first { it.titulo == "Acesso às notificações" }.gravidade)
+            naPrincipal { g.coordenador.sincronizar("teste") }
+            val nm = app.getSystemService(NotificationManager::class.java)
+            assertTrue("aviso de problema publicado", esperar { nm.activeNotifications.any { it.id == Notificador.ID_PROBLEMA } })
+            postar(901, "SemEscuta_msg901")
+            Thread.sleep(2_500)
+            assertNull("sem acesso, o app não percebe a mensagem", tocando)
+        } finally {
+            sh("cmd notification allow_listener $servico")
+        }
         assertTrue("a escuta voltou", esperar(20_000) { SentinelaService.conectada.value })
         postar(902, "Voltou_msg902")
         assertTrue("depois de religar, volta a tocar", esperar { tocando != null })

@@ -2,6 +2,7 @@ package com.plantaoseguro.sentinela
 
 import android.app.ActivityOptions
 import android.app.Notification
+import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.ComponentName
 import android.content.Context
@@ -176,8 +177,13 @@ class SentinelaService : NotificationListenerService() {
         private val intencoes = java.util.concurrent.ConcurrentHashMap<String, PendingIntent>()
         private val autoCancelar: MutableSet<String> = java.util.concurrent.ConcurrentHashMap.newKeySet()
 
+        /** O acesso às notificações está liberado? (Pergunta direto ao sistema, sem cache.) */
         fun autorizada(context: Context): Boolean =
-            NotificationManagerCompat.getEnabledListenerPackages(context).contains(context.packageName)
+            if (Build.VERSION.SDK_INT >= 27) {
+                context.getSystemService(NotificationManager::class.java).isNotificationListenerAccessGranted(componente(context))
+            } else {
+                NotificationManagerCompat.getEnabledListenerPackages(context).contains(context.packageName)
+            }
 
         fun componente(context: Context): ComponentName = ComponentName(context, SentinelaService::class.java)
 

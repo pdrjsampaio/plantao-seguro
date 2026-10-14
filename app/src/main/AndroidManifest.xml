@@ -87,6 +87,14 @@
             android:taskAffinity=""
             android:theme="@style/Tema.Plantao.Invisivel" />
 
+        <!-- "Por quanto tempo manter o volume baixo?" (vigia de volume) -->
+        <activity
+            android:name=".servico.EscolhaVolumeActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:taskAffinity=""
+            android:theme="@style/Tema.Plantao.Invisivel" />
+
         <!-- Escuta das notificações: descarta na hora as de apps que nenhuma regra vigia.
              O texto só é comparado (em memória, sem gravar) quando a regra tem filtro. -->
         <service

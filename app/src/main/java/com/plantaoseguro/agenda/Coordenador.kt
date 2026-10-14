@@ -332,8 +332,14 @@ class Coordenador(
 
     // ---------------------------------------------------------------- vigia de volume
 
-    suspend fun manterVolumeBaixo(minutos: Int) {
-        val ate = System.currentTimeMillis() + minutos * 60_000L
+    /** Mantém o volume baixo por [minutos]; nulo = até o fim do plantão que vigia o volume. */
+    suspend fun manterVolumeBaixo(minutos: Int?) {
+        val agora = System.currentTimeMillis()
+        val ate = if (minutos != null) {
+            agora + minutos * 60_000L
+        } else {
+            ativasAgora(agora).filter { it.plantao.vigiarVolume }.maxOfOrNull { it.fim } ?: (agora + 60 * 60_000L)
+        }
         repo.atualizar { d -> d.copy(execucao = d.execucao.copy(volumeReduzidoAte = ate)) }
         agendador.agendarVoltaDoVolume(ate)
         notificador.limparPerguntaVolume()
