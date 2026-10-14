@@ -195,7 +195,19 @@ class TelasTest {
         InicioTela(montarInicio(dados, null, null, agora, emptyList(), nomeDoApp, false, sp), AcoesInicio(), animar = false)
     }
 
+    @Test
+    @Config(qualifiers = RobolectricDeviceQualifiers.Pixel7, fontScale = 1.3f)
+    fun inicio_letra_grande() = foto("06b_inicio_letra_grande") {
+        InicioTela(montarInicio(dados, null, null, agora, emptyList(), nomeDoApp, true, sp), AcoesInicio(), animar = false)
+    }
+
     // ---------------------------------------------------------------- alerta
+
+    @Test
+    @Config(qualifiers = RobolectricDeviceQualifiers.Pixel7, fontScale = 1.3f)
+    fun alarme_letra_grande() = foto("08b_alarme_letra_grande", escuro = true) {
+        AlarmeTela(alerta, mostrarConversa = true, volumePara = true, onParar = {}, onAbrir = {}, onSilenciar = {}, animar = false)
+    }
 
     @Test
     fun alarme_mensagens() = foto("07_alarme_mensagens", escuro = true) {

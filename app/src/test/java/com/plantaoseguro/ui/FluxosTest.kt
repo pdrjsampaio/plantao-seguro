@@ -2,19 +2,23 @@ package com.plantaoseguro.ui
 
 import android.content.Context
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.test.ComposeTimeoutException
 import androidx.compose.ui.test.hasScrollAction
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onFirst
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollToNode
 import androidx.compose.ui.test.performTextInput
+import androidx.compose.ui.test.printToString
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.plantaoseguro.Grafo
 import com.plantaoseguro.modelo.SomRef
+import com.plantaoseguro.modelo.TipoAgenda
 import com.plantaoseguro.ui.tema.PlantaoTema
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
@@ -59,7 +63,12 @@ class FluxosTest {
     }
 
     private fun esperarTexto(texto: String) {
-        compose.waitUntil(10_000) { compose.onAllNodesWithText(texto).fetchSemanticsNodes().isNotEmpty() }
+        try {
+            compose.waitUntil(10_000) { compose.onAllNodesWithText(texto).fetchSemanticsNodes().isNotEmpty() }
+        } catch (e: ComposeTimeoutException) {
+            // Mostra o que estava na tela, para entender a falha pelo relatório.
+            throw AssertionError("Não apareceu \"$texto\". Tela:\n" + compose.onRoot().printToString(maxDepth = 40), e)
+        }
     }
 
     @Test
@@ -89,6 +98,23 @@ class FluxosTest {
         compose.onNodeWithText("Começar um plantão agora").performClick()
         compose.waitUntil(10_000) { grafo.coordenador.ativasAgora().isNotEmpty() }
         esperarTexto("Em plantão")
+    }
+
+    @Test
+    fun plantao_de_uma_vez_com_calendario_e_relogio() {
+        runBlocking { grafo.repo.atualizar { it.copy(ajustes = it.ajustes.copy(boasVindasConcluida = true)) } }
+        MainActivity.destinoPendente = "plantao/novo"
+        abrirApp()
+        esperarTexto("Salvar plantão")
+        compose.onNodeWithText("Uma vez").performClick()
+        compose.onAllNodesWithText("Dia")[0].performClick()
+        esperarTexto("OK")
+        compose.onNodeWithText("OK").performClick()
+        compose.onAllNodesWithText("Hora")[1].performClick()
+        esperarTexto("Termina às")
+        compose.onNodeWithText("OK").performClick()
+        compose.onNodeWithText("Salvar plantão").performClick()
+        compose.waitUntil(10_000) { grafo.repo.dados.value.plantoes.any { it.tipo == TipoAgenda.UNICO } }
     }
 
     @Test

@@ -1,0 +1,96 @@
+name: Publicar versão
+
+# Cria a página da versão (Release) quando uma tag "v*" é enviada.
+#
+# - Tags com sufixo (ex.: v3.0.0-beta.1) saem como PRÉ-LANÇAMENTO e nunca
+#   tomam o lugar da versão principal. Só uma tag sem sufixo vira a principal.
+# - Com o secret PS_CHAVE, o APK é compilado e assinado aqui. Sem ele, usa o
+#   APK já assinado guardado no branch "publicacao" (pasta com o nome da tag).
+# - Em qualquer caso, o certificado e a versão do APK são conferidos antes de
+#   publicar: um APK com outra assinatura é recusado.
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PS_CHAVE: ${{ secrets.PS_CHAVE }}
+      TAG: ${{ github.ref_name }}
+      CERT_ESPERADO: f7e877227ac15a26b88eb975f737bdbdab4be0662d2efe15191872dc56635373
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Obter o APK assinado
+        run: |
+          versao="${TAG#v}"
+          saida="plantao-seguro-$versao.apk"
+          if [ -n "$PS_CHAVE" ]; then
+            dir="$RUNNER_TEMP/chave"
+            mkdir -p "$dir"
+            openssl enc -d -aes-256-cbc -pbkdf2 -iter 600000 -in assinatura/chave.tgz.enc -pass env:PS_CHAVE | tar xz -C "$dir"
+            prop() { grep "^$1=" "$dir/chave.properties" | cut -d= -f2-; }
+            sp="$(prop storePassword)"; kp="$(prop keyPassword)"
+            echo "::add-mask::$sp"
+            echo "::add-mask::$kp"
+            PS_KEYSTORE="$dir/release.jks" PS_KEYSTORE_PASSWORD="$sp" PS_KEY_ALIAS="$(prop keyAlias)" PS_KEY_PASSWORD="$kp" \
+              ./gradlew --no-daemon :app:assembleRelease
+            cp app/build/outputs/apk/release/app-release.apk "$saida"
+            echo "Compilado e assinado aqui com a chave do projeto."
+          else
+            git fetch --depth 1 origin publicacao
+            if ! git show "origin/publicacao:$TAG/$saida" > "$saida"; then
+              echo "::error::Sem o secret PS_CHAVE e sem APK assinado em publicacao/$TAG/$saida."
+              exit 1
+            fi
+            echo "Usando o APK assinado guardado em publicacao/$TAG/."
+          fi
+          echo "APK=$saida" >> "$GITHUB_ENV"
+
+      - name: Conferir assinatura, versão e alinhamento
+        run: |
+          bt="$ANDROID_HOME/build-tools/$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)"
+          "$bt/apksigner" verify --print-certs "$APK" | tee certs.txt
+          cert="$(grep -m1 'certificate SHA-256 digest' certs.txt | awk '{print $NF}')"
+          if [ "$cert" != "$CERT_ESPERADO" ]; then
+            echo "::error::Certificado inesperado ($cert). Só APKs assinados com a chave do projeto podem ser publicados."
+            exit 1
+          fi
+          nome="$("$bt/aapt2" dump badging "$APK" | sed -n "s/.*versionName='\([^']*\)'.*/\1/p")"
+          if [ "$nome" != "${TAG#v}" ]; then
+            echo "::error::A versão do APK ($nome) não bate com a tag ($TAG)."
+            exit 1
+          fi
+          "$bt/zipalign" -c 4 "$APK"
+          sha256sum "$APK" > "$APK.sha256"
+          cat "$APK.sha256"
+
+      - name: Criar a página da versão
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          args=(--title "Plantão Seguro ${TAG#v}" --verify-tag)
+          if [ -f "docs/notas/$TAG.md" ]; then
+            args+=(--notes-file "docs/notas/$TAG.md")
+          else
+            args+=(--notes "Veja o CHANGELOG.md.")
+          fi
+          case "$TAG" in
+            *-*) args+=(--prerelease --latest=false) ;;
+          esac
+          gh release create "$TAG" "$APK" "$APK.sha256" "${args[@]}"
