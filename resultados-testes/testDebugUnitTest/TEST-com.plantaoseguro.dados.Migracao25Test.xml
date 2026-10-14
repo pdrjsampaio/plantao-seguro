@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.plantaoseguro.dados.Migracao25Test" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-14T10:41:23.824Z" hostname="runnervmmprz5" time="15.771">
+  <properties/>
+  <testcase name="importa plantoes semanais e unicos e junta as repeticoes" classname="com.plantaoseguro.dados.Migracao25Test" time="15.651"/>
+  <testcase name="banco estragado nao derruba o app" classname="com.plantaoseguro.dados.Migracao25Test" time="0.062"/>
+  <testcase name="sem banco antigo nao importa nada" classname="com.plantaoseguro.dados.Migracao25Test" time="0.057"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

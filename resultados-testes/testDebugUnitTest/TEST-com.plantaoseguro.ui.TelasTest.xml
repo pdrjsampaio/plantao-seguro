@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.plantaoseguro.ui.TelasTest" tests="26" skipped="0" failures="0" errors="0" timestamp="2026-10-14T10:42:06.031Z" hostname="runnervmmprz5" time="18.756">
+  <properties/>
+  <testcase name="inicio_em_plantao" classname="com.plantaoseguro.ui.TelasTest" time="3.443"/>
+  <testcase name="plantao_editor" classname="com.plantaoseguro.ui.TelasTest" time="1.253"/>
+  <testcase name="inicio_tocando" classname="com.plantaoseguro.ui.TelasTest" time="0.682"/>
+  <testcase name="alarme_bloqueado_chamada" classname="com.plantaoseguro.ui.TelasTest" time="0.518"/>
+  <testcase name="ajustes" classname="com.plantaoseguro.ui.TelasTest" time="1.544"/>
+  <testcase name="alertas" classname="com.plantaoseguro.ui.TelasTest" time="0.608"/>
+  <testcase name="diagnostico" classname="com.plantaoseguro.ui.TelasTest" time="0.967"/>
+  <testcase name="inicio_letra_grande" classname="com.plantaoseguro.ui.TelasTest" time="0.562"/>
+  <testcase name="permissoes" classname="com.plantaoseguro.ui.TelasTest" time="0.997"/>
+  <testcase name="inicio_primeira_vez" classname="com.plantaoseguro.ui.TelasTest" time="0.493"/>
+  <testcase name="inicio_com_pendencias" classname="com.plantaoseguro.ui.TelasTest" time="0.563"/>
+  <testcase name="apps" classname="com.plantaoseguro.ui.TelasTest" time="0.744"/>
+  <testcase name="sons" classname="com.plantaoseguro.ui.TelasTest" time="1.152"/>
+  <testcase name="ajuda" classname="com.plantaoseguro.ui.TelasTest" time="0.356"/>
+  <testcase name="plantao_novo_unico" classname="com.plantaoseguro.ui.TelasTest" time="0.748"/>
+  <testcase name="boas_vindas_1" classname="com.plantaoseguro.ui.TelasTest" time="0.397"/>
+  <testcase name="boas_vindas_2" classname="com.plantaoseguro.ui.TelasTest" time="0.595"/>
+  <testcase name="boas_vindas_3" classname="com.plantaoseguro.ui.TelasTest" time="0.344"/>
+  <testcase name="boas_vindas_4" classname="com.plantaoseguro.ui.TelasTest" time="0.395"/>
+  <testcase name="boas_vindas_5" classname="com.plantaoseguro.ui.TelasTest" time="0.314"/>
+  <testcase name="alarme_letra_grande" classname="com.plantaoseguro.ui.TelasTest" time="0.314"/>
+  <testcase name="regra_editor" classname="com.plantaoseguro.ui.TelasTest" time="0.529"/>
+  <testcase name="inicio_escuta_desligada" classname="com.plantaoseguro.ui.TelasTest" time="0.299"/>
+  <testcase name="inicio_em_plantao_escuro" classname="com.plantaoseguro.ui.TelasTest" time="0.246"/>
+  <testcase name="historico" classname="com.plantaoseguro.ui.TelasTest" time="0.296"/>
+  <testcase name="alarme_mensagens" classname="com.plantaoseguro.ui.TelasTest" time="0.391"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

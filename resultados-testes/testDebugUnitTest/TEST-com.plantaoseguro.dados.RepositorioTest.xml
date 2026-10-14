@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.plantaoseguro.dados.RepositorioTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-14T10:41:39.605Z" hostname="runnervmmprz5" time="1.24">
+  <properties/>
+  <testcase name="o que foi salvo volta depois de reiniciar" classname="com.plantaoseguro.dados.RepositorioTest" time="0.322"/>
+  <testcase name="arquivo estragado nao e apagado" classname="com.plantaoseguro.dados.RepositorioTest" time="0.064"/>
+  <testcase name="primeira vez comeca com a regra padrao" classname="com.plantaoseguro.dados.RepositorioTest" time="0.096"/>
+  <testcase name="historico nunca passa do limite e pode ser apagado" classname="com.plantaoseguro.dados.RepositorioTest" time="0.758"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

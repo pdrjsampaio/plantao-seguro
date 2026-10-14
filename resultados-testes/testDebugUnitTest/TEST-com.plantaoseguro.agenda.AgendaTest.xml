@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.plantaoseguro.agenda.AgendaTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-10-14T10:41:23.276Z" hostname="runnervmmprz5" time="0.146">
+  <properties/>
+  <testcase name="horario de verao nao quebra o calculo" classname="com.plantaoseguro.agenda.AgendaTest" time="0.107"/>
+  <testcase name="folga pula so aquela ocorrencia" classname="com.plantaoseguro.agenda.AgendaTest" time="0.005"/>
+  <testcase name="dois plantoes ao mesmo tempo vem ordenados pelo fim" classname="com.plantaoseguro.agenda.AgendaTest" time="0.003"/>
+  <testcase name="plantao unico ativo futuro e encerrado" classname="com.plantaoseguro.agenda.AgendaTest" time="0.001"/>
+  <testcase name="plantao unico daqui a um mes ainda aparece como proximo" classname="com.plantaoseguro.agenda.AgendaTest" time="0.0"/>
+  <testcase name="escala do dia inclui o plantao que vem da noite anterior" classname="com.plantaoseguro.agenda.AgendaTest" time="0.014"/>
+  <testcase name="inicio igual ao fim e plantao de 24 horas" classname="com.plantaoseguro.agenda.AgendaTest" time="0.0"/>
+  <testcase name="plantao unico com fim antes do inicio e ignorado" classname="com.plantaoseguro.agenda.AgendaTest" time="0.0"/>
+  <testcase name="proxima transicao e o proximo inicio ou fim" classname="com.plantaoseguro.agenda.AgendaTest" time="0.008"/>
+  <testcase name="sexta a noite avanca para o sabado mas sabado a noite nao vale" classname="com.plantaoseguro.agenda.AgendaTest" time="0.0"/>
+  <testcase name="inicio conta e fim nao conta" classname="com.plantaoseguro.agenda.AgendaTest" time="0.001"/>
+  <testcase name="plantao desligado ou sem dias nunca vale" classname="com.plantaoseguro.agenda.AgendaTest" time="0.001"/>
+  <testcase name="plantao noturno vale de madrugada e termina no dia seguinte" classname="com.plantaoseguro.agenda.AgendaTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

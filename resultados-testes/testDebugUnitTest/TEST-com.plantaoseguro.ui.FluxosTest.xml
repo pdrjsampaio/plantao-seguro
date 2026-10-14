@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.plantaoseguro.ui.FluxosTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-14T10:41:41.040Z" hostname="runnervmmprz5" time="24.948">
+  <properties/>
+  <testcase name="comecar_agora_nos_primeiros_passos_liga_o_plantao" classname="com.plantaoseguro.ui.FluxosTest" time="15.915"/>
+  <testcase name="nova_regra_com_som_escolhido_na_biblioteca" classname="com.plantaoseguro.ui.FluxosTest" time="4.065"/>
+  <testcase name="primeiros_passos_levam_ao_cadastro_do_plantao" classname="com.plantaoseguro.ui.FluxosTest" time="1.764"/>
+  <testcase name="plantao_de_uma_vez_com_calendario_e_relogio" classname="com.plantaoseguro.ui.FluxosTest" time="3.204"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[System.logW: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.
+java.lang.Throwable: Explicit termination method 'AbstractCursor.close' not called
+	at dalvik.system.CloseGuard.$$robo$$dalvik_system_CloseGuard$openWithCallSite(CloseGuard.java:288)
+	at dalvik.system.CloseGuard.openWithCallSite(CloseGuard.java)
+	at dalvik.system.CloseGuard.$$robo$$dalvik_system_CloseGuard$open(CloseGuard.java:257)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.robolectric.shadows.ShadowCloseGuard$CloseGuardReflector$$Reflector71.open(Unknown Source)
+	at org.robolectric.shadows.ShadowCloseGuard.open(ShadowCloseGuard.java:38)
+	at dalvik.system.CloseGuard.open(CloseGuard.java)
+	at android.database.AbstractCursor.$$robo$$android_database_AbstractCursor$__constructor__(AbstractCursor.java:227)
+	at android.database.AbstractCursor.<init>(AbstractCursor.java:225)
+	at com.android.internal.database.SortCursor.<init>(SortCursor.java:60)
+	at android.media.RingtoneManager.$$robo$$android_media_RingtoneManager$getCursor(RingtoneManager.java:451)
+	at android.media.RingtoneManager.getCursor(RingtoneManager.java)
+	at com.plantaoseguro.sirene.Catalogo.alarmesDoCelular(Catalogo.kt:72)
+	at com.plantaoseguro.ui.NavegacaoKt$SonsRota$doCelular$2$1$1.invokeSuspend(Navegacao.kt:444)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:820)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+
+]]></system-err>
+</testsuite>

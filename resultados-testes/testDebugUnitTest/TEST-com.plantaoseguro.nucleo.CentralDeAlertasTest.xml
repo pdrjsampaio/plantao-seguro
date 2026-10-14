@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.plantaoseguro.nucleo.CentralDeAlertasTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2026-10-14T10:41:40.857Z" hostname="runnervmmprz5" time="0.076">
+  <properties/>
+  <testcase name="remocao sem motivo de leitura ou de outra notificacao nao para" classname="com.plantaoseguro.nucleo.CentralDeAlertasTest" time="0.038"/>
+  <testcase name="tocar na notificacao original para o alerta" classname="com.plantaoseguro.nucleo.CentralDeAlertasTest" time="0.006"/>
+  <testcase name="insistencia toca de novo enquanto a mensagem continua la" classname="com.plantaoseguro.nucleo.CentralDeAlertasTest" time="0.004"/>
+  <testcase name="alerta toca e fica registrado" classname="com.plantaoseguro.nucleo.CentralDeAlertasTest" time="0.0"/>
+  <testcase name="som que termina sozinho deixa o alerta aguardando confirmacao" classname="com.plantaoseguro.nucleo.CentralDeAlertasTest" time="0.0"/>
+  <testcase name="chamada atendida ou encerrada sempre para o alerta" classname="com.plantaoseguro.nucleo.CentralDeAlertasTest" time="0.0"/>
+  <testcase name="falha ao tocar avisa em vez de fingir que tocou" classname="com.plantaoseguro.nucleo.CentralDeAlertasTest" time="0.0"/>
+  <testcase name="um alarme por vez e mensagens novas somam no que ja toca" classname="com.plantaoseguro.nucleo.CentralDeAlertasTest" time="0.0"/>
+  <testcase name="alerta novo absorve o que aguardava confirmacao" classname="com.plantaoseguro.nucleo.CentralDeAlertasTest" time="0.0"/>
+  <testcase name="insistencia desiste se a mensagem ja foi aberta" classname="com.plantaoseguro.nucleo.CentralDeAlertasTest" time="0.0"/>
+  <testcase name="teste nao atrapalha alerta de verdade" classname="com.plantaoseguro.nucleo.CentralDeAlertasTest" time="0.003"/>
+  <testcase name="teste que toca ate o fim nao vira pendencia" classname="com.plantaoseguro.nucleo.CentralDeAlertasTest" time="0.0"/>
+  <testcase name="fim do plantao para alertas de plantao mas nao os de sempre" classname="com.plantaoseguro.nucleo.CentralDeAlertasTest" time="0.001"/>
+  <testcase name="confirmar cancela as insistencias" classname="com.plantaoseguro.nucleo.CentralDeAlertasTest" time="0.0"/>
+  <testcase name="com o ajuste desligado tocar na mensagem nao para o alerta" classname="com.plantaoseguro.nucleo.CentralDeAlertasTest" time="0.0"/>
+  <testcase name="depois de confirmada a mesma mensagem nao toca de novo" classname="com.plantaoseguro.nucleo.CentralDeAlertasTest" time="0.009"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

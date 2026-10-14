@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.plantaoseguro.dados.DadosCompatibilidadeTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-14T10:41:23.427Z" hostname="runnervmmprz5" time="0.108">
+  <properties/>
+  <testcase name="copia de configuracoes vai e volta" classname="com.plantaoseguro.dados.DadosCompatibilidadeTest" time="0.092"/>
+  <testcase name="o tipo do som fica gravado com nomes estaveis" classname="com.plantaoseguro.dados.DadosCompatibilidadeTest" time="0.005"/>
+  <testcase name="arquivo que nao e copia e recusado" classname="com.plantaoseguro.dados.DadosCompatibilidadeTest" time="0.002"/>
+  <testcase name="formato 3 continua legivel" classname="com.plantaoseguro.dados.DadosCompatibilidadeTest" time="0.003"/>
+  <testcase name="arquivo minimo ganha a regra padrao" classname="com.plantaoseguro.dados.DadosCompatibilidadeTest" time="0.0"/>
+  <testcase name="copia nao leva o historico nem o estado de execucao" classname="com.plantaoseguro.dados.DadosCompatibilidadeTest" time="0.001"/>
+  <testcase name="campos de versoes futuras sao ignorados e valores desconhecidos voltam ao padrao" classname="com.plantaoseguro.dados.DadosCompatibilidadeTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
