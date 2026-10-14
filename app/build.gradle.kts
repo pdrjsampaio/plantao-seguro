@@ -8,9 +8,9 @@ plugins {
     alias(libs.plugins.roborazzi)
 }
 
-// Assinatura de release: o GitHub Actions decodifica a chave dos "secrets" e
-// passa o caminho por variável de ambiente. Sem chave (ex.: build local),
-// o release sai assinado com a chave de debug, só para testes.
+// Assinatura de release: o GitHub Actions abre a chave criptografada
+// (assinatura/chave.tgz.enc) com o secret PS_CHAVE e passa o caminho e as
+// senhas por variáveis de ambiente. Veja assinatura/LEIA.md.
 val caminhoChave: String? = System.getenv("PS_KEYSTORE")
 val temChave = caminhoChave != null && file(caminhoChave).exists()
 
@@ -47,11 +47,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            signingConfig = if (temChave) {
-                signingConfigs.getByName("release")
-            } else {
-                signingConfigs.getByName("debug")
-            }
+            // Sem a chave, o release sai sem assinatura (app-release-unsigned.apk):
+            // assim ninguém instala por engano um APK que não poderia ser atualizado.
+            signingConfig = if (temChave) signingConfigs.getByName("release") else null
         }
         debug {
             applicationIdSuffix = ".debug"

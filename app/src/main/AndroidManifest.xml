@@ -49,6 +49,7 @@
     <application
         android:name=".PlantaoApp"
         android:allowBackup="false"
+        android:dataExtractionRules="@xml/regras_de_copia"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"

@@ -7,13 +7,13 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Build
 import android.os.PowerManager
 import android.provider.Settings
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import com.plantaoseguro.sentinela.SentinelaService
+import androidx.core.net.toUri
 
 /** O que o app precisa que a pessoa libere, em linguagem simples. */
 enum class Requisito(val titulo: String, val porque: String) {
@@ -90,7 +90,7 @@ object Permissoes {
     /** Telas de configuração do sistema para cada requisito, da mais direta para a mais genérica. */
     fun atalhos(context: Context, r: Requisito): List<Intent> {
         val pkg = context.packageName
-        val pacoteUri = Uri.parse("package:$pkg")
+        val pacoteUri = "package:$pkg".toUri()
         val detalhes = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, pacoteUri)
         return when (r) {
             Requisito.NOTIFICACOES -> listOf(
@@ -153,7 +153,7 @@ object Permissoes {
     /** Ajustes que cada fabricante esconde e que o Android não deixa conferir. */
     fun dicas(context: Context, f: Fabricante = fabricante()): List<Dica> {
         val pkg = context.packageName
-        val detalhes = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:$pkg"))
+        val detalhes = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, "package:$pkg".toUri())
         fun comp(p: String, c: String) = Intent().setComponent(ComponentName(p, c))
         return when (f) {
             Fabricante.XIAOMI -> listOf(

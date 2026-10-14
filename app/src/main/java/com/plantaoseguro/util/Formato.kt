@@ -39,7 +39,7 @@ object Formato {
             1L -> "amanhã às $h"
             -1L -> "ontem às $h"
             in 2L..6L -> "${diaSemanaLongo(dia)} às $h"
-            else -> if (dif < 0) "${dia.format(fDiaMes)} às $h" else "${dia.format(fDiaMes)} às $h"
+            else -> "${dia.format(fDiaMes)} às $h"
         }
     }
 

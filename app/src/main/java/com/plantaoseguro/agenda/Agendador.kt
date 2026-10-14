@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Build
 import android.util.Log
 import com.plantaoseguro.ui.MainActivity
+import androidx.core.net.toUri
 
 /**
  * Programa o relógio do sistema para acordar o app: início/fim de plantão
@@ -64,7 +65,7 @@ class Agendador(private val context: Context) {
     private fun piInsistencia(chave: String, pacote: String?): PendingIntent {
         val i = Intent(context, AlarmeReceiver::class.java)
             .setAction(AlarmeReceiver.ACAO_INSISTIR)
-            .setData(Uri.parse("plantao://insistir/" + Uri.encode(chave)))
+            .setData(("plantao://insistir/" + Uri.encode(chave)).toUri())
             .putExtra(AlarmeReceiver.EXTRA_CHAVE, chave)
             .putExtra(AlarmeReceiver.EXTRA_PACOTE, pacote)
         return PendingIntent.getBroadcast(context, REQ_INSISTIR, i, FLAGS)

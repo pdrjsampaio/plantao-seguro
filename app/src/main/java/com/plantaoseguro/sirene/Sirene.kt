@@ -8,7 +8,6 @@ import android.media.AudioFocusRequest
 import android.media.AudioManager
 import android.media.MediaPlayer
 import android.media.RingtoneManager
-import android.net.Uri
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
@@ -26,6 +25,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlin.math.roundToInt
+import androidx.core.net.toUri
 
 /**
  * Reprodução do alerta: som no canal de ALARME (toca mesmo no silencioso e no
@@ -253,8 +253,8 @@ class Sirene(private val context: Context) {
                         mp.setDataSource(afd.fileDescriptor, afd.startOffset, afd.length)
                     }
                 }
-                is SomRef.Sistema -> mp.setDataSource(context, Uri.parse(som.uri))
-                is SomRef.Arquivo -> mp.setDataSource(context, Uri.parse(som.uri))
+                is SomRef.Sistema -> mp.setDataSource(context, som.uri.toUri())
+                is SomRef.Arquivo -> mp.setDataSource(context, som.uri.toUri())
             }
             mp.prepare()
             mp

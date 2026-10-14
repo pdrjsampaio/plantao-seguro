@@ -10,6 +10,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.plantaoseguro.PlantaoApp
@@ -23,6 +25,9 @@ import kotlinx.coroutines.launch
 class AlarmeActivity : ComponentActivity() {
 
     private val grafo get() = (application as PlantaoApp).grafo
+
+    /** Atualizado ao voltar para a tela: desbloqueou, o nome da conversa aparece. */
+    private var bloqueado by mutableStateOf(true)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,11 +47,12 @@ class AlarmeActivity : ComponentActivity() {
             finish()
             return
         }
-        val bloqueado = getSystemService(KeyguardManager::class.java).isKeyguardLocked
+        bloqueado = getSystemService(KeyguardManager::class.java).isKeyguardLocked
 
         setContent {
             PlantaoTema(escuro = true) {
                 val alerta by grafo.central.tocando.collectAsStateWithLifecycle()
+                val dados by grafo.repo.dados.collectAsStateWithLifecycle()
                 LaunchedEffect(alerta) {
                     if (alerta == null) finish()
                 }
@@ -55,7 +61,7 @@ class AlarmeActivity : ComponentActivity() {
                     alerta = a,
                     // Nome do grupo/contato só aparece com o celular desbloqueado.
                     mostrarConversa = !bloqueado,
-                    volumePara = grafo.repo.dados.value.ajustes.volumeParaSirene,
+                    volumePara = dados.ajustes.volumeParaSirene,
                     onParar = {
                         grafo.central.confirmar("Você tocou em Parar na tela do alerta")
                         finish()
@@ -69,6 +75,11 @@ class AlarmeActivity : ComponentActivity() {
                 )
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        bloqueado = getSystemService(KeyguardManager::class.java).isKeyguardLocked
     }
 
     private fun pararEAbrir(a: AlertaAtivo) {

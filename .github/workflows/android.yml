@@ -100,8 +100,11 @@ jobs:
           [ -d app/build/outputs/roborazzi ] && cp -r app/build/outputs/roborazzi "$r/telas"
           cp app/build/reports/lint-results-debug.txt "$r/lint.txt" 2>/dev/null || true
           cp app/build/reports/lint-results-debug.xml "$r/lint.xml" 2>/dev/null || true
-          mkdir -p "$r/apk"
+          mkdir -p "$r/apk" "$r/ferramentas"
           find app/build/outputs/apk -name '*.apk' -exec cp {} "$r/apk/" \; 2>/dev/null || true
+          # apksigner (Apache 2.0, do Android SDK) para assinar fora do GitHub quando preciso
+          bt="$ANDROID_HOME/build-tools/$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)"
+          cp "$bt/lib/apksigner.jar" "$r/ferramentas/" 2>/dev/null || true
           cat > "$r/LEIA.md" <<EOF
           # Resultados da compilação (não é uma versão publicada)
 

@@ -1,5 +1,6 @@
 package com.plantaoseguro.servico
 
+import android.annotation.SuppressLint
 import android.app.Service
 import android.content.Context
 import android.content.Intent
@@ -86,6 +87,8 @@ class PlantaoService : Service() {
             }
         }
 
+        // Falso positivo do lint: stopService compara o componente, não a instância do Intent.
+        @SuppressLint("ImplicitSamInstance")
         fun parar(context: Context) {
             context.stopService(Intent(context, PlantaoService::class.java))
         }

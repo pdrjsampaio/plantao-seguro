@@ -44,7 +44,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavGraph.Companion.findStartDestination
-import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -478,7 +477,7 @@ private fun SonsRota(nav: NavController) {
 // ------------------------------------------------------------------ proteção
 
 @Composable
-private fun PedirNotificacoes(): () -> Unit {
+private fun rememberPedirNotificacoes(): () -> Unit {
     val contexto = LocalContext.current
     val pedir = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { ok ->
         if (!ok) Permissoes.abrir(contexto, Requisito.NOTIFICACOES)
@@ -499,7 +498,7 @@ private fun PermissoesRota(nav: NavController) {
         SentinelaService.pedirReconexao(contexto)
         onPauseOrDispose { }
     }
-    val pedirNotificacoes = PedirNotificacoes()
+    val pedirNotificacoes = rememberPedirNotificacoes()
     val fabricante = remember { Permissoes.fabricante() }
     PermissoesTela(
         status = status,
@@ -598,7 +597,7 @@ private fun BoasVindasRota() {
         status = Permissoes.aplicaveis().map { it to Permissoes.ok(contexto, it) }
         onPauseOrDispose { }
     }
-    val pedirNotificacoes = PedirNotificacoes()
+    val pedirNotificacoes = rememberPedirNotificacoes()
     val fabricante = remember { Permissoes.fabricante() }
     fun salvarRegra(f: (Regra) -> Regra) {
         escopo.launch {

@@ -6,7 +6,6 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.plantaoseguro.R
@@ -16,6 +15,7 @@ import com.plantaoseguro.sirene.AlarmeActivity
 import com.plantaoseguro.sirene.PararActivity
 import com.plantaoseguro.ui.MainActivity
 import com.plantaoseguro.util.Formato
+import androidx.core.net.toUri
 
 /**
  * Todas as notificações do app, num lugar só.
@@ -70,7 +70,7 @@ class Notificador(private val context: Context) {
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
         if (destino != null) {
             i.putExtra(MainActivity.EXTRA_DESTINO, destino)
-            i.data = Uri.parse("plantao://abrir/$destino")
+            i.data = "plantao://abrir/$destino".toUri()
         }
         return PendingIntent.getActivity(context, if (destino == null) 1 else 5, i, FLAGS)
     }
