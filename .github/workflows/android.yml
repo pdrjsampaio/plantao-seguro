@@ -147,7 +147,22 @@ jobs:
           sudo udevadm trigger --name-match=kvm
 
       - name: Compilar o app, os testes e o simulador
-        run: ./gradlew --no-daemon :app:assembleDebug :app:assembleDebugAndroidTest :simulador:assembleDebug
+        run: ./gradlew --no-daemon :app:assembleDebug :app:assembleRelease :app:assembleDebugAndroidTest :simulador:assembleDebug
+
+      - name: Preparar os APKs de release para o teste de fumaça
+        run: |
+          bt="$ANDROID_HOME/build-tools/$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)"
+          # O release compilado agora, assinado com a chave de teste (só para instalar no emulador).
+          "$bt/apksigner" sign --ks "$HOME/.android/debug.keystore" --ks-pass pass:android --key-pass pass:android \
+            --ks-key-alias androiddebugkey --out release-atual.apk app/build/outputs/apk/release/app-release-unsigned.apk
+          # O APK já publicado desta versão, se existir (o arquivo que as pessoas instalam).
+          versao="$(sed -n 's/.*versionName = "\(.*\)".*/\1/p' app/build.gradle.kts)"
+          if git fetch --depth 1 origin publicacao 2> /dev/null && \
+             git show "origin/publicacao:v$versao/plantao-seguro-$versao.apk" > release-publicado.apk 2> /dev/null; then
+            echo "Também será testado o APK publicado da v$versao."
+          else
+            rm -f release-publicado.apk
+          fi
 
       - name: Rodar os cenários no emulador
         id: e2e
@@ -164,6 +179,9 @@ jobs:
             mkdir -p e2e-arquivos
             adb pull /sdcard/Android/data/com.plantaoseguro.debug/files/e2e e2e-arquivos/ || true
             adb logcat -d -v time -s E2E:V PlantaoSeguro:V AndroidRuntime:E TestRunner:V > e2e-arquivos/logcat.txt || true
+            adb uninstall com.plantaoseguro.debug || true
+            bash ferramentas/teste-release.sh release-atual.apk simulador/build/outputs/apk/debug/simulador-debug.apk e2e-arquivos/release-atual || touch release-falhou
+            if [ -f release-publicado.apk ]; then bash ferramentas/teste-release.sh release-publicado.apk simulador/build/outputs/apk/debug/simulador-debug.apk e2e-arquivos/release-publicado || touch release-falhou; fi
 
       - name: Publicar resultados no branch ci-e2e
         if: always()
@@ -176,12 +194,15 @@ jobs:
           [ -d app/build/outputs/androidTest-results/connected ] && cp -r app/build/outputs/androidTest-results/connected "$r/resultados-junit"
           resultado="passaram"
           [ -f e2e-falhou ] && resultado="algum cenário falhou (veja relatorio.md e e2e-gradle.log)"
+          release="passou"
+          [ -f release-falhou ] && release="falhou (veja release-*/release.md)"
           cat > "$r/LEIA.md" <<EOF
           # Cenários no emulador (Android 14)
 
           - Commit: $GITHUB_SHA
           - Execução: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
-          - Resultado: $resultado
+          - Cenários (APK de debug): $resultado
+          - Teste de fumaça do APK de release: $release
           EOF
           cd "$r"
           git init -q
