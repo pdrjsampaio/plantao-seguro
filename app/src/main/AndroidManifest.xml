@@ -25,8 +25,7 @@
         android:name="android.hardware.camera.flash"
         android:required="false" />
 
-    <!-- Para mostrar nome e ícone dos apps que você escolher monitorar.
-         O app nunca lê o conteúdo das mensagens. -->
+    <!-- Para mostrar nome e ícone dos apps que você pode escolher monitorar. -->
     <queries>
         <package android:name="com.whatsapp.w4b" />
         <package android:name="com.whatsapp" />

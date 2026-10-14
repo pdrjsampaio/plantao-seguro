@@ -128,6 +128,8 @@ class Notificador(private val context: Context) {
             .setShowWhen(true)
             .setContentIntent(pararEAbrir(3))
             .setFullScreenIntent(telaAlarme(), true)
+            // A partir do Android 14 dá para arrastar até notificações fixas: arrastar também para o som.
+            .setDeleteIntent(acao(ACAO_DISPENSAR, 15))
             .addAction(0, "Parar", acao(ACAO_CONFIRMAR, 10))
         if (!a.teste && a.pacote != null) {
             b.addAction(0, "Abrir conversa", pararEAbrir(4))
@@ -275,6 +277,7 @@ class Notificador(private val context: Context) {
         const val TAG_TESTE_ESCUTA = "teste-escuta"
 
         const val ACAO_CONFIRMAR = "com.plantaoseguro.CONFIRMAR"
+        const val ACAO_DISPENSAR = "com.plantaoseguro.DISPENSAR"
         const val ACAO_SILENCIAR = "com.plantaoseguro.SILENCIAR"
         const val ACAO_ENCERRAR = "com.plantaoseguro.ENCERRAR_PLANTAO"
         const val ACAO_TESTAR = "com.plantaoseguro.TESTAR"

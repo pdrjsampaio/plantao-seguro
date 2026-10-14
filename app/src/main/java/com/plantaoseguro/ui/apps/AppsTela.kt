@@ -64,7 +64,7 @@ fun AppsTela(
             item {
                 Text(
                     "Durante o plantão, a sirene toca quando um destes apps mostrar uma notificação. " +
-                        "O Plantão Seguro nunca lê o que está escrito nela.",
+                        "O texto só é conferido, sem ser guardado, se a regra tiver filtro de contato ou palavra.",
                     style = MaterialTheme.typography.bodyLarge,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(horizontal = 20.dp, vertical = 8.dp)

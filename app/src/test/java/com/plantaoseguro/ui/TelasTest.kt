@@ -236,7 +236,7 @@ class TelasTest {
             selecionado = SomRef.Embutido("sirene_europeia"),
             previa = SomRef.Embutido("sirene_europeia"),
             volume = 80,
-            doCelular = listOf(SomRef.Sistema("content://media/alarme/1", "Alarme do celular")),
+            doCelular = listOf(SomRef.Sistema("content://media/alarme/1", "Argon")),
             acoes = AcoesSons()
         )
     }

@@ -22,3 +22,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "PlantaoSeguro"
 include(":app")
+// Só para os testes no emulador (faz o papel do WhatsApp). Não é distribuído.
+include(":simulador")

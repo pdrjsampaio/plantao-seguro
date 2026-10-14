@@ -23,7 +23,7 @@ enum class Requisito(val titulo: String, val porque: String) {
     ),
     ESCUTA(
         "Acesso às notificações",
-        "É como o app percebe que chegou mensagem. Ele vê só qual app avisou, nunca o texto."
+        "É como o app percebe que chegou mensagem. Ignora os apps que você não escolheu e não guarda o texto de nenhuma."
     ),
     NAO_PERTURBE(
         "Controlar o Não Perturbe",

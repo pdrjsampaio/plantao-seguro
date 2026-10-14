@@ -1,6 +1,7 @@
 package com.plantaoseguro.dados
 
 import android.content.Context
+import android.database.DatabaseErrorHandler
 import android.database.sqlite.SQLiteDatabase
 import android.util.Log
 import com.plantaoseguro.modelo.AoTerminar
@@ -24,7 +25,8 @@ object Migracao25 {
         val arquivo = context.getDatabasePath("plantao_seguro.db")
         if (!arquivo.exists()) return null
         return try {
-            SQLiteDatabase.openDatabase(arquivo.path, null, SQLiteDatabase.OPEN_READONLY).use { db ->
+            // Tratador de erro vazio: o padrão do Android apaga bancos corrompidos, e aqui nada é apagado.
+            SQLiteDatabase.openDatabase(arquivo.path, null, SQLiteDatabase.OPEN_READONLY, DatabaseErrorHandler { }).use { db ->
                 val plantoes = ArrayList<Plantao>()
                 db.rawQuery(
                     "SELECT nome, inicioEpochMs, fimEpochMs, repetirSemanalmente, tirarDoSilencioso, desligarNaoPerturbe, status FROM plantoes",

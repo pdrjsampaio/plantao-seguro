@@ -127,7 +127,10 @@ class Sirene(private val context: Context) {
         if (toque.vibracao != Vibracao.NENHUMA) vibrar(toque.vibracao, repetir = true)
         val umaVez = (mp.duration / 1000).coerceAtLeast(1)
         iniciarComuns(toque, segundosLimite(toque, umaVez))
-        return mp.isPlaying
+        // start() não falhou: o som está tocando. (isPlaying pode demorar alguns
+        // milissegundos para virar true em alguns aparelhos; devolver false aqui
+        // deixaria um som tocando sem tela para parar.)
+        return true
     }
 
     /** Uma nova mensagem chegou durante o alerta: renova o tempo (não começa outro som). */

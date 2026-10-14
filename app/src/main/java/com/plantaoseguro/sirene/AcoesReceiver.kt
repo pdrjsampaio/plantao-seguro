@@ -13,6 +13,7 @@ class AcoesReceiver : BroadcastReceiver() {
         val grafo = (context.applicationContext as PlantaoApp).grafo
         when (intent.action) {
             Notificador.ACAO_CONFIRMAR -> grafo.central.confirmar("Você tocou em Parar na notificação")
+            Notificador.ACAO_DISPENSAR -> grafo.central.confirmar("Você dispensou a notificação do alerta")
             Notificador.ACAO_TESTAR -> grafo.coordenador.testar(null)
             else -> {
                 val pendente = goAsync()
