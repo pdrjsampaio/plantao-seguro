@@ -1,8 +1,122 @@
 name: Android
+
+# Compila, roda os testes e gera os APKs a cada envio.
+# Nenhuma senha fica no repositório: a chave de assinatura está criptografada em
+# assinatura/chave.tgz.enc e só é aberta aqui, com o secret PS_CHAVE.
+
 on:
+  push:
+    branches: [main, v3]
+    paths-ignore: ["**.md", "docs/**"]
+  pull_request:
   workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  placeholder:
+  compilar:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PS_CHAVE: ${{ secrets.PS_CHAVE }}
     steps:
-      - run: echo "Workflow será substituído pelo de compilação."
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Abrir a chave de assinatura (se o secret existir)
+        id: chave
+        run: |
+          if [ -z "$PS_CHAVE" ]; then
+            echo "tipo=teste" >> "$GITHUB_OUTPUT"
+            echo "::warning::Secret PS_CHAVE não configurado: o APK de release sai com assinatura de teste e não serve para distribuir."
+            exit 0
+          fi
+          dir="$RUNNER_TEMP/chave"
+          mkdir -p "$dir"
+          if ! openssl enc -d -aes-256-cbc -pbkdf2 -iter 600000 -in assinatura/chave.tgz.enc -pass env:PS_CHAVE | tar xz -C "$dir"; then
+            echo "tipo=erro" >> "$GITHUB_OUTPUT"
+            echo "::error::Não consegui abrir assinatura/chave.tgz.enc com o PS_CHAVE informado."
+            exit 0
+          fi
+          prop() { grep "^$1=" "$dir/chave.properties" | cut -d= -f2-; }
+          sp="$(prop storePassword)"; kp="$(prop keyPassword)"; al="$(prop keyAlias)"
+          echo "::add-mask::$sp"
+          echo "::add-mask::$kp"
+          {
+            echo "PS_KEYSTORE=$dir/release.jks"
+            echo "PS_KEYSTORE_PASSWORD=$sp"
+            echo "PS_KEY_ALIAS=$al"
+            echo "PS_KEY_PASSWORD=$kp"
+          } >> "$GITHUB_ENV"
+          echo "tipo=producao" >> "$GITHUB_OUTPUT"
+
+      - name: Compilar, testar e analisar
+        id: gradle
+        run: |
+          set -o pipefail
+          ./gradlew --no-daemon --continue --stacktrace \
+            assembleDebug assembleRelease testDebugUnitTest lintDebug \
+            -Proborazzi.test.record=true 2>&1 | tee build.log
+
+      - name: Conferir os APKs
+        if: always()
+        run: |
+          bt="$ANDROID_HOME/build-tools/$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)"
+          : > apks.txt
+          for apk in $(find app/build/outputs/apk -name '*.apk' | sort); do
+            {
+              echo "== $apk"
+              echo "tamanho: $(stat -c %s "$apk") bytes"
+              echo "sha256: $(sha256sum "$apk" | cut -d' ' -f1)"
+              "$bt/apksigner" verify --verbose --print-certs "$apk" 2>&1 | grep -v "^WARNING" || true
+              "$bt/aapt2" dump badging "$apk" 2>&1 | grep -E "^(package|sdkVersion|targetSdkVersion|uses-permission|application-label)" || true
+              echo
+            } >> apks.txt
+          done
+          cat apks.txt
+
+      - name: Publicar resultados no branch ci-resultados
+        if: always()
+        env:
+          TIPO_CHAVE: ${{ steps.chave.outputs.tipo }}
+          RESULTADO: ${{ steps.gradle.outcome }}
+        run: |
+          r="$RUNNER_TEMP/resultados"
+          mkdir -p "$r"
+          cp build.log apks.txt "$r/" 2>/dev/null || true
+          [ -d app/build/reports/tests ] && cp -r app/build/reports/tests "$r/relatorio-testes"
+          [ -d app/build/test-results ] && cp -r app/build/test-results "$r/resultados-testes"
+          [ -d app/build/outputs/roborazzi ] && cp -r app/build/outputs/roborazzi "$r/telas"
+          cp app/build/reports/lint-results-debug.txt "$r/lint.txt" 2>/dev/null || true
+          cp app/build/reports/lint-results-debug.xml "$r/lint.xml" 2>/dev/null || true
+          mkdir -p "$r/apk"
+          find app/build/outputs/apk -name '*.apk' -exec cp {} "$r/apk/" \; 2>/dev/null || true
+          cat > "$r/LEIA.md" <<EOF
+          # Resultados da compilação (não é uma versão publicada)
+
+          - Commit: $GITHUB_SHA
+          - Execução: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
+          - Resultado do Gradle: $RESULTADO
+          - Assinatura do release: $TIPO_CHAVE
+
+          Estes arquivos servem para conferir a compilação. Para instalar o app,
+          use apenas a página de versões (Releases) do repositório.
+          EOF
+          cd "$r"
+          git init -q
+          git checkout -q -b ci-resultados
+          git add -A
+          git -c user.name="github-actions" -c user.email="github-actions@users.noreply.github.com" \
+            commit -qm "Resultados de ${GITHUB_SHA::7} (execução $GITHUB_RUN_ID)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" ci-resultados

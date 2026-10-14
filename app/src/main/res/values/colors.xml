@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fundo_janela">#FFF0F3F7</color>
+    <color name="fundo_alarme">#FF1A0608</color>
+    <color name="icone_fundo">#FF0F1B33</color>
+    <color name="sinal">#FFFF6A13</color>
+</resources>

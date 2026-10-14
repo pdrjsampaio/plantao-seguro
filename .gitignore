@@ -1,0 +1,19 @@
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/app/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+*.jks
+*.keystore
+chave.properties
+
+# Assinatura: só a versão criptografada vai para o repositório
+/assinatura/*
+!/assinatura/chave.tgz.enc
+!/assinatura/LEIA.md
+senha.txt
