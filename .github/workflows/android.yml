@@ -88,7 +88,7 @@ jobs:
           cat apks.txt
 
       - name: Publicar resultados no branch ci-resultados
-        if: always()
+        if: always() && github.event_name != 'pull_request'
         env:
           TIPO_CHAVE: ${{ steps.chave.outputs.tipo }}
           RESULTADO: ${{ steps.gradle.outcome }}
@@ -151,18 +151,25 @@ jobs:
 
       - name: Preparar os APKs de release para o teste de fumaça
         run: |
-          bt="$ANDROID_HOME/build-tools/$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)"
-          # O release compilado agora, assinado com a chave de teste (só para instalar no emulador).
-          "$bt/apksigner" sign --ks "$HOME/.android/debug.keystore" --ks-pass pass:android --key-pass pass:android \
-            --ks-key-alias androiddebugkey --out release-atual.apk app/build/outputs/apk/release/app-release-unsigned.apk
-          # O APK já publicado desta versão, se existir (o arquivo que as pessoas instalam).
-          versao="$(sed -n 's/.*versionName = "\(.*\)".*/\1/p' app/build.gradle.kts)"
-          if git fetch --depth 1 origin publicacao 2> /dev/null && \
-             git show "origin/publicacao:v$versao/plantao-seguro-$versao.apk" > release-publicado.apk 2> /dev/null; then
-            echo "Também será testado o APK publicado da v$versao."
-          else
-            rm -f release-publicado.apk
-          fi
+          mkdir -p e2e-arquivos
+          {
+            bt="$ANDROID_HOME/build-tools/$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)"
+            # O release compilado agora, assinado com uma chave descartável (só para instalar no emulador).
+            keytool -genkeypair -keystore "$RUNNER_TEMP/teste.jks" -storepass android -keypass android -alias teste \
+              -keyalg RSA -keysize 2048 -validity 2 -dname "CN=Teste do emulador"
+            "$bt/apksigner" sign --ks "$RUNNER_TEMP/teste.jks" --ks-pass pass:android --key-pass pass:android \
+              --ks-key-alias teste --out release-atual.apk app/build/outputs/apk/release/app-release-unsigned.apk
+            # O APK já publicado desta versão, se existir (o arquivo que as pessoas instalam).
+            versao="$(sed -n 's/.*versionName = "\(.*\)".*/\1/p' app/build.gradle.kts)"
+            if git fetch --depth 1 origin publicacao && \
+               git show "FETCH_HEAD:v$versao/plantao-seguro-$versao.apk" > release-publicado.apk; then
+              echo "Também será testado o APK publicado da v$versao."
+            else
+              rm -f release-publicado.apk
+              echo "Nenhum APK publicado da v$versao."
+            fi
+            ls -la release-*.apk
+          } 2>&1 | tee e2e-arquivos/preparacao.txt || true
 
       - name: Rodar os cenários no emulador
         id: e2e
@@ -184,7 +191,7 @@ jobs:
             if [ -f release-publicado.apk ]; then bash ferramentas/teste-release.sh release-publicado.apk simulador/build/outputs/apk/debug/simulador-debug.apk e2e-arquivos/release-publicado || touch release-falhou; fi
 
       - name: Publicar resultados no branch ci-e2e
-        if: always()
+        if: always() && github.event_name != 'pull_request'
         run: |
           r="$RUNNER_TEMP/e2e"
           mkdir -p "$r"
@@ -196,6 +203,11 @@ jobs:
           [ -f e2e-falhou ] && resultado="algum cenário falhou (veja relatorio.md e e2e-gradle.log)"
           release="passou"
           [ -f release-falhou ] && release="falhou (veja release-*/release.md)"
+          [ -f e2e-arquivos/release-atual/release.md ] || release="não rodou (veja preparacao.txt)"
+          if [ "${{ steps.e2e.outcome }}" != "success" ]; then
+            resultado="não rodaram (${{ steps.e2e.outcome }})"
+            release="não rodou"
+          fi
           cat > "$r/LEIA.md" <<EOF
           # Cenários no emulador (Android 14)
 
