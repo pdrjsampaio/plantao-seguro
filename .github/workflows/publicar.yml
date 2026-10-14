@@ -1,17 +1,23 @@
 name: Publicar versão
 
-# Cria a página da versão (Release) quando uma tag "v*" é enviada.
+# Anexa o APK assinado a uma versão (Release) publicada no GitHub.
 #
-# - Tags com sufixo (ex.: v3.0.0-beta.1) saem como PRÉ-LANÇAMENTO e nunca
-#   tomam o lugar da versão principal. Só uma tag sem sufixo vira a principal.
-# - Com o secret PS_CHAVE, o APK é compilado e assinado aqui. Sem ele, usa o
-#   APK já assinado guardado no branch "publicacao" (pasta com o nome da tag).
-# - Em qualquer caso, o certificado e a versão do APK são conferidos antes de
-#   publicar: um APK com outra assinatura é recusado.
+# Como usar: em Releases > "Draft a new release", crie a tag (ex.:
+# v3.0.0-beta.1) apontando para o branch certo, marque "Set as a pre-release"
+# se for versão de teste e publique. Este workflow então:
+#
+# - compila e assina o APK aqui, se o secret PS_CHAVE existir; senão usa o APK
+#   já assinado guardado no branch "publicacao" (pasta com o nome da tag);
+# - confere o certificado, a versão e o alinhamento do APK (um APK com outra
+#   assinatura é recusado);
+# - anexa o APK e o arquivo .sha256 e preenche as notas a partir de
+#   docs/notas/<tag>.md;
+# - mantém como pré-lançamento qualquer tag com sufixo (ex.: -beta.1), para
+#   que ela nunca tome o lugar da versão principal.
 
 on:
-  push:
-    tags: ["v*"]
+  release:
+    types: [published]
 
 permissions:
   contents: write
@@ -22,8 +28,9 @@ jobs:
     timeout-minutes: 30
     env:
       PS_CHAVE: ${{ secrets.PS_CHAVE }}
-      TAG: ${{ github.ref_name }}
+      TAG: ${{ github.event.release.tag_name }}
       CERT_ESPERADO: f7e877227ac15a26b88eb975f737bdbdab4be0662d2efe15191872dc56635373
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -80,17 +87,12 @@ jobs:
           sha256sum "$APK" > "$APK.sha256"
           cat "$APK.sha256"
 
-      - name: Criar a página da versão
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Anexar à versão
         run: |
-          args=(--title "Plantão Seguro ${TAG#v}" --verify-tag)
+          gh release upload "$TAG" "$APK" "$APK.sha256" --clobber
           if [ -f "docs/notas/$TAG.md" ]; then
-            args+=(--notes-file "docs/notas/$TAG.md")
-          else
-            args+=(--notes "Veja o CHANGELOG.md.")
+            gh release edit "$TAG" --notes-file "docs/notas/$TAG.md"
           fi
           case "$TAG" in
-            *-*) args+=(--prerelease --latest=false) ;;
+            *-*) gh release edit "$TAG" --prerelease --latest=false ;;
           esac
-          gh release create "$TAG" "$APK" "$APK.sha256" "${args[@]}"

@@ -108,6 +108,18 @@ O APK de release só é assinado quando as variáveis `PS_KEYSTORE`,
 Actions elas vêm da chave criptografada no repositório, aberta com o secret
 `PS_CHAVE` (`assinatura/LEIA.md`). Sem elas, sai `app-release-unsigned.apk`.
 
+### Publicar uma versão
+
+1. Ajuste `versionCode` e `versionName` em `app/build.gradle.kts` e escreva
+   as notas em `docs/notas/v<versão>.md`.
+2. Em Releases > *Draft a new release*, crie a tag `v<versão>` apontando para
+   o branch certo. Versões de teste levam sufixo (`-beta.1`) e a opção
+   *Set as a pre-release*.
+3. Ao publicar, o workflow `Publicar versão` anexa o APK assinado e o
+   `.sha256`, depois de conferir o certificado e a versão. Com o secret
+   `PS_CHAVE` ele mesmo compila e assina; sem ele, usa o APK assinado guardado
+   no branch `publicacao`.
+
 ### Organização
 
 ```
