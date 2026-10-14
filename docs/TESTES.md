@@ -12,7 +12,7 @@ emulador, com relatório e fotos tiradas no emulador).
 
 | Onde | O que roda | Resultado |
 |---|---|---|
-| JVM | 104 testes: decisão (Motor), central de alertas, agenda, textos, formatos, dados e compatibilidade, importação da 2.5.0, arquivo de configurações, histórico, fluxos de tela com o app de verdade e 26 fotos de telas | ver `ci-resultados` |
+| JVM | 103 testes: decisão (Motor), central de alertas, agenda, textos, formatos, dados e compatibilidade, importação da 2.5.0, arquivo de configurações, histórico, fluxos de tela com o app de verdade e 26 fotos de telas | **103 de 103 passaram** |
 | Emulador Android 14 (API 34, Pixel 6) | 21 cenários de ponta a ponta com UiAutomator; o app `:simulador` faz o papel do WhatsApp | **21 de 21 passaram** |
 | Celular de verdade | — | **não validado ainda** (roteiro no fim deste documento) |
 

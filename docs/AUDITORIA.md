@@ -333,3 +333,42 @@ validado em aparelho real**.
 4. Telas e primeira utilização.
 5. GitHub Actions: compilar, testar, capturas de tela, emulador.
 6. Release 3.0.0 só depois dos testes e da decisão da seção 7.
+
+O resultado está em [TESTES.md](TESTES.md). Na prática, o cenário 9 foi
+testado retirando e devolvendo o acesso às notificações (`am kill` encerraria
+o próprio teste, que roda dentro do processo do app), e o 10 foi simulado
+apagando os alarmes e acionando o receptor do sistema.
+
+---
+
+## 10. Situação ao fim da implementação (3.0.0-beta.1)
+
+**Feito e testado (JVM e emulador Android 14):** todos os itens P0 e P1 da
+tabela 3.2, com uma mudança de decisão registrada na 3.1 (arquivo JSON
+atômico no lugar do DataStore).
+
+**Encontrado pelos testes e corrigido antes da publicação:**
+
+- Concluir os primeiros passos rodava num escopo de tela que era cancelado
+  quando a própria tela saía: "Cadastrar meu plantão" e "Começar agora"
+  podiam não acontecer.
+- A verificação do acesso às notificações lia uma configuração que demora a
+  ser atualizada; passou a perguntar direto ao sistema.
+- Os botões flutuantes ("Novo plantão", "Nova regra") eram anunciados pelo
+  leitor de tela só como "botão".
+- Textos de privacidade que diziam que o app nunca lê o texto das mensagens
+  (com filtro por palavra, ele lê na memória).
+- O alerta da tela cheia usava ícones escuros na barra de status.
+
+**Recuperado da 2.5.0 depois da primeira versão do plano:** as opções do
+vigia de volume (30 min, 1 h, 2 h, até o fim do plantão e voltar agora).
+
+**Pendente:**
+
+1. Validação em celulares de verdade (roteiro em `TESTES.md`), principalmente
+   com o WhatsApp real e aparelhos Xiaomi/POCO/Samsung.
+2. Secret `PS_CHAVE` no GitHub para o próprio Actions assinar as próximas
+   versões (a 3.0.0-beta.1 foi assinada fora do GitHub com a mesma chave).
+3. Promover a 3.0.0 a versão principal só depois do item 1.
+4. Depois: `targetSdk` 36 (Android 16) e atualização das bibliotecas, que o
+   lint já aponta como disponíveis; checagem automática de acessibilidade.
