@@ -6,8 +6,10 @@ import androidx.compose.ui.test.ComposeTimeoutException
 import androidx.compose.ui.test.hasScrollAction
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.onAllNodesWithContentDescription
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onFirst
+import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
@@ -122,8 +124,9 @@ class FluxosTest {
         runBlocking { grafo.repo.atualizar { it.copy(ajustes = it.ajustes.copy(boasVindasConcluida = true)) } }
         abrirApp()
         compose.onNodeWithText("Alertas").performClick()
-        esperarTexto("Nova regra")
-        compose.onNodeWithText("Nova regra").performClick()
+        // O Material 3 tira o texto do botão flutuante da acessibilidade; o app põe a descrição.
+        compose.waitUntil(10_000) { compose.onAllNodesWithContentDescription("Nova regra").fetchSemanticsNodes().isNotEmpty() }
+        compose.onNodeWithContentDescription("Nova regra").performClick()
 
         esperarTexto("Nome da regra")
         compose.onNodeWithText("Nome da regra").performTextInput("Chefia")

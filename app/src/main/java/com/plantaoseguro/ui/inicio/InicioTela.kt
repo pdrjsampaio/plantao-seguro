@@ -147,7 +147,7 @@ fun InicioTela(e: InicioEstado, acoes: AcoesInicio, animar: Boolean = true) {
                 text = { Text("Novo plantão") },
                 containerColor = MaterialTheme.colorScheme.primary,
                 contentColor = MaterialTheme.colorScheme.onPrimary,
-                modifier = Modifier.align(Alignment.BottomEnd).padding(20.dp)
+                modifier = Modifier.align(Alignment.BottomEnd).padding(20.dp).semantics { contentDescription = "Novo plantão" }
             )
         }
     }
@@ -372,7 +372,7 @@ private fun LinhaPlantao(r: ResumoPlantao, acoes: AcoesInicio) {
         Switch(
             checked = ligado,
             onCheckedChange = { acoes.ligar(r.plantao.id, it) },
-            modifier = Modifier.semantics { contentDescription = "Plantão ${r.plantao.nome} ligado" }
+            modifier = Modifier.semantics { contentDescription = "Ligar o plantão ${r.plantao.nome}" }
         )
         if (r.plantao.tipo == TipoAgenda.SEMANAL) {
             Box {

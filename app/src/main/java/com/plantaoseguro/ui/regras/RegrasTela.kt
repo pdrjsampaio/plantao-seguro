@@ -120,7 +120,7 @@ fun RegrasTela(regras: List<ResumoRegra>, onNova: () -> Unit, onEditar: (String)
             text = { Text("Nova regra") },
             containerColor = MaterialTheme.colorScheme.primary,
             contentColor = MaterialTheme.colorScheme.onPrimary,
-            modifier = Modifier.align(Alignment.BottomEnd).padding(20.dp)
+            modifier = Modifier.align(Alignment.BottomEnd).padding(20.dp).semantics { contentDescription = "Nova regra" }
         )
     }
 }
@@ -169,7 +169,7 @@ private fun LinhaRegra(r: ResumoRegra, onEditar: (String) -> Unit, onLigar: (Str
         Switch(
             checked = ligada,
             onCheckedChange = { onLigar(r.regra.id, it) },
-            modifier = Modifier.semantics { contentDescription = "Regra ${r.regra.nome} ligada" }
+            modifier = Modifier.semantics { contentDescription = "Ligar a regra ${r.regra.nome}" }
         )
     }
 }
