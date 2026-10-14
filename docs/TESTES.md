@@ -14,7 +14,14 @@ emulador, com relatório e fotos tiradas no emulador).
 |---|---|---|
 | JVM | 103 testes: decisão (Motor), central de alertas, agenda, textos, formatos, dados e compatibilidade, importação da 2.5.0, arquivo de configurações, histórico, fluxos de tela com o app de verdade e 26 fotos de telas | **103 de 103 passaram** |
 | Emulador Android 14 (API 34, Pixel 6) | 21 cenários de ponta a ponta com UiAutomator; o app `:simulador` faz o papel do WhatsApp | **21 de 21 passaram** |
+| Emulador Android 14, APK de release | Teste de fumaça do arquivo publicado (`plantao-seguro-3.0.0-beta.1.apk`, SHA-256 `01b25af2…dc03d073`, assinado com a chave do projeto): instalar, abrir, ler e gravar as configurações, alerta, parada ao fechar a mensagem, histórico, sem travamentos | **8 de 8 passaram** |
 | Celular de verdade | — | **não validado ainda** (roteiro no fim deste documento) |
+
+Os cenários completos rodam no APK de debug, que tem instrumentação de teste.
+O teste de fumaça (`ferramentas/teste-release.sh`) existe porque o APK de
+release passa pelo R8 (encolhimento e ofuscação), que pode quebrar coisas que
+o de debug não mostra; ele roda só com o `adb`, no mesmo arquivo que vai para
+as pessoas.
 
 ## Os 15 cenários pedidos
 
