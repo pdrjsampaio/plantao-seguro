@@ -1,0 +1,963 @@
+10-14 10:48:25.133  4916  4937 I TestRunner: started: c22_teste_com_tela_bloqueada(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:48:25.135  4916  4937 D UiDevice: Executing shell command: cmd notification allow_listener com.plantaoseguro.debug/com.plantaoseguro.sentinela.SentinelaService
+10-14 10:48:25.145  4916  4937 D UiDevice: Executing shell command: am broadcast -n com.plantaoseguro.simulador/.Comando -f 32 --es acao cancelar_tudo
+10-14 10:48:25.156   520   533 I ActivityManager: Broadcasting: Intent { flg=0x400020 cmp=com.plantaoseguro.simulador/.Comando (has extras) }
+10-14 10:48:25.159   520   537 I ActivityManager: Broadcast completed: result=0
+10-14 10:48:25.161  4916  4937 D UiDevice: Turning on screen.
+10-14 10:48:25.161  4916  4937 D UiDevice: Executing shell command: wm dismiss-keyguard
+10-14 10:48:25.173  4916  4937 D UiDevice: Pressing home button.
+10-14 10:48:25.199   836   836 I vol.VolumeDialogImpl: mDialog.dismiss() reason: volume_controller from: com.android.systemui.volume.VolumeDialogImpl$7.onDismissRequested:3
+10-14 10:48:25.204  1093  1093 D TaplTarget: Launcher.onNewIntent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000100 cmp=com.google.android.apps.nexuslauncher/.NexusLauncherActivity (has extras) }
+10-14 10:48:25.206   520  1650 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+10-14 10:48:25.208  1093  1991 D OneSearchSuggestProvider: Established or reuse existing binder channel authority=com.google.android.googlequicksearchbox
+10-14 10:48:25.214   836  1385 D KeyguardService: setOccluded(false)
+10-14 10:48:25.215   836  1385 D KeyguardViewMediator: setOccluded(false)
+10-14 10:48:25.217  1636  2096 I AiAiEcho: Predicting[0]:
+10-14 10:48:25.217  1636  2096 I AiAiEcho: EchoTargets:
+10-14 10:48:25.217  1636  2096 I AiAiEcho: Filtered by AiAi flag check:
+10-14 10:48:25.217  1636  2096 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+10-14 10:48:25.218  1636  2096 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-14 10:48:25.218   836   836 D KeyguardViewMediator: handleSetOccluded(false)
+10-14 10:48:25.219   836   836 I vol.VolumeDialogImpl: mDialog.dismiss() reason: volume_controller from: com.android.systemui.volume.VolumeDialogImpl$7.onDismissRequested:3
+10-14 10:48:25.219   836   836 D vol.VolumeDialogImpl: dismissH: skipping dismiss because isAnimatingDismiss is true and showingStateInconsistent is false
+10-14 10:48:25.231  1093  1093 D SearchTargetUtil:  query= size=15
+10-14 10:48:25.231  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=costco younger demographic membership growth,group_id=web157696,response_id=063e2c76-4647-4920-b0fd-d54bb4410ceb,support_query_builder=false,} searchAction=costco younger demographic membership growth searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 36bfd123-4724-4abd-a53e-d7a73ac29c64
+10-14 10:48:25.231  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=next gen buick lacrosse 2027,group_id=web157696,response_id=063e2c76-4647-4920-b0fd-d54bb4410ceb,support_query_builder=false,} searchAction=next gen buick lacrosse 2027 searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: bc6a97b2-e8f4-4d1e-a018-1127070f512a
+10-14 10:48:25.231  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=uswnt vs spain,group_id=web157696,response_id=063e2c76-4647-4920-b0fd-d54bb4410ceb,support_query_builder=false,} searchAction=uswnt vs spain searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: e2cb4757-1113-4eeb-8ae3-12068a9f782c
+10-14 10:48:25.231  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=elephant dies in south africa,group_id=web157696,response_id=063e2c76-4647-4920-b0fd-d54bb4410ceb,support_query_builder=false,} searchAction=elephant dies in south africa searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 2a1b6a0f-dd81-4195-85e2-c0f0651a7962
+10-14 10:48:25.231  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=google fitbit edge fitness tracker,group_id=web157696,response_id=063e2c76-4647-4920-b0fd-d54bb4410ceb,support_query_builder=false,} searchAction=google fitbit edge fitness tracker searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 9c5676e4-4301-4bda-a840-940e0c27f9d2
+10-14 10:48:25.232  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=spacex rocket launch falcon 9,group_id=web157696,response_id=063e2c76-4647-4920-b0fd-d54bb4410ceb,support_query_builder=false,} searchAction=spacex rocket launch falcon 9 searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: c0aff05b-9804-472f-a2ab-a5a324c2fad9
+10-14 10:48:25.232  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=openai mathematical research impact,group_id=web157696,response_id=063e2c76-4647-4920-b0fd-d54bb4410ceb,support_query_builder=false,} searchAction=openai mathematical research impact searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 19e51d69-31a4-4c53-af4d-ab65588dccee
+10-14 10:48:25.232  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=george strait 1987 country chart hit,group_id=web157696,response_id=063e2c76-4647-4920-b0fd-d54bb4410ceb,support_query_builder=false,} searchAction=george strait 1987 country chart hit searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 97b76313-3581-4665-bd66-8677e5a2b387
+10-14 10:48:25.232  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=west nile virus north carolina,group_id=web157696,response_id=063e2c76-4647-4920-b0fd-d54bb4410ceb,support_query_builder=false,} searchAction=west nile virus north carolina searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 74d716c0-ed0a-4e12-887c-e0157a2270d4
+10-14 10:48:25.232  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=great smoky mountains hiker sahil jilani,group_id=web157696,response_id=063e2c76-4647-4920-b0fd-d54bb4410ceb,support_query_builder=false,} searchAction=great smoky mountains hiker sahil jilani searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 484be698-6bff-48a2-977d-c032a4cf66da
+10-14 10:48:25.232  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=walmart express pickup service,group_id=web157696,response_id=063e2c76-4647-4920-b0fd-d54bb4410ceb,support_query_builder=false,} searchAction=walmart express pickup service searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 2fee729f-560c-4547-b601-f68569035dff
+10-14 10:48:25.232  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=cleveland guardians tampa bay rays,group_id=web157696,response_id=063e2c76-4647-4920-b0fd-d54bb4410ceb,support_query_builder=false,} searchAction=cleveland guardians tampa bay rays searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 9fcf7dd0-d1a0-4a3c-970a-7feb597107d9
+10-14 10:48:25.232  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=nathan fielder elizabeth holmes film,group_id=web157696,response_id=063e2c76-4647-4920-b0fd-d54bb4410ceb,support_query_builder=false,} searchAction=nathan fielder elizabeth holmes film searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 19712b8b-065f-4da3-832e-021fac9003e0
+10-14 10:48:25.232  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=golden retriever skylar wakes baby,group_id=web157696,response_id=063e2c76-4647-4920-b0fd-d54bb4410ceb,support_query_builder=false,} searchAction=golden retriever skylar wakes baby searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 30c8c616-63d6-4c27-ae37-e424d1cfcf3f
+10-14 10:48:25.232  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=apple homeview,group_id=web157696,response_id=063e2c76-4647-4920-b0fd-d54bb4410ceb,support_query_builder=false,} searchAction=apple homeview searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 85fa1f5c-0c3e-4601-a962-08173e24a611
+10-14 10:48:25.348   520   520 I ResourceTimer: GetResourceValue count=11263 pvalues=1000,6000,8000,13000
+10-14 10:48:25.348   520   520 I ResourceTimer: RetrieveAttributes count=17336 pvalues=1000,2000,4000,16000
+10-14 10:48:25.682   474  5188 D BufferPoolAccessor2.0: bufferpool2 0x7bc7d5a6cce8 : 0(0 size) total buffers - 0(0 size) used buffers - 95/103 (recycle/alloc) - 8/198 (fetch/transfer)
+10-14 10:48:25.682   474  5188 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+10-14 10:48:25.710   479   834 D BufferPoolAccessor2.0: bufferpool2 0x76bee85b44d8 : 0(0 size) total buffers - 0(0 size) used buffers - 94/97 (recycle/alloc) - 3/96 (fetch/transfer)
+10-14 10:48:25.710   479   834 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+10-14 10:48:26.199  4916  4937 W InteractionController: Timed out waiting 1000ms for command and events.
+10-14 10:48:26.203  4916  4937 D UiDevice: Turning off screen.
+10-14 10:48:26.247  4916  4937 D UiDevice: Waiting 20000ms for SearchCondition[findObject=BySelector [DESC='\QParar o alerta\E']].
+10-14 10:48:26.247  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:26.260   836   908 D EGL_emulation: app_time_stats: avg=126781.62ms min=126781.62ms max=126781.62ms count=1
+10-14 10:48:26.272  1539  1539 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227
+10-14 10:48:26.272  1539  1539 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+10-14 10:48:26.279   396   409 W AudioFlinger: createTrack_l(): mismatch between requested flags (00000004) and output flags (00000002)
+10-14 10:48:26.291   836   836 I vol.VolumeDialogImpl: mDialog.dismiss() reason: volume_controller from: com.android.systemui.volume.VolumeDialogImpl$7.onDismissRequested:3
+10-14 10:48:26.329   836   908 D EGL_emulation: app_time_stats: avg=520.34ms min=16.29ms max=2676.97ms count=6
+10-14 10:48:26.336   396   409 D AF::TrackHandle: OpPlayAudio: track:97 usage:13 not muted
+10-14 10:48:26.340   520   566 E EGL_emulation: eglQueryContext 32c0  EGL_BAD_ATTRIBUTE
+10-14 10:48:26.342   520   566 E EGL_emulation: tid 566: eglQueryContext(2146): error 0x3004 (EGL_BAD_ATTRIBUTE)
+10-14 10:48:26.377   396   409 D audioserver: FGS Logger Transaction failed
+10-14 10:48:26.377   396   409 D audioserver: -129
+10-14 10:48:26.384   396   409 D audioserver: FGS Logger Transaction failed
+10-14 10:48:26.384   396   409 D audioserver: -129
+10-14 10:48:26.385   836   836 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-14 10:48:26.428  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:26.429   396   499 D AudioFlinger: mixer(0x7937fda79930) throttle end: throttle time(33)
+10-14 10:48:26.533  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:26.596  1685  2178 I BistoDBWrapper: Close DB
+10-14 10:48:26.617  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:26.681   396   499 D audioserver: FGS Logger Transaction failed
+10-14 10:48:26.682   474  5188 D BufferPoolAccessor2.0: bufferpool2 0x7bc7d5a66288 : 0(0 size) total buffers - 0(0 size) used buffers - 95/103 (recycle/alloc) - 8/198 (fetch/transfer)
+10-14 10:48:26.682   474  5188 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+10-14 10:48:26.682   396   499 D audioserver: -129
+10-14 10:48:26.702   836   836 D CentralSurfaces: updateQsExpansionEnabled - QS Expand enabled: true
+10-14 10:48:26.711   479   834 D BufferPoolAccessor2.0: bufferpool2 0x76bee85b9cb8 : 0(0 size) total buffers - 0(0 size) used buffers - 94/97 (recycle/alloc) - 3/96 (fetch/transfer)
+10-14 10:48:26.719   479   834 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+10-14 10:48:26.727  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:26.758   520   566 E Surface : freeAllBuffers: 1 buffers were freed while being dequeued!
+10-14 10:48:26.759   520   566 E Surface : getSlotFromBufferLocked: unknown buffer: 0x0
+10-14 10:48:26.791  1024  1324 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+10-14 10:48:26.792  1024  1324 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+10-14 10:48:26.795   520   540 I InputManager-JNI: Viewport [0] to add: local:4619827259835644672, isActive: false
+10-14 10:48:26.795   399   399 D SurfaceFlinger: Setting power mode 0 on display 4619827259835644672
+10-14 10:48:26.796   520   621 I InputReader: Reconfiguring input devices, changes=DISPLAY_INFO
+10-14 10:48:26.797   399   399 D SurfaceFlinger: Finished setting power mode 0 on display 4619827259835644672
+10-14 10:48:26.804   520   621 I InputReader: Touch device 'virtio_input_multi_touch_11' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:26.804   520   621 I InputReader: Touch device 'virtio_input_multi_touch_10' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:26.804   520   621 I InputReader: Touch device 'virtio_input_multi_touch_9' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:26.804   520   621 I InputReader: Touch device 'virtio_input_multi_touch_7' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:26.805   520   621 I InputReader: Touch device 'virtio_input_multi_touch_6' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:26.805   520   621 I InputReader: Touch device 'virtio_input_multi_touch_5' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:26.805   520   621 I InputReader: Touch device 'virtio_input_multi_touch_4' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:26.805   520   621 I InputReader: Touch device 'virtio_input_multi_touch_3' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:26.805   520   621 I InputReader: Disabling virtio_input_multi_touch_1 (device 4) because the associated viewport is not active
+10-14 10:48:26.805   520   621 I InputReader: Device reconfigured: id=4, name='virtio_input_multi_touch_1', size 32768x32768, orientation 0, mode 0, display id 0
+10-14 10:48:26.805   520  2417 W SurfaceControl: Invalid layer stack -1
+10-14 10:48:26.805   520   621 I InputReader: Touch device 'virtio_input_multi_touch_2' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:26.805   520   621 I InputReader: Touch device 'virtio_input_multi_touch_8' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:26.812  1024  1324 D BtGatt.ScanManager: handleScreenOff()
+10-14 10:48:26.812  6000  6000 I NearbyDirect: FastPairDisplayObserver: STATE_ON -> STATE_OFF [CONTEXT service_id=49 ]
+10-14 10:48:26.830   836   906 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
+10-14 10:48:26.832  1093  1136 I ImeTracker: com.google.android.apps.nexuslauncher:2a8be863: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+10-14 10:48:26.832  1093  1136 I ImeTracker: com.google.android.apps.nexuslauncher:2a8be863: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-14 10:48:26.834  1685  1685 I BgTaskExecutorImpl: Starting EXCLUSIVE background task UPLOAD_ASSISTANT_DEVICE_SETTINGS.
+10-14 10:48:26.835  4916  4937 W UiDevice: Active window root not found.
+10-14 10:48:26.837  1093  1991 D OneSearchSuggestProvider: Shut down the binder channel
+10-14 10:48:26.838  1093  5293 I IPCThreadState: oneway function results for code 2 on binder at 0x7d7350103160 will be dropped but finished with status UNKNOWN_TRANSACTION
+10-14 10:48:26.850  1685  2270 I PBSessionCacheImpl: Deleted sessionId[7412500345843048] from persistence.
+10-14 10:48:26.861  1685  2216 W SearchServiceCore: Abort, client detached.
+10-14 10:48:26.862  1539  7498 I DeviceStatusMonitor: DeviceStatusMonitor.handleBroadcast():122 onReceive() : Action = android.intent.action.SCREEN_OFF
+10-14 10:48:26.862  1539  7498 I DeviceStatusMonitor: DeviceStatusMonitor.updateCountryInfo():138 updateCountryInfo(), notifyAnyway = false
+10-14 10:48:26.866  1539  1539 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+10-14 10:48:26.867  1539  1539 I InputBundle: InputBundle.consumeEvent():919 Skip consuming an event as imeStatus is 0
+10-14 10:48:26.871  1685  7221 I NetworkRecognitionRnr: Using pair HTTP connection
+10-14 10:48:26.872  1685  2270 W LocationOracle: getBestLocation(): no location is available
+10-14 10:48:26.878   520  7499 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-14 10:48:26.885  1685  2709 I A       : [Upload] Connected
+10-14 10:48:26.897  1685  2164 W LocationOracle: No location returned by GMS core getLastLocation()
+10-14 10:48:26.898  1685  2709 I NetworkRecognitionRnr: Using pair HTTP connection
+10-14 10:48:26.898  1685  1685 E A       : onError
+10-14 10:48:26.898  1685  1685 E A       : com.google.android.apps.gsa.shared.speech.a.m: errorCode: 65561, engine: 2
+10-14 10:48:26.898  1685  1685 E A       : 	at com.google.android.apps.gsa.staticplugins.dc.a.e.a(PG:3)
+10-14 10:48:26.898  1685  1685 E A       : 	at com.google.android.apps.gsa.s3.n.hh(PG:1)
+10-14 10:48:26.898  1685  1685 E A       : 	at com.google.cd.g.a.f.e(PG:2)
+10-14 10:48:26.898  1685  1685 E A       : 	at com.google.android.apps.gsa.speech.k.a.g.d(PG:22)
+10-14 10:48:26.898  1685  1685 E A       : 	at com.google.android.apps.gsa.speech.k.a.g.ks(PG:6)
+10-14 10:48:26.898  1685  1685 E A       : 	at com.google.android.apps.gsa.s3.o.e(PG:14)
+10-14 10:48:26.898  1685  1685 E A       : 	at com.google.android.apps.gsa.s3.p.run(PG:1)
+10-14 10:48:26.898  1685  1685 E A       : 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:487)
+10-14 10:48:26.898  1685  1685 E A       : 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-14 10:48:26.898  1685  1685 E A       : 	at com.google.android.apps.gsa.shared.util.c.a.e.run(PG:2)
+10-14 10:48:26.898  1685  1685 E A       : 	at com.google.android.apps.gsa.shared.util.c.a.bi.run(PG:1)
+10-14 10:48:26.898  1685  1685 E A       : 	at com.google.android.apps.gsa.shared.util.c.a.bi.run(PG:1)
+10-14 10:48:26.898  1685  1685 E A       : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-14 10:48:26.898  1685  1685 E A       : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-14 10:48:26.898  1685  1685 E A       : 	at java.lang.Thread.run(Thread.java:1012)
+10-14 10:48:26.898  1685  1685 E A       : 	at com.google.android.apps.gsa.shared.util.c.a.l.run(PG:5)
+10-14 10:48:26.898  1685  1685 E A       : Caused by: com.google.android.apps.gsa.shared.speech.a.o: errorCode: 65586, engine: 2
+10-14 10:48:26.898  1685  1685 E A       : 	... 15 more
+10-14 10:48:26.898  1685  1685 E A       : Caused by: com.google.android.apps.gsa.shared.speech.a.k: errorCode: 401, engine: 2
+10-14 10:48:26.898  1685  1685 E A       : 	at com.google.android.apps.gsa.assistant.shared.n.h.a(PG:5)
+10-14 10:48:26.898  1685  1685 E A       : 	at com.google.android.apps.gsa.s3.producers.j.hE(PG:2)
+10-14 10:48:26.898  1685  1685 E A       : 	at com.google.android.apps.gsa.speech.k.a.g.d(PG:16)
+10-14 10:48:26.898  1685  1685 E A       : 	... 12 more
+10-14 10:48:26.912  1685  7500 I A       : [Upload] Connected
+10-14 10:48:26.918  1685  2157 W CronetNetworkRqstWrppr: Upload request without a content type.
+10-14 10:48:26.921  1685  1685 W A       : Failed to sync device settings.
+10-14 10:48:26.921  1685  1685 I A       : Retrying to sync device settings.
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: Exception in upload method
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: com.google.android.apps.gsa.shared.r.d: Error code: 262182
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.android.apps.gsa.shared.ab.bk.d(PG:5)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.android.libraries.gsa.c.a.ar.d(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.android.libraries.gsa.c.a.bo.b(PG:5)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.android.libraries.gsa.c.a.e.a(PG:2)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.android.libraries.gsa.c.a.a.run(PG:2)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.bf.execute(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.i(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.l(PG:12)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.cancel(PG:8)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.m(PG:2)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.j.a(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.l(PG:3)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.cancel(PG:8)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.p(PG:11)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.h.f(PG:2)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.j.run(PG:12)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.bf.execute(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.i(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.l(PG:12)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.p(PG:4)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.h.f(PG:2)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.j.run(PG:12)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.bf.execute(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.i(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.l(PG:12)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.p(PG:4)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.ch.run(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.bf.execute(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.i(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.l(PG:12)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.n(PG:2)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.c.run(PG:10)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.bf.execute(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.i(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.l(PG:12)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.d.p(PG:4)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.android.apps.gsa.shared.util.c.x.run(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.bf.execute(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.bi.c(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.bi.b(PG:3)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.common.util.concurrent.cx.done(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at java.util.concurrent.FutureTask.finishCompletion(FutureTask.java:381)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at java.util.concurrent.FutureTask.set(FutureTask.java:232)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at java.util.concurrent.FutureTask.run(FutureTask.java:272)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.android.libraries.i.ae.run(PG:1)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.android.libraries.i.k.run(PG:2)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at com.google.android.libraries.i.p.run(PG:4)
+10-14 10:48:26.928  1685  2178 E cr_CronetUrlRequestContext: 	at java.lang.Thread.run(Thread.java:1012)
+10-14 10:48:26.936  1636  2096 I AiAiEcho: Predicting[0]:
+10-14 10:48:26.936  1636  2096 I AiAiEcho: EchoTargets:
+10-14 10:48:26.936  1636  2096 I AiAiEcho: Filtered by AiAi flag check:
+10-14 10:48:26.936  1636  2096 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+10-14 10:48:26.938  1636  2096 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-14 10:48:26.940  6000  6583 I NearbySharing: Screen is locked [CONTEXT service_id=194 ]
+10-14 10:48:26.940  6000  6583 I NearbySharing: Stopping scanning because the screen is locked. [CONTEXT service_id=194 ]
+10-14 10:48:26.940  6000  6583 I NearbySharing: Failed to stop scanning because we're not scanning. [CONTEXT service_id=194 ]
+10-14 10:48:26.945   836   836 D SbStateController: setState: requested state KEYGUARD!= upcomingState: SHADE. This usually means the status bar state transition was interrupted before the upcoming state could be applied.
+10-14 10:48:26.947   836   836 D CentralSurfaces: updateQsExpansionEnabled - QS Expand enabled: true
+10-14 10:48:26.948  6000  6583 I NearbySharing: Can't stop advertising FastInitiation. Not advertising. [CONTEXT service_id=194 ]
+10-14 10:48:26.948  6000  6583 I NearbySharing: Stopping Fast Init advertisement because we're not scanning in the foreground. [CONTEXT service_id=194 ]
+10-14 10:48:26.949  6000  6583 I NearbySharing: Stopping advertising because the screen is locked. [CONTEXT service_id=194 ]
+10-14 10:48:26.949  6000  6583 I NearbySharing: Stopping FastInitiation scanning because the screen is locked. [CONTEXT service_id=194 ]
+10-14 10:48:26.950  6000  6583 D BluetoothAdapter: isLeEnabled(): ON
+10-14 10:48:26.954  1024  1037 D BtGatt.GattService: stopScan() - queue size =2
+10-14 10:48:26.957  1024  1037 D ActivityAttributionService: notifyActivityAttributionInfo UID=1002 packageName=com.google.android.bluetooth deviceAddress=no_active_device_address
+10-14 10:48:26.957  1024  1037 I bt_btif : packages/modules/Bluetooth/system/btif/src/bluetooth.cc:829 get_profile_interface: get_profile_interface: id = activity_attribution
+10-14 10:48:26.957  1024  1324 D BtGatt.ScanManager: handling stopping scan  [ScanClient scanModeApp -1 scanModeUsed -1 [appScanStats com.google.uid.shared:10131]]
+10-14 10:48:26.957  1024  1324 D BtGatt.ScanManager: stop gattClientScanNative
+10-14 10:48:26.957  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(168)] Scan in shim layer stopped
+10-14 10:48:26.957  1024  1203 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:588 stop_scan: Scanning already stopped, return!
+10-14 10:48:26.957  1024  1324 W bt_shim_scanner: packages/modules/Bluetooth/system/main/shim/le_scanning_manager.cc:190 Scan: Invalid state: start:0, current scan state: 0
+10-14 10:48:26.957  1024  1324 W BtGatt.ScanManager: There is no scan radio to stop
+10-14 10:48:26.958  1024  1037 D BtGatt.GattService: unregisterScanner() - scannerId=2
+10-14 10:48:26.958  1024  1037 I bt_stack: [INFO:le_scanning_manager.cc(162)] Unregister in shim layer, scanner_id:2
+10-14 10:48:26.959   836   836 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-14 10:48:26.959   836   836 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-14 10:48:26.959   836   836 D CentralSurfaces: Received new disable state: enaihbcrso.qingr (unchanged)
+10-14 10:48:26.960   836   836 D CentralSurfaces: Received new disable state: enaihbcrso.qingr (unchanged)
+10-14 10:48:26.964  6000  6583 I NearbySharing: Stopped scanning for FastInitiation [CONTEXT service_id=194 ]
+10-14 10:48:26.964  6000  6583 I NearbySharing: Cancelling in use notification [CONTEXT service_id=194 ]
+10-14 10:48:26.965  6000  6583 I NearbySharing: Fast Initiation Scanning has stopped [CONTEXT service_id=194 ]
+10-14 10:48:26.965  4916  4937 W UiDevice: Skipping null root node for window: AccessibilityWindowInfo[title=Home, displayId=0, id=3, taskId=7, type=TYPE_APPLICATION, layer=0, region=SkRegion((0,0,1080,2400)), bounds=Rect(0, 0 - 1080, 2400), focused=true, active=true, pictureInPicture=false, transitionTime=192391, hasParent=false, isAnchored=false, hasChildren=false]
+10-14 10:48:26.968  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:26.969   836   836 D CentralSurfaces: Received new disable state: Old: enaihbcrso.qingr | New: enaihbcRso.qingr (changed: R.)
+10-14 10:48:26.971   836   836 D CentralSurfaces: Received new disable state: enaihbcRso.qingr (unchanged)
+10-14 10:48:26.971   836   836 I vol.VolumeDialogImpl: mDialog.dismiss() reason: screen_off from: com.android.systemui.volume.VolumeDialogImpl$7.onScreenOff:4
+10-14 10:48:26.972   399   415 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-14 10:48:26.977  6000  6583 I NearbySharing: Dismissing HUN as there's no device nearby. [CONTEXT service_id=194 ]
+10-14 10:48:26.977  6000  6583 I NearbySharing: Cancelling in use notification [CONTEXT service_id=194 ]
+10-14 10:48:26.993  1685  1784 I earchbox:search: JIT allocated 66KB for compiled code of com.google.android.apps.gsa.s.h com.google.android.apps.gsa.s.h.a(int)
+10-14 10:48:27.000   836   836 D CentralSurfaces: Received new disable state: enaihbcRso.qingr (unchanged)
+10-14 10:48:27.001   836   836 W View    : requestLayout() improperly called by com.android.systemui.util.AutoMarqueeTextView{1b2ec91 V.ED..... ..S...ID 0,37-143,88 #7f0a06aa app:id/shade_carrier_text} during layout: running second layout pass
+10-14 10:48:27.001   836   836 W View    : requestLayout() improperly called by com.android.keyguard.CarrierText{9d29c34 V.ED..... ......ID 50,0-481,128 #7f0a03a9 app:id/keyguard_carrier_text} during layout: running second layout pass
+10-14 10:48:27.036   836   836 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-14 10:48:27.056   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@f8ec254
+10-14 10:48:27.056   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@ff685fd
+10-14 10:48:27.057   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:48:27.058   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:48:27.058   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@77852f2
+10-14 10:48:27.059   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@ad3d43
+10-14 10:48:27.059   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:48:27.060   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:48:27.060   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@73fafc0
+10-14 10:48:27.061   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@c2a84f9
+10-14 10:48:27.062   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:48:27.062   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:48:27.063   836   906 E QuickAccessWalletKeyguardQuickAffordanceConfig: Wallet card retrieval error, message: "null"
+10-14 10:48:27.064   836   906 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+10-14 10:48:27.064   836   906 E QuickAccessWalletKeyguardQuickAffordanceConfig: Wallet card retrieval error, message: "null"
+10-14 10:48:27.065   836   906 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+10-14 10:48:27.066   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:48:27.067   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:48:27.067   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:48:27.067   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:48:27.067   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:48:27.068   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:48:27.068  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:27.069   836   906 E QuickAccessWalletKeyguardQuickAffordanceConfig: Wallet card retrieval error, message: "null"
+10-14 10:48:27.070   836   906 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+10-14 10:48:27.697  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:27.798  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:27.808  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:27.908  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:27.918  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.019  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.034  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.135  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.145  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.245  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.254  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.354  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.364  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.464  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.474  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.574  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.585  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.685  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.694  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.795  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.803  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.904  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.915  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:28.940   520  2475 D ConnectivityService: requestNetwork for uid/pid:10132/1685 activeRequest: null callbackRequest: 144 [NetworkRequest [ REQUEST id=144, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&NOT_VCN_MANAGED Uid: 10132 RequestorUid: 10132 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-14 10:48:28.941   335   363 I netd    : networkSetPermissionForNetwork(101, 0) <0.95ms>
+10-14 10:48:28.945   520   763 D ConnectivityService: NetReassign [144 : null → 101] [c 1] [a 4] [i 1]
+10-14 10:48:28.945   520   763 D ConnectivityService: reportNetworkConnectivity(100, false) by 10132
+10-14 10:48:28.945   984  2000 D NetworkMonitor/100: Forcing reevaluation for UID 10132. Dns signal count: 0
+10-14 10:48:28.946   984  7508 D TrafficStats: tagSocket(68) with statsTag=0xffffff81, statsUid=-1
+10-14 10:48:28.947   984  7508 D TrafficStats: tagSocket(68) with statsTag=0xffffff81, statsUid=-1
+10-14 10:48:28.948   984  7507 D TrafficStats: tagSocket(107) with statsTag=0xffffff81, statsUid=-1
+10-14 10:48:28.949   984  7507 D TrafficStats: tagSocket(107) with statsTag=0xffffff81, statsUid=-1
+10-14 10:48:28.949   335  7509 I resolv  : ResNSendHandler::run: 0 / {100 983140 100 983140 1073 1}
+10-14 10:48:28.950   335  7510 I resolv  : ResNSendHandler::run: 0 / {100 983140 100 983140 1073 1}
+10-14 10:48:28.951   335  7511 I resolv  : ResNSendHandler::run: 0 / {100 983140 100 983140 1073 1}
+10-14 10:48:28.951   335  7511 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7791cf4ca630
+10-14 10:48:28.952   335  7512 I resolv  : ResNSendHandler::run: 0 / {100 983140 100 983140 1073 1}
+10-14 10:48:28.956   335  7512 I resolv  : res_nsend: used send_dg 160 terrno: 0
+10-14 10:48:28.964   335  7509 I resolv  : res_nsend: used send_dg 75 terrno: 0
+10-14 10:48:28.964   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.965   335  7510 I resolv  : res_nsend: used send_dg 256 terrno: 0
+10-14 10:48:28.965   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.966   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.967   984  7508 D NetworkMonitor/100: PROBE_DNS connectivitycheck.gstatic.com 20ms OK 142.251.150.120,2001:4860:4826:7800::
+10-14 10:48:28.968   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.969   335  7513 I resolv  : GetAddrInfoHandler::run: {100 983140 100 983140 1073 1}
+10-14 10:48:28.969   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.970   335  7515 I resolv  : res_nmkquery: (QUERY, IN, A)
+10-14 10:48:28.970   335  7514 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+10-14 10:48:28.970   335  7514 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7791cf4cc4d0
+10-14 10:48:28.970   335  7514 I resolv  : doQuery: rcode=0, ancount=1, return value=75
+10-14 10:48:28.970   335  7515 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7791cf4ca630
+10-14 10:48:28.970   335  7515 I resolv  : doQuery: rcode=0, ancount=1, return value=63
+10-14 10:48:28.971   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.971   984  7508 D TrafficStats: tagSocket(107) with statsTag=0xffffff81, statsUid=-1
+10-14 10:48:28.972   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.973   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.973   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.974   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.975   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.976   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.976   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.977   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.978   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.978   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.979   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.980   984   984 D TrafficStats: tagSocket(68) with statsTag=0xffffffff, statsUid=-1
+10-14 10:48:28.980   984  7507 D NetworkMonitor/100: PROBE_DNS www.google.com 32ms OK 142.251.152.119,142.251.157.119,142.251.156.119,142.251.153.119,142.251.154.119,142.251.151.119,142.251.150.119,142.251.155.119,2001:4860:482b:7700::,2001:4860:482a:7700::,2001:4860:4827:7700::,2001:4860:482d:7700::,2001:4860:4828:7700::,2001:4860:4826:7700::,2001:4860:4829:7700::,2001:4860:482c:7700::
+10-14 10:48:28.981   335  7516 I resolv  : GetAddrInfoHandler::run: {100 983140 100 983140 1073 1}
+10-14 10:48:28.982   335  7517 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+10-14 10:48:28.982   335  7517 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7790cf4d2850
+10-14 10:48:28.982   335  7517 I resolv  : doQuery: rcode=0, ancount=8, return value=256
+10-14 10:48:28.982   335  7518 I resolv  : res_nmkquery: (QUERY, IN, A)
+10-14 10:48:28.983   335  7518 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7791ff4c5bf0
+10-14 10:48:28.983   335  7518 I resolv  : doQuery: rcode=0, ancount=8, return value=160
+10-14 10:48:28.984   984  7507 D TrafficStats: tagSocket(68) with statsTag=0xffffff81, statsUid=-1
+10-14 10:48:28.986   984  7508 D NetworkMonitor/100: PROBE_HTTP http://connectivitycheck.gstatic.com/generate_204 time=18ms ret=204 request={Connection=[close], User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36]} headers={null=[HTTP/1.1 204 No Content], Connection=[close], Content-Length=[0], Cross-Origin-Resource-Policy=[cross-origin], Date=[Wed, 14 Oct 2026 10:48:29 GMT], X-Android-Received-Millis=[1791974908986], X-Android-Response-Source=[NETWORK 204], X-Android-Selected-Protocol=[http/1.1], X-Android-Sent-Millis=[1791974908975]}
+10-14 10:48:29.003   984  7507 D NetworkMonitor/100: PROBE_HTTPS https://www.google.com/generate_204 time=21ms ret=204 request={Connection=[close], User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36]} headers={null=[HTTP/1.1 204 No Content], Alt-Svc=[h3=":443"; ma=2592000,h3-29=":443"; ma=2592000], Connection=[close], Content-Length=[0], Cross-Origin-Resource-Policy=[cross-origin], Date=[Wed, 14 Oct 2026 10:48:29 GMT], X-Android-Received-Millis=[1791974909002], X-Android-Response-Source=[NETWORK 204], X-Android-Selected-Protocol=[http/1.1], X-Android-Sent-Millis=[1791974908999]}
+10-14 10:48:29.004   984  7506 D NetworkMonitor/100: isCaptivePortal: isSuccessful()=true isPortal()=false RedirectUrl=null isPartialConnectivity()=false Time=58ms
+10-14 10:48:29.006   520   763 D ConnectivityService: [100 WIFI] validation passed
+10-14 10:48:29.015  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.025  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.126  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.136  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.236  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.246  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.346  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.355  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.456  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.465  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.546   341  5199 D android.hardware.audio@7.1-impl.ranchu: threadLoop: entering standby, frames: 6309312
+10-14 10:48:29.565  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.574  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.674  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.683  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.783  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.792  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.892  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:29.901  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.001  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.016  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.116  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.125  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.226  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.235  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.335  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.344  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.445  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.454  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.483  1685  2270 W A       : [Download] response code: 400
+10-14 10:48:30.554  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.563  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.664  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.672  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.772  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.781  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.882  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.891  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.991  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:30.999  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:31.100  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:31.109  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:31.209   474  3251 D NuPlayerDriver: NuPlayerDriver(0x7bc6b5a64690) created, clientPid(4916)
+10-14 10:48:31.209  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:31.210   134   134 I hwservicemanager: getTransport: Cannot find entry android.hardware.media.omx@1.0::IOmx/default in either framework or device VINTF manifest.
+10-14 10:48:31.210   474  3251 D MediaPlayerService: OMX service is not available
+10-14 10:48:31.215   474  7521 D GenericSource: FileSource remote
+10-14 10:48:31.225  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:31.228   836  1139 I vol.Events: writeEvent level_changed STREAM_ALARM 1
+10-14 10:48:31.229   520  2478 I MediaFocusControl: requestAudioFocus() from uid/pid 10193/4916 AA=USAGE_ALARM/CONTENT_TYPE_SONIFICATION clientId=android.media.AudioManager@eb3745fcom.plantaoseguro.sirene.Sirene$$ExternalSyntheticLambda4@2220562 callingPack=com.plantaoseguro.debug req=2 flags=0x0 sdk=35
+10-14 10:48:31.230   520  2478 I AudioService.FadeOutManager: unfadeOutUid() uid:10193
+10-14 10:48:31.230   474  7520 I GenericSource: start
+10-14 10:48:31.231   520   629 D FlashNotifController: alarm state changed: true
+10-14 10:48:31.231   520   629 D FlashNotifController: requestStartFlashNotification
+10-14 10:48:31.232   520   629 I FlashNotifController: startFlashNotification: type=2, tag=alarm
+10-14 10:48:31.232   520   629 D FlashNotifController: Flash notification is disabled
+10-14 10:48:31.233   474  7525 D CCodec  : allocate(c2.android.vorbis.decoder)
+10-14 10:48:31.235   474  7525 I CCodec  : setting up 'default' as default (vendor) store
+10-14 10:48:31.238   474  7525 I CCodec  : Created component [c2.android.vorbis.decoder]
+10-14 10:48:31.239   474  7525 D CCodecConfig: read media type: audio/vorbis
+10-14 10:48:31.239   474  7525 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+10-14 10:48:31.240   474  7525 D ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+10-14 10:48:31.240   474  7525 D ReflectedParamUpdater: extent() != 1 for single value type: input.buffers.allocator-ids.values
+10-14 10:48:31.241   474  7525 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.allocator-ids.values
+10-14 10:48:31.241   474  7525 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+10-14 10:48:31.241   474  7525 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+10-14 10:48:31.242   474  7525 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values
+10-14 10:48:31.243   474  7525 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+10-14 10:48:31.243   474  7525 D CCodecConfig: c2 config diff is Dict {
+10-14 10:48:31.243   474  7525 D CCodecConfig:   c2::u32 coded.bitrate.value = 64000
+10-14 10:48:31.243   474  7525 D CCodecConfig:   c2::u32 input.buffers.max-size.value = 32768
+10-14 10:48:31.243   474  7525 D CCodecConfig:   c2::u32 input.delay.value = 0
+10-14 10:48:31.243   474  7525 D CCodecConfig:   string input.media-type.value = "audio/vorbis"
+10-14 10:48:31.243   474  7525 D CCodecConfig:   string output.media-type.value = "audio/raw"
+10-14 10:48:31.243   474  7525 D CCodecConfig:   c2::u32 raw.channel-count.value = 1
+10-14 10:48:31.243   474  7525 D CCodecConfig:   c2::u32 raw.sample-rate.value = 48000
+10-14 10:48:31.243   474  7525 D CCodecConfig: }
+10-14 10:48:31.245   474  7525 D MediaCodec: flushMediametrics
+10-14 10:48:31.245   474  7525 D CCodec  : [c2.android.vorbis.decoder] buffers are bound to CCodec for this session
+10-14 10:48:31.245   474  7525 D CCodecConfig: no c2 equivalents for durationUs
+10-14 10:48:31.245   474  7525 D CCodecConfig: no c2 equivalents for csd-1
+10-14 10:48:31.245   474  7525 D CCodecConfig: no c2 equivalents for flags
+10-14 10:48:31.246   474  7525 D CCodecConfig: c2 config diff is   c2::u32 coded.bitrate.value = 110000
+10-14 10:48:31.246   474  7525 D CCodecConfig:   c2::u32 raw.sample-rate.value = 44100
+10-14 10:48:31.246   474  7525 W Codec2Client: query -- param skipped: index = 1107298332.
+10-14 10:48:31.247   474  7525 D CCodec  : encoding statistics level = 0
+10-14 10:48:31.247   474  7525 D CCodec  : setup formats input: AMessage(what = 0x00000000) = {
+10-14 10:48:31.247   474  7525 D CCodec  :   int32_t bitrate = 110000
+10-14 10:48:31.247   474  7525 D CCodec  :   int32_t channel-count = 1
+10-14 10:48:31.247   474  7525 D CCodec  :   int32_t max-input-size = 32768
+10-14 10:48:31.247   474  7525 D CCodec  :   string mime = "audio/vorbis"
+10-14 10:48:31.247   474  7525 D CCodec  :   int32_t sample-rate = 44100
+10-14 10:48:31.247   474  7525 D CCodec  : }
+10-14 10:48:31.247   474  7525 D CCodec  : setup formats output: AMessage(what = 0x00000000) = {
+10-14 10:48:31.247   474  7525 D CCodec  :   int32_t channel-count = 1
+10-14 10:48:31.247   474  7525 D CCodec  :   string mime = "audio/raw"
+10-14 10:48:31.247   474  7525 D CCodec  :   int32_t sample-rate = 44100
+10-14 10:48:31.247   474  7525 D CCodec  :   int32_t channel-mask = 1
+10-14 10:48:31.247   474  7525 D CCodec  :   int32_t android._config-pcm-encoding = 2
+10-14 10:48:31.247   474  7525 D CCodec  : }
+10-14 10:48:31.247   474  7525 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+10-14 10:48:31.248   474  7525 I MediaCodec: MediaCodec will operate in async mode
+10-14 10:48:31.248   474  7524 D MediaCodec: keep callback message for reclaim
+10-14 10:48:31.249   474  7525 W Codec2Client: query -- param skipped: index = 1342179345.
+10-14 10:48:31.250   474  7525 W Codec2Client: query -- param skipped: index = 2415921170.
+10-14 10:48:31.250   479   479 D BufferPoolAccessor2.0: bufferpool2 0x76bee85b44d8 : 0(0 size) total buffers - 0(0 size) used buffers - 94/97 (recycle/alloc) - 3/96 (fetch/transfer)
+10-14 10:48:31.251   479   479 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x76bee85b44d8 cached: 0/0M, 0/0% in use; allocs: 97, 97% recycled; transfers: 96, 97% unfetched
+10-14 10:48:31.251   479   479 D BufferPoolAccessor2.0: bufferpool2 0x76bee85b4728 : 0(0 size) total buffers - 0(0 size) used buffers - 3/5 (recycle/alloc) - 2/4 (fetch/transfer)
+10-14 10:48:31.251   479   479 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x76bee85b4728 cached: 0/0M, 0/0% in use; allocs: 5, 60% recycled; transfers: 4, 50% unfetched
+10-14 10:48:31.252   479   479 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x76bee85b9cb8 cached: 0/0M, 0/0% in use; allocs: 97, 97% recycled; transfers: 96, 97% unfetched
+10-14 10:48:31.252   474  7525 D CCodecBufferChannel: [c2.android.vorbis.decoder#328] Created input block pool with allocatorID 16 => poolID 61 - OK (0)
+10-14 10:48:31.253   474  5195 D BufferPoolAccessor2.0: bufferpool2 0x7bc7d5a6cce8 : 0(0 size) total buffers - 0(0 size) used buffers - 95/103 (recycle/alloc) - 8/198 (fetch/transfer)
+10-14 10:48:31.253   474  5195 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x7bc7d5a6cce8 cached: 0/0M, 0/0% in use; allocs: 103, 92% recycled; transfers: 198, 96% unfetched
+10-14 10:48:31.253   474  5195 D BufferPoolAccessor2.0: bufferpool2 0x7bc7d5a6e408 : 0(0 size) total buffers - 0(0 size) used buffers - 4/11 (recycle/alloc) - 5/14 (fetch/transfer)
+10-14 10:48:31.253   474  5195 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x7bc7d5a6e408 cached: 0/0M, 0/0% in use; allocs: 11, 36% recycled; transfers: 14, 64% unfetched
+10-14 10:48:31.253   474  5195 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x7bc7d5a66288 cached: 0/0M, 0/0% in use; allocs: 103, 92% recycled; transfers: 198, 96% unfetched
+10-14 10:48:31.254   474  7525 I CCodecBufferChannel: [c2.android.vorbis.decoder#328] Created output block pool with allocatorID 16 => poolID 70 - OK
+10-14 10:48:31.254   474  7525 D CCodecBufferChannel: [c2.android.vorbis.decoder#328] Configured output block pool ids 70 => OK
+10-14 10:48:31.255   479  7526 D SimpleC2Component: Using output block pool with poolID 70 => got 70 - 0
+10-14 10:48:31.259   396   837 D AudioFlinger: Client defaulted notificationFrames to 11488 for frameCount 22977
+10-14 10:48:31.260   396   837 D AF::TrackHandle: OpPlayAudio: track:98 usage:4 not muted
+10-14 10:48:31.263   396   837 D audioserver: FGS Logger Transaction failed
+10-14 10:48:31.263   396   837 D audioserver: -129
+10-14 10:48:31.263   469  5257 D AudioAnalytics: gc(1700, 2000): log size:1700 item map size:56, item map items:1700
+10-14 10:48:31.266   474  7523 D AudioTrack: getTimestamp_l(58): device stall time corrected using current time 317804531872
+10-14 10:48:31.273   474  7523 D AudioTrack: stop(58): called with 22050 frames delivered
+10-14 10:48:31.309   396   499 D AudioFlinger: mixer(0x7937fda79930) throttle end: throttle time(47)
+10-14 10:48:31.325  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:31.335  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:31.435  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:31.440  1636  2193 W AiAiEcho: LyftNotificationParser Ridesharing ETA not enabled
+10-14 10:48:31.440  1636  2193 W AiAiEcho: SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+10-14 10:48:31.450  4916  4937 D UiDevice: Node not found with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:31.461   399   399 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-14 10:48:31.464   520   540 I InputManager-JNI: Viewport [0] to add: local:4619827259835644672, isActive: true
+10-14 10:48:31.464   399   399 D SurfaceFlinger: Setting power mode 2 on display 4619827259835644672
+10-14 10:48:31.466   399   399 D SurfaceFlinger: Finished setting power mode 2 on display 4619827259835644672
+10-14 10:48:31.466  1024  1324 D BtGatt.ScanManager: handleScreenOn()
+10-14 10:48:31.467   520   621 I InputReader: Reconfiguring input devices, changes=DISPLAY_INFO
+10-14 10:48:31.467   520   621 I InputReader: Touch device 'virtio_input_multi_touch_11' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:31.467   520   621 I InputReader: Touch device 'virtio_input_multi_touch_10' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:31.467   520   621 I InputReader: Touch device 'virtio_input_multi_touch_9' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:31.467   520   621 I InputReader: Touch device 'virtio_input_multi_touch_7' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:31.467   520   621 I InputReader: Touch device 'virtio_input_multi_touch_6' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:31.467   520   621 I InputReader: Touch device 'virtio_input_multi_touch_5' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:31.467   520   621 I InputReader: Touch device 'virtio_input_multi_touch_4' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:31.467   520   621 I InputReader: Touch device 'virtio_input_multi_touch_3' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:31.467   520   621 I InputReader: Device reconfigured: id=4, name='virtio_input_multi_touch_1', size 1080x2400, orientation 0, mode 1, display id 0
+10-14 10:48:31.467   520   621 I InputReader: Touch device 'virtio_input_multi_touch_2' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:31.467   520   621 I InputReader: Touch device 'virtio_input_multi_touch_8' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-14 10:48:31.469  6000  6000 I NearbyDirect: FastPairDisplayObserver: STATE_OFF -> STATE_ON [CONTEXT service_id=49 ]
+10-14 10:48:31.472  6000  6128 I Nearby  : [MBleClient] Start ble scanning from NearbyDirect:BluetoothAdapterWrapper, context tag = nearby_messages [CONTEXT service_id=49 ]
+10-14 10:48:31.473  6000  6128 D BluetoothAdapter: isLeEnabled(): ON
+10-14 10:48:31.479  1024  4338 D BtGatt.GattService: stopScan() - queue size =1
+10-14 10:48:31.480  1024  4338 D ActivityAttributionService: notifyActivityAttributionInfo UID=1002 packageName=com.google.android.bluetooth deviceAddress=no_active_device_address
+10-14 10:48:31.480  1024  4338 I bt_btif : packages/modules/Bluetooth/system/btif/src/bluetooth.cc:829 get_profile_interface: get_profile_interface: id = activity_attribution
+10-14 10:48:31.481  1024  4338 D BtGatt.GattService: unregisterScanner() - scannerId=1
+10-14 10:48:31.481  1024  4338 I bt_stack: [INFO:le_scanning_manager.cc(162)] Unregister in shim layer, scanner_id:1
+10-14 10:48:31.482  6000  6128 I Nearby  : [MBleClient] M hardware scan: 1 clients, scanMode= LOW_LATENCY, filters size = 5 [CONTEXT service_id=49 ]
+10-14 10:48:31.482  6000  6128 D BluetoothAdapter: isLeEnabled(): ON
+10-14 10:48:31.483   836   906 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
+10-14 10:48:31.483  1024  4338 D BtGatt.GattService: registerScanner() - UUID=a66964be-092d-48e7-9513-4ff4959e6e9f
+10-14 10:48:31.483  1024  4338 I bt_stack: [INFO:le_scanning_manager.cc(155)] RegisterScanner in shim layer
+10-14 10:48:31.487   520   520 D FastPairService: onReceive: ACTION_SCREEN_ON
+10-14 10:48:31.487   520   520 V FastPairService: invalidateScan: scan is disabled
+10-14 10:48:31.488   520   520 E NearbyManager: Cannot stop scan with this callback because it is never registered.
+10-14 10:48:31.488  1024  1263 D BtGatt.GattService: onScannerRegistered() - UUID=a66964be-092d-48e7-9513-4ff4959e6e9f, scannerId=1, status=0
+10-14 10:48:31.497  4916  4916 D LifecycleMonitor: Lifecycle status change: com.plantaoseguro.sirene.AlarmeActivity@7c154c8 in: PRE_ON_CREATE
+10-14 10:48:31.501  1024  1324 D BtGatt.ScanManager: handling stopping scan  [ScanClient scanModeApp -1 scanModeUsed -1 [appScanStats com.google.uid.shared:10131]]
+10-14 10:48:31.502  1024  1324 D BtGatt.ScanManager: stop gattClientScanNative
+10-14 10:48:31.502  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(168)] Scan in shim layer stopped
+10-14 10:48:31.503  1024  1203 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:588 stop_scan: Scanning already stopped, return!
+10-14 10:48:31.505  1024  1324 W bt_shim_scanner: packages/modules/Bluetooth/system/main/shim/le_scanning_manager.cc:190 Scan: Invalid state: start:0, current scan state: 0
+10-14 10:48:31.506  1024  1324 W BtGatt.ScanManager: There is no scan radio to stop
+10-14 10:48:31.506   836   908 D EGL_emulation: app_time_stats: avg=132139.36ms min=132139.36ms max=132139.36ms count=1
+10-14 10:48:31.508  6000  6011 D BluetoothLeScanner: onScannerRegistered() - status=0 scannerId=1 mScannerId=0
+10-14 10:48:31.509   836   908 D EGL_emulation: app_time_stats: avg=132137.81ms min=132137.81ms max=132137.81ms count=1
+10-14 10:48:31.512  1539  7529 I DeviceStatusMonitor: DeviceStatusMonitor.handleBroadcast():122 onReceive() : Action = android.intent.action.SCREEN_ON
+10-14 10:48:31.512  1539  7529 I DeviceStatusMonitor: DeviceStatusMonitor.updateCountryInfo():138 updateCountryInfo(), notifyAnyway = false
+10-14 10:48:31.514   836   836 D CentralSurfaces: mShouldDelayWakeUpAnimation CLEARED
+10-14 10:48:31.514   836   836 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-14 10:48:31.514   836   836 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-14 10:48:31.514   836   836 D CentralSurfaces: Received new disable state: enaihbcRso.qingr (unchanged)
+10-14 10:48:31.515   836   836 D CentralSurfaces: Received new disable state: enaihbcRso.qingr (unchanged)
+10-14 10:48:31.533  1636  2096 I AiAiEcho: Predicting[0]:
+10-14 10:48:31.534  1636  2096 I AiAiEcho: EchoTargets:
+10-14 10:48:31.534  1636  2096 I AiAiEcho: Filtered by AiAi flag check:
+10-14 10:48:31.537  4916  4916 D LifecycleMonitor: Lifecycle status change: com.plantaoseguro.sirene.AlarmeActivity@7c154c8 in: CREATED
+10-14 10:48:31.539  1636  2096 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+10-14 10:48:31.540  1636  2096 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-14 10:48:31.540  1024  4338 D BtGatt.GattService: start scan with filters
+10-14 10:48:31.541  1024  4338 D BtGatt.GattService: enforcePrivilegedPermissionIfNeeded([BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=224, mManufacturerData=[0, 0, 0], mManufacturerDataMask=[0, 0, -1], mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=0000fef3-0000-1000-8000-00805f9b34fb, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=0000feaa-0000-1000-8000-00805f9b34fb, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=0000fea0-0000-1000-8000-00805f9b34fb, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=76, mManufacturerData=[2, 21], mManufacturerDataMask=[-1, -1], mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null]])
+10-14 10:48:31.542  4916  4916 D LifecycleMonitor: Lifecycle status change: com.plantaoseguro.sirene.AlarmeActivity@7c154c8 in: STARTED
+10-14 10:48:31.546  1024  4338 D BtGatt.ScanManager: startScan()  [ScanClient scanModeApp 2 scanModeUsed 2 [appScanStats com.google.uid.shared:10131]]
+10-14 10:48:31.547  4916  4916 D LifecycleMonitor: Lifecycle status change: com.plantaoseguro.sirene.AlarmeActivity@7c154c8 in: RESUMED
+10-14 10:48:31.549  1024  4338 D ActivityAttributionService: notifyActivityAttributionInfo UID=1002 packageName=com.google.android.bluetooth deviceAddress=no_active_device_address
+10-14 10:48:31.549  1024  4338 I bt_btif : packages/modules/Bluetooth/system/btif/src/bluetooth.cc:829 get_profile_interface: get_profile_interface: id = activity_attribution
+10-14 10:48:31.549  1024  1324 D BtGatt.ScanManager: handling starting scan
+10-14 10:48:31.549  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(268)] ScanFilterEnable in shim layer
+10-14 10:48:31.549  1024  1263 D BtGatt.GattService: onScanFilterEnableDisabled() - clientIf=1, status=0, action=1
+10-14 10:48:31.549  1024  1263 D BtGatt.ScanManager: callback done for scannerId - 1 status - 0
+10-14 10:48:31.549  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(243)] ScanFilterAdd in shim layer
+10-14 10:48:31.549  1024  1263 D BtGatt.GattService: onScanFilterConfig() - clientIf=1, action = 0 status = 0, filterType=0, availableSpace=0
+10-14 10:48:31.549  1024  1263 D BtGatt.ScanManager: callback done for scannerId - 1 status - 0
+10-14 10:48:31.549  1024  1324 D BtGatt.ScanManager: configureFilterParamter 500 10000 1 0
+10-14 10:48:31.550  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(204)] ScanFilterParamSetup in shim layer
+10-14 10:48:31.550  1024  1263 D BtGatt.GattService: onScanFilterParamsConfigured() - clientIf=1, status=0, action=0, availableSpace=0
+10-14 10:48:31.550  1024  1263 D BtGatt.ScanManager: callback done for scannerId - 1 status - 0
+10-14 10:48:31.550  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(243)] ScanFilterAdd in shim layer
+10-14 10:48:31.550  1024  1263 D BtGatt.GattService: onScanFilterConfig() - clientIf=1, action = 0 status = 0, filterType=0, availableSpace=0
+10-14 10:48:31.550  1024  1263 D BtGatt.ScanManager: callback done for scannerId - 1 status - 0
+10-14 10:48:31.550  1024  1324 D BtGatt.ScanManager: configureFilterParamter 500 10000 1 0
+10-14 10:48:31.550   520  1947 D WifiNl80211Manager: Scan result ready event
+10-14 10:48:31.550   520  1947 D WifiNative: Scan result ready event
+10-14 10:48:31.553  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(204)] ScanFilterParamSetup in shim layer
+10-14 10:48:31.553  1024  1263 D BtGatt.GattService: onScanFilterParamsConfigured() - clientIf=1, status=0, action=0, availableSpace=0
+10-14 10:48:31.553  1024  1263 D BtGatt.ScanManager: callback done for scannerId - 1 status - 0
+10-14 10:48:31.553  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(243)] ScanFilterAdd in shim layer
+10-14 10:48:31.553  1024  1263 D BtGatt.GattService: onScanFilterConfig() - clientIf=1, action = 0 status = 0, filterType=0, availableSpace=0
+10-14 10:48:31.554  1024  1263 D BtGatt.ScanManager: callback done for scannerId - 1 status - 0
+10-14 10:48:31.554  1024  1324 D BtGatt.ScanManager: configureFilterParamter 500 10000 1 0
+10-14 10:48:31.554  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(204)] ScanFilterParamSetup in shim layer
+10-14 10:48:31.554  1024  1263 D BtGatt.GattService: onScanFilterParamsConfigured() - clientIf=1, status=0, action=0, availableSpace=0
+10-14 10:48:31.554  1024  1263 D BtGatt.ScanManager: callback done for scannerId - 1 status - 0
+10-14 10:48:31.555  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(243)] ScanFilterAdd in shim layer
+10-14 10:48:31.555  1024  1263 D BtGatt.GattService: onScanFilterConfig() - clientIf=1, action = 0 status = 0, filterType=0, availableSpace=0
+10-14 10:48:31.555  1024  1263 D BtGatt.ScanManager: callback done for scannerId - 1 status - 0
+10-14 10:48:31.556  4916  4937 D UiDevice: Retrieving node with selector: BySelector [DESC='\QParar o alerta\E'].
+10-14 10:48:31.556  1024  1324 D BtGatt.ScanManager: configureFilterParamter 500 10000 1 0
+10-14 10:48:31.556  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(204)] ScanFilterParamSetup in shim layer
+10-14 10:48:31.556  1024  1263 D BtGatt.GattService: onScanFilterParamsConfigured() - clientIf=1, status=0, action=0, availableSpace=0
+10-14 10:48:31.557  1024  1263 D BtGatt.ScanManager: callback done for scannerId - 1 status - 0
+10-14 10:48:31.557  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(243)] ScanFilterAdd in shim layer
+10-14 10:48:31.558  1024  1263 D BtGatt.GattService: onScanFilterConfig() - clientIf=1, action = 0 status = 0, filterType=0, availableSpace=0
+10-14 10:48:31.558  1024  1263 D BtGatt.ScanManager: callback done for scannerId - 1 status - 0
+10-14 10:48:31.558  1024  1324 D BtGatt.ScanManager: configureFilterParamter 500 10000 1 0
+10-14 10:48:31.559  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(204)] ScanFilterParamSetup in shim layer
+10-14 10:48:31.559  1024  1263 D BtGatt.GattService: onScanFilterParamsConfigured() - clientIf=1, status=0, action=0, availableSpace=0
+10-14 10:48:31.559  1024  1263 D BtGatt.ScanManager: callback done for scannerId - 1 status - 0
+10-14 10:48:31.559  1024  1324 D BtGatt.ScanManager: start gattClientScanNative from startRegularScan()
+10-14 10:48:31.559  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(168)] Scan in shim layer started
+10-14 10:48:31.559  1024  1203 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:588 stop_scan: Scanning already stopped, return!
+10-14 10:48:31.559  1024  1203 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_address_manager.cc:175 register_client: Scheduled address rotation for first client registered
+10-14 10:48:31.559  1024  1203 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_address_manager.cc:178 register_client: Client registered
+10-14 10:48:31.559  1024  1324 D BtGatt.ScanManager: configureRegularScanParams() - queue=1
+10-14 10:48:31.559  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(168)] Scan in shim layer stopped
+10-14 10:48:31.559  1024  1203 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_address_manager.cc:193 unregister_client: Client unregistered
+10-14 10:48:31.559  1024  1203 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_address_manager.cc:197 unregister_client: Cancelled address rotation alarm
+10-14 10:48:31.559  1024  1324 D BtGatt.ScanManager: Start gattClientScanNative with old scanMode -2147483648 new scanMode 2 ( in MS: 100 / 100, in scan unit: 160 / 160 ) [ScanClient scanModeApp 2 scanModeUsed 2 [appScanStats com.google.uid.shared:10131]]
+10-14 10:48:31.559  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(346)] SetScanParameters in shim layer
+10-14 10:48:31.560  1024  1263 D BtGatt.GattService: onScanParamSetupCompleted : 0
+10-14 10:48:31.560  1024  1324 I bt_stack: [INFO:le_scanning_manager.cc(168)] Scan in shim layer started
+10-14 10:48:31.561  1024  1203 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:588 stop_scan: Scanning already stopped, return!
+10-14 10:48:31.561  1024  1203 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_address_manager.cc:175 register_client: Scheduled address rotation for first client registered
+10-14 10:48:31.561  1024  1203 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_address_manager.cc:178 register_client: Client registered
+10-14 10:48:31.561  1024  1324 D BtGatt.ScanManager: apply scan timeout (300000)to scannerId 1
+10-14 10:48:31.575  1024  1203 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:1369 on_advertising_filter_complete: Got a Command complete LE_ADV_FILTER, status UNKNOWN_CONNECTION
+10-14 10:48:31.583  1024  1203 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:1369 on_advertising_filter_complete: Got a Command complete LE_ADV_FILTER, status UNKNOWN_CONNECTION
+10-14 10:48:31.592  4916  4916 D LifecycleMonitor: Lifecycle status change: com.plantaoseguro.sirene.AlarmeActivity@7c154c8 in: PAUSED
+10-14 10:48:31.620  1024  1203 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:1369 on_advertising_filter_complete: Got a Command complete LE_ADV_FILTER, status UNKNOWN_CONNECTION
+10-14 10:48:31.622   836   908 D EGL_emulation: app_time_stats: avg=5360.93ms min=5360.93ms max=5360.93ms count=1
+10-14 10:48:31.686   836   908 D EGL_emulation: app_time_stats: avg=5357.50ms min=5357.50ms max=5357.50ms count=1
+10-14 10:48:31.687   836   836 D ProxSensor: [FalsingCollector] Primary sensor event: false. No secondary.
+10-14 10:48:31.688   836   836 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-14 10:48:31.741  6000  6583 I NearbySharing: Screen is already locked, skipping invalidate [CONTEXT service_id=194 ]
+10-14 10:48:31.760  5081  5128 I BugleRcsEngine: [65] brqh.handleMessage: RcsEngineImpl[DUAL_REG]:[b07c19a5-93ba]>Handler: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference
+10-14 10:48:31.762  5081  5122 I BugleRcsEngine: [59] bqvv.c: Connected state: [1], networkType: [WIFI]
+10-14 10:48:31.764  1636  2193 W AiAiEcho: LyftNotificationParser Ridesharing ETA not enabled
+10-14 10:48:31.765  1636  2193 W AiAiEcho: SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+10-14 10:48:31.765  4269  4269 W JobService: onNetworkChanged() not implemented in androidx.work.impl.background.systemjob.SystemJobService. Must override in a subclass.
+10-14 10:48:31.784  4916  4916 D LifecycleMonitor: Lifecycle status change: com.plantaoseguro.sirene.AlarmeActivity@7c154c8 in: RESUMED
+10-14 10:48:31.785   396   499 D AudioFlinger: mixer(0x7937fda79930) throttle end: throttle time(11)
+10-14 10:48:31.785  1024  1203 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:1369 on_advertising_filter_complete: Got a Command complete LE_ADV_FILTER, status UNKNOWN_CONNECTION
+10-14 10:48:31.803  1024  1203 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:1369 on_advertising_filter_complete: Got a Command complete LE_ADV_FILTER, status UNKNOWN_CONNECTION
+10-14 10:48:31.838  4916  4916 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+10-14 10:48:31.839   474  7524 D MediaCodec: keep callback message for reclaim
+10-14 10:48:31.843   836   906 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-14 10:48:31.843   836   906 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-14 10:48:31.844   474  7525 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+10-14 10:48:31.844   474  7525 W Codec2Client: query -- param skipped: index = 1342179345.
+10-14 10:48:31.844   474  7525 W Codec2Client: query -- param skipped: index = 2415921170.
+10-14 10:48:31.847   479  7526 D C2SoftVorbisDec: vorbis_dsp_synthesis returned -135; ignored
+10-14 10:48:31.849  6000  6011 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
+10-14 10:48:31.849  6000  6011 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+10-14 10:48:31.850   479  7526 D C2SoftVorbisDec: vorbis_dsp_synthesis returned -135; ignored
+10-14 10:48:31.866   836   836 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-14 10:48:31.870   474  7523 D AudioTrack: getTimestamp_l(58): device stall time corrected using current time 318408495342
+10-14 10:48:31.893   836   906 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-14 10:48:31.899   474  7525 D CCodecBufferChannel: [c2.android.vorbis.decoder#328] buffers after EOS ignored (0 us)
+10-14 10:48:31.900   474  7523 D AudioTrack: stop(58): called with 22050 frames delivered
+10-14 10:48:31.902  1636  2096 I AiAiEcho: Predicting[0]:
+10-14 10:48:31.902   836   906 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-14 10:48:31.904  1636  2096 I AiAiEcho: EchoTargets:
+10-14 10:48:31.904  1636  2096 I AiAiEcho: Filtered by AiAi flag check:
+10-14 10:48:31.905  1636  2096 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+10-14 10:48:31.907  1636  2096 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-14 10:48:31.916   836   836 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-14 10:48:32.233   396   499 D AudioFlinger: mixer(0x7937fda79930) throttle end: throttle time(11)
+10-14 10:48:32.303   396   499 D AudioFlinger: mixer(0x7937fda79930) throttle end: throttle time(37)
+10-14 10:48:32.318  4916  4916 I Choreographer: Skipped 30 frames!  The application may be doing too much work on its main thread.
+10-14 10:48:32.378   520   537 W ziparchive: Unable to open '/data/app/~~1xyZHdrD7D4vyJnhShy8Eg==/com.plantaoseguro.debug-De6ckgrkuYlP6xkP5LMNiQ==/base.dm': No such file or directory
+10-14 10:48:32.411  4916  4927 I OpenGLRenderer: Davey! duration=762ms; Flags=1, FrameTimelineVsyncId=22720, IntendedVsync=318082232408, Vsync=318315565732, InputEventId=0, HandleInputStart=318323907656, AnimationStart=318323912275, PerformTraversalsStart=318323915411, DrawStart=318619973808, FrameDeadline=318098899074, FrameInterval=318323319068, FrameStartTime=16666666, SyncQueued=318623243736, SyncStart=318646019019, IssueDrawCommandsStart=318651438927, SwapBuffers=318802458404, FrameCompleted=318867236148, DequeueBufferDuration=3426, QueueBufferDuration=466681, GpuCompleted=318867236148, SwapBuffersCompleted=318847918803, DisplayPresentTime=48, CommandSubmissionCompleted=318802458404,
+10-14 10:48:32.422   520   537 I ActivityTaskManager: Displayed com.plantaoseguro.debug/com.plantaoseguro.sirene.AlarmeActivity for user 0: +868ms
+10-14 10:48:32.423   836   836 D CentralSurfaces: Received new disable state: enaihbcRso.qingr (unchanged)
+10-14 10:48:32.433   474  7524 D MediaCodec: keep callback message for reclaim
+10-14 10:48:32.434   474  7525 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+10-14 10:48:32.434   474  7525 W Codec2Client: query -- param skipped: index = 1342179345.
+10-14 10:48:32.434   474  7525 W Codec2Client: query -- param skipped: index = 2415921170.
+10-14 10:48:32.441   479  7526 D C2SoftVorbisDec: vorbis_dsp_synthesis returned -135; ignored
+10-14 10:48:32.451   836   836 D CentralSurfaces: Received new disable state: enaihbcRso.qingr (unchanged)
+10-14 10:48:32.451   479  7526 D C2SoftVorbisDec: vorbis_dsp_synthesis returned -135; ignored
+10-14 10:48:32.465   474  7523 D AudioTrack: getTimestamp_l(58): device stall time corrected using current time 319003240553
+10-14 10:48:32.476   836   906 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-14 10:48:32.476   836   906 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-14 10:48:32.554   836   870 D KeyguardViewMediator: OccludeAnimator#onAnimationStart. Set occluded = true.
+10-14 10:48:32.554   836   870 D KeyguardViewMediator: setOccluded(true)
+10-14 10:48:32.560   836   836 D KeyguardViewMediator: handleSetOccluded(true)
+10-14 10:48:32.562   474  7523 D AudioTrack: stop(58): called with 22050 frames delivered
+10-14 10:48:32.564   836   836 D SbStateController: setState: requested state SHADE!= upcomingState: KEYGUARD. This usually means the status bar state transition was interrupted before the upcoming state could be applied.
+10-14 10:48:32.567   836   836 D CentralSurfaces: updateQsExpansionEnabled - QS Expand enabled: true
+10-14 10:48:32.568   836  3429 D KeyguardService: setOccluded(true)
+10-14 10:48:32.568   836  3429 D KeyguardViewMediator: setOccluded(true)
+10-14 10:48:32.570  4916  5478 I OpenGLRenderer: Davey! duration=719ms; Flags=0, FrameTimelineVsyncId=22768, IntendedVsync=318348899064, Vsync=318848899044, InputEventId=0, HandleInputStart=318856233469, AnimationStart=318856236655, PerformTraversalsStart=318951008365, DrawStart=318951254914, FrameDeadline=318898899042, FrameInterval=318856001136, FrameStartTime=16666666, SyncQueued=318957271815, SyncStart=318962468767, IssueDrawCommandsStart=318967953335, SwapBuffers=318968908657, FrameCompleted=319073680825, DequeueBufferDuration=3246, QueueBufferDuration=298637, GpuCompleted=319073680825, SwapBuffersCompleted=319040951629, DisplayPresentTime=0, CommandSubmissionCompleted=318968908657,
+10-14 10:48:32.572   836   836 D ProxSensor: [FalsingCollector] unregistering sensor listener
+10-14 10:48:32.583   836   836 D CentralSurfaces: Received new disable state: enaihbcRso.qingr (unchanged)
+10-14 10:48:32.587   396   499 D AudioFlinger: mixer(0x7937fda79930) throttle end: throttle time(6)
+10-14 10:48:32.594   836   836 D CentralSurfaces: updateQsExpansionEnabled - QS Expand enabled: true
+10-14 10:48:32.639   396   499 D AudioFlinger: mixer(0x7937fda79930) throttle end: throttle time(10)
+10-14 10:48:32.660   836   908 D EGL_emulation: app_time_stats: avg=562.40ms min=56.95ms max=4619.39ms count=10
+10-14 10:48:32.666   520  2092 I ImeTracker: com.plantaoseguro.debug:300341b1: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+10-14 10:48:32.666   520  2092 I ImeTracker: com.plantaoseguro.debug:300341b1: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-14 10:48:32.686  1539  1539 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.plantaoseguro.debug fieldId=0 fieldName=null extras=null}, false)
+10-14 10:48:32.687  1539  1539 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+10-14 10:48:32.691  1539  1539 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+10-14 10:48:32.697   836   908 D EGL_emulation: app_time_stats: avg=336.94ms min=131.95ms max=547.83ms count=3
+10-14 10:48:32.698   836   836 D KeyguardViewMediator: handleSetOccluded(true)
+10-14 10:48:32.699   836   836 W FrameTracker: Missed App frame:UNKNOWN: 74, 22852, 269465765, CUJ=J<NOTIFICATION_ADD>
+10-14 10:48:32.699   836   836 W FrameTracker: Missed SF frame:UNKNOWN: 74, 22852, 269465765, CUJ=J<NOTIFICATION_ADD>
+10-14 10:48:32.704   836   836 D CentralSurfaces: Received new disable state: Old: enaihbcRso.qingr | New: enaihbcrso.qingr (changed: r.)
+10-14 10:48:32.754   396   499 D AudioFlinger: mixer(0x7937fda79930) throttle end: throttle time(10)
+10-14 10:48:32.825   836   836 D CentralSurfaces: Received new disable state: enaihbcrso.qingr (unchanged)
+10-14 10:48:32.887   836   836 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@f8ec254
+10-14 10:48:32.890   836   836 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@ff685fd
+10-14 10:48:32.891   836   836 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@77852f2
+10-14 10:48:32.892   836   836 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@ad3d43
+10-14 10:48:32.892   836   836 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@73fafc0
+10-14 10:48:32.893   836   836 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@c2a84f9
+10-14 10:48:32.894   836   906 D ControlsListingControllerImpl: Unsubscribing callback
+10-14 10:48:32.894   836   906 D ControlsListingControllerImpl: Unsubscribing callback
+10-14 10:48:32.895   836   906 D ControlsListingControllerImpl: Unsubscribing callback
+10-14 10:48:33.103   474  7523 W AudioTrack: pauseAndWait: timeout expired state:7 still pausing:7 after 40 ms
+10-14 10:48:33.104   474  7524 D MediaCodec: keep callback message for reclaim
+10-14 10:48:33.104   474  7525 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+10-14 10:48:33.105   474  7525 W Codec2Client: query -- param skipped: index = 1342179345.
+10-14 10:48:33.105   474  7525 W Codec2Client: query -- param skipped: index = 2415921170.
+10-14 10:48:33.106   479  7526 D C2SoftVorbisDec: vorbis_dsp_synthesis returned -135; ignored
+10-14 10:48:33.107   479  7526 D C2SoftVorbisDec: vorbis_dsp_synthesis returned -135; ignored
+10-14 10:48:33.114   474  7523 D AudioTrack: getTimestamp_l(58): device stall time corrected using current time 319652255833
+10-14 10:48:33.117   474  7523 D AudioTrack: stop(58): called with 22050 frames delivered
+10-14 10:48:33.438  4916  4937 D UiDevice: Taking screenshot (scale=1.000000, quality=90) and storing at /storage/emulated/0/Android/data/com.plantaoseguro.debug/files/e2e/c22_teste_com_tela_bloqueada.png.
+10-14 10:48:33.657   474  7523 W AudioTrack: pauseAndWait: timeout expired state:7 still pausing:7 after 40 ms
+10-14 10:48:33.659   474  7524 D MediaCodec: keep callback message for reclaim
+10-14 10:48:33.659   474  7525 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+10-14 10:48:33.660   474  7525 W Codec2Client: query -- param skipped: index = 1342179345.
+10-14 10:48:33.660   474  7525 W Codec2Client: query -- param skipped: index = 2415921170.
+10-14 10:48:33.661   479  7526 D C2SoftVorbisDec: vorbis_dsp_synthesis returned -135; ignored
+10-14 10:48:33.662   479  7526 D C2SoftVorbisDec: vorbis_dsp_synthesis returned -135; ignored
+10-14 10:48:33.663   474  7523 D AudioTrack: getTimestamp_l(58): device stall time corrected using current time 320201629275
+10-14 10:48:33.671   474  7523 D AudioTrack: stop(58): called with 22050 frames delivered
+10-14 10:48:34.016  4916  4937 D UiObject2: Clicking on (541, 1933).
+10-14 10:48:34.017  4916  4937 W UiObject2: Clicking on non-clickable object: android.view.accessibility.AccessibilityNodeInfo@6f7dab08; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(294, 1686 - 788, 2180); boundsInWindow: Rect(294, 1686 - 788, 2180); packageName: com.plantaoseguro.debug; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: Parar o alerta; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null]; isTextSelectable: false
+10-14 10:48:34.042  1093  1093 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=541.0, y[0]=1933.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=320555, downTime=320555, deviceId=-1, source=0x1002, displayId=0, eventId=-502685715 }
+10-14 10:48:34.052  1093  1093 D TaplEvents: TIS / TouchInteractionService.onInputEvent: MotionEvent { action=ACTION_UP, actionButton=0, id[0]=0, x[0]=541.0, y[0]=1933.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=320589, downTime=320555, deviceId=-1, source=0x1002, displayId=0, eventId=-31448609 }
+10-14 10:48:34.054   474  3251 D NuPlayerDriver: stop(0x7bc6b5a64690)
+10-14 10:48:34.055   520   629 D FlashNotifController: alarm state changed: false
+10-14 10:48:34.055   520   629 I FlashNotifController: stopFlashNotification: tag=alarm
+10-14 10:48:34.055  4916  4916 V MediaPlayer: resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+10-14 10:48:34.055  4916  4916 V MediaPlayer: cleanDrmObj: mDrmObj=null mDrmSessionId=null
+10-14 10:48:34.056   474  3251 D NuPlayerDriver: reset(0x7bc6b5a64690) at state 8
+10-14 10:48:34.057   474  7525 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+10-14 10:48:34.057   479   479 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+10-14 10:48:34.057   479   479 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+10-14 10:48:34.058   474  7524 D MediaCodec: flushMediametrics
+10-14 10:48:34.059   474  7520 D NuPlayerDriver: notifyResetComplete(0x7bc6b5a64690)
+10-14 10:48:34.059   474  3251 W AMessage: failed to post message as target looper for handler 0 is gone.
+10-14 10:48:34.062   520  2353 I MediaFocusControl: abandonAudioFocus() from uid/pid 10193/4916 clientId=android.media.AudioManager@eb3745fcom.plantaoseguro.sirene.Sirene$$ExternalSyntheticLambda4@2220562
+10-14 10:48:34.072   836  1139 I vol.Events: writeEvent level_changed STREAM_ALARM 6
+10-14 10:48:34.090  4916  4937 W GestureController: Gestures took longer than expected (72ms >> 16ms), device might be in a busy state.
+10-14 10:48:34.094   399   399 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-14 10:48:34.103  4916  4916 W MediaPlayer: mediaplayer went away with unhandled events
+10-14 10:48:34.105  4916  4916 D LifecycleMonitor: Lifecycle status change: com.plantaoseguro.sirene.AlarmeActivity@7c154c8 in: PAUSED
+10-14 10:48:34.107  4916  6446 D EGL_emulation: app_time_stats: avg=599.19ms min=193.03ms max=938.70ms count=3
+10-14 10:48:34.122   836   908 D EGL_emulation: app_time_stats: avg=475.01ms min=53.07ms max=1236.76ms count=3
+10-14 10:48:34.134   396   499 D audioserver: FGS Logger Transaction failed
+10-14 10:48:34.135   396   499 D audioserver: -129
+10-14 10:48:34.152   396   499 D audioserver: FGS Logger Transaction failed
+10-14 10:48:34.152   396   499 D audioserver: -129
+10-14 10:48:34.155   836   870 D KeyguardViewMediator: UnoccludeAnimator#onAnimationStart. Set occluded = false.
+10-14 10:48:34.155   836   870 D KeyguardViewMediator: setOccluded(false)
+10-14 10:48:34.155   836   836 D KeyguardViewMediator: handleSetOccluded(false)
+10-14 10:48:34.167  1636  2096 I AiAiEcho: Predicting[0]:
+10-14 10:48:34.167  1636  2096 I AiAiEcho: EchoTargets:
+10-14 10:48:34.167  1636  2096 I AiAiEcho: Filtered by AiAi flag check:
+10-14 10:48:34.167  1636  2096 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+10-14 10:48:34.170   836   870 E ShellTransitions: Somehow blocked on a non-sync transition? (#43)android.os.BinderProxy@b0bded0@0
+10-14 10:48:34.175   520  1650 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+10-14 10:48:34.176  1093  1991 D OneSearchSuggestProvider: Created the binder channel successfully for end point service =com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService , mChannel=z1{delegate=s1{logId=33, target=directaddress:///AndroidComponentAddress%5BIntent%20%7B%20act=grpc.io.action.BIND%20cmp=com.google.android.googlequicksearchbox/com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService%20%7D%5D}} , mOneSearchConnection=X1.T@8eccfbc
+10-14 10:48:34.182  1636  2096 I AiAiEcho: Predicting[0]:
+10-14 10:48:34.182  1636  2096 I AiAiEcho: EchoTargets:
+10-14 10:48:34.182  1636  2096 I AiAiEcho: Filtered by AiAi flag check:
+10-14 10:48:34.182  1636  2096 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+10-14 10:48:34.183  1636  2096 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-14 10:48:34.183  1636  2096 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-14 10:48:34.251  1685  2216 I A       : Using proto config with mendel
+10-14 10:48:34.253  1685  2216 W A       : Queue length for executor EventBus is now 11. Perhaps some tasks are too long, or the pool is too small.
+10-14 10:48:34.268  1685  2216 I A       : Using proto config with mendel
+10-14 10:48:34.287   836   836 D SbStateController: setState: requested state KEYGUARD!= upcomingState: SHADE. This usually means the status bar state transition was interrupted before the upcoming state could be applied.
+10-14 10:48:34.291  1636  2193 W AiAiEcho: LyftNotificationParser Ridesharing ETA not enabled
+10-14 10:48:34.292  1636  2193 W AiAiEcho: SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+10-14 10:48:34.297   836   836 D CentralSurfaces: updateQsExpansionEnabled - QS Expand enabled: true
+10-14 10:48:34.306   836   836 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-14 10:48:34.306   836   836 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-14 10:48:34.307   836   836 D CentralSurfaces: Received new disable state: enaihbcrso.qingr (unchanged)
+10-14 10:48:34.308   836   836 D CentralSurfaces: Received new disable state: enaihbcrso.qingr (unchanged)
+10-14 10:48:34.323   836  3429 D KeyguardService: setOccluded(false)
+10-14 10:48:34.323   836  3429 D KeyguardViewMediator: setOccluded(false)
+10-14 10:48:34.348  1093  1093 D SearchTargetUtil:  query= size=15
+10-14 10:48:34.348  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=costco younger demographic membership growth,group_id=web157696,response_id=d35ca5c3-7d95-4e85-b9ef-4f6f73edbd4c,support_query_builder=false,} searchAction=costco younger demographic membership growth searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 423309d9-d404-4d53-8426-2ef56e3272d9
+10-14 10:48:34.348  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=next gen buick lacrosse 2027,group_id=web157696,response_id=d35ca5c3-7d95-4e85-b9ef-4f6f73edbd4c,support_query_builder=false,} searchAction=next gen buick lacrosse 2027 searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: da1baf44-d887-4b4f-be1c-13009b728702
+10-14 10:48:34.348  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=uswnt vs spain,group_id=web157696,response_id=d35ca5c3-7d95-4e85-b9ef-4f6f73edbd4c,support_query_builder=false,} searchAction=uswnt vs spain searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 5c7c816a-41b6-40c7-8d33-130ed1cebc9c
+10-14 10:48:34.348  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=elephant dies in south africa,group_id=web157696,response_id=d35ca5c3-7d95-4e85-b9ef-4f6f73edbd4c,support_query_builder=false,} searchAction=elephant dies in south africa searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 0ae12f4a-616e-4bdf-bd75-d9c844ee3fe3
+10-14 10:48:34.348  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=google fitbit edge fitness tracker,group_id=web157696,response_id=d35ca5c3-7d95-4e85-b9ef-4f6f73edbd4c,support_query_builder=false,} searchAction=google fitbit edge fitness tracker searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 141f67e1-effd-47dd-96fc-b45710dc4819
+10-14 10:48:34.348  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=spacex rocket launch falcon 9,group_id=web157696,response_id=d35ca5c3-7d95-4e85-b9ef-4f6f73edbd4c,support_query_builder=false,} searchAction=spacex rocket launch falcon 9 searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 804f99f2-2606-4af4-9c63-a1d80f30294d
+10-14 10:48:34.348  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=openai mathematical research impact,group_id=web157696,response_id=d35ca5c3-7d95-4e85-b9ef-4f6f73edbd4c,support_query_builder=false,} searchAction=openai mathematical research impact searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 05a7daed-908e-4696-81b2-5fa21d9293ca
+10-14 10:48:34.351  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=george strait 1987 country chart hit,group_id=web157696,response_id=d35ca5c3-7d95-4e85-b9ef-4f6f73edbd4c,support_query_builder=false,} searchAction=george strait 1987 country chart hit searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 27beacad-08c4-46cf-b7a5-151ecb97c99c
+10-14 10:48:34.351  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=west nile virus north carolina,group_id=web157696,response_id=d35ca5c3-7d95-4e85-b9ef-4f6f73edbd4c,support_query_builder=false,} searchAction=west nile virus north carolina searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 30ee8b51-3441-4c55-a57f-100784259dac
+10-14 10:48:34.351  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=great smoky mountains hiker sahil jilani,group_id=web157696,response_id=d35ca5c3-7d95-4e85-b9ef-4f6f73edbd4c,support_query_builder=false,} searchAction=great smoky mountains hiker sahil jilani searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 9d6c2deb-b77b-4a96-b8be-e0ddf71f3e72
+10-14 10:48:34.351  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=walmart express pickup service,group_id=web157696,response_id=d35ca5c3-7d95-4e85-b9ef-4f6f73edbd4c,support_query_builder=false,} searchAction=walmart express pickup service searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 3672793c-40d1-4ebf-acae-be48667dfefb
+10-14 10:48:34.351  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=cleveland guardians tampa bay rays,group_id=web157696,response_id=d35ca5c3-7d95-4e85-b9ef-4f6f73edbd4c,support_query_builder=false,} searchAction=cleveland guardians tampa bay rays searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: fc387d84-f158-44d9-a101-c50c64188239
+10-14 10:48:34.351  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=nathan fielder elizabeth holmes film,group_id=web157696,response_id=d35ca5c3-7d95-4e85-b9ef-4f6f73edbd4c,support_query_builder=false,} searchAction=nathan fielder elizabeth holmes film searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 110b3c00-1b40-4dd6-bb6b-85d8ddeb6dd3
+10-14 10:48:34.351  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=golden retriever skylar wakes baby,group_id=web157696,response_id=d35ca5c3-7d95-4e85-b9ef-4f6f73edbd4c,support_query_builder=false,} searchAction=golden retriever skylar wakes baby searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: cf585bc3-5afe-476d-a54d-6a5bbee4c963
+10-14 10:48:34.351  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=apple homeview,group_id=web157696,response_id=d35ca5c3-7d95-4e85-b9ef-4f6f73edbd4c,support_query_builder=false,} searchAction=apple homeview searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 3baa6630-73ba-4b33-a588-533ee8b94962
+10-14 10:48:34.355  1093  1991 D OneSearchSuggestProvider: Shut down the binder channel
+10-14 10:48:34.356  1093  1435 I IPCThreadState: oneway function results for code 2 on binder at 0x7d735010a5d0 will be dropped but finished with status UNKNOWN_TRANSACTION
+10-14 10:48:34.362  1093  1136 I ImeTracker: com.google.android.apps.nexuslauncher:c3cfe337: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+10-14 10:48:34.362  1093  1136 I ImeTracker: com.google.android.apps.nexuslauncher:c3cfe337: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-14 10:48:34.374   836   836 D CentralSurfaces: Received new disable state: Old: enaihbcrso.qingr | New: enaihbcRso.qingr (changed: R.)
+10-14 10:48:34.375   836   836 W View    : requestLayout() improperly called by com.android.systemui.util.AutoMarqueeTextView{1b2ec91 V.ED..... ..S...ID 0,37-143,88 #7f0a06aa app:id/shade_carrier_text} during layout: running second layout pass
+10-14 10:48:34.375   836   836 W View    : requestLayout() improperly called by com.android.keyguard.CarrierText{9d29c34 V.ED..... ..S...ID 50,0-481,128 #7f0a03a9 app:id/keyguard_carrier_text} during layout: running second layout pass
+10-14 10:48:34.390  1685  2174 I PBSessionCacheImpl: Deleted sessionId[7412500345843069] from persistence.
+10-14 10:48:34.405  1685  2216 W SearchServiceCore: Abort, client detached.
+10-14 10:48:34.421   836   836 D ProxSensor: [FalsingCollector] Primary sensor event: false. No secondary.
+10-14 10:48:34.421   836   836 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-14 10:48:34.433   836   836 D KeyguardViewMediator: handleSetOccluded(false)
+10-14 10:48:34.434  4916  4916 D LifecycleMonitor: Lifecycle status change: com.plantaoseguro.sirene.AlarmeActivity@7c154c8 in: STOPPED
+10-14 10:48:34.455  4916  4916 D LifecycleMonitor: Lifecycle status change: com.plantaoseguro.sirene.AlarmeActivity@7c154c8 in: DESTROYED
+10-14 10:48:34.455  4916  4916 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@89c0bfc
+10-14 10:48:34.489   520  2475 W InputManager-JNI: Input channel object 'd93e906 com.plantaoseguro.debug/com.plantaoseguro.sirene.AlarmeActivity (client)' was disposed without first being removed with the input manager!
+10-14 10:48:34.659   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@4f36d94
+10-14 10:48:34.661   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@b80f03d
+10-14 10:48:34.665   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:48:34.665   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:48:34.665   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:48:34.666   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:48:34.666   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@b471032
+10-14 10:48:34.666   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@cdd5183
+10-14 10:48:34.667   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:48:34.667   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:48:34.668   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@763cf00
+10-14 10:48:34.668   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@8915339
+10-14 10:48:34.674   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:48:34.674   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:48:34.675   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:48:34.675   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:48:34.675   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:48:34.675   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:48:34.708   836   906 E QuickAccessWalletKeyguardQuickAffordanceConfig: Wallet card retrieval error, message: "null"
+10-14 10:48:34.708   836   906 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+10-14 10:48:34.712   836   906 E QuickAccessWalletKeyguardQuickAffordanceConfig: Wallet card retrieval error, message: "null"
+10-14 10:48:34.713   836   906 E QuickAccessWalletKeyguardQuickAffordanceConfig: Wallet card retrieval error, message: "null"
+10-14 10:48:34.713   836   906 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+10-14 10:48:34.716   836   906 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+10-14 10:48:34.718   836   836 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-14 10:48:35.159  4916  4937 D UiDevice: Pressing back button.
+10-14 10:48:35.887  6000  7541 I NamespaceManager: Package com.android.refreshratecontrol name not found! Using module version.
+10-14 10:48:35.888  6000  7541 I NamespaceManager: Package com.google.oslo name not found! Using module version.
+10-14 10:48:35.889  6000  7541 I NamespaceManager: Package com.android.media name not found! Using module version.
+10-14 10:48:35.890  6000  7541 I NamespaceManager: Package com.android.media.swcodec name not found! Using module version.
+10-14 10:48:35.891  6000  7541 I NamespaceManager: Package com.android.neuralnetworks name not found! Using module version.
+10-14 10:48:35.892  6000  7541 I NamespaceManager: Package com.android.media name not found! Using module version.
+10-14 10:48:35.894  6000  7541 I NamespaceManager: Package 1 name not found! Using module version.
+10-14 10:48:35.894  6073  7543 I ChimeraConfigurator: Starting update, reason: 4 urgentFeatures: vision.ocr:-1
+10-14 10:48:35.895  6000  7541 I NamespaceManager: Package rkpd name not found! Using module version.
+10-14 10:48:35.896  6000  7541 I NamespaceManager: Package android.companion name not found! Using module version.
+10-14 10:48:35.897  6000  7541 I NamespaceManager: Package com.google.android.aicore name not found! Using module version.
+10-14 10:48:35.898  6000  7541 I NamespaceManager: Package com.google.android.audioproxy name not found! Using module version.
+10-14 10:48:35.899  6000  7541 I NamespaceManager: Package com.google.android.apps.pixel.psi name not found! Using module version.
+10-14 10:48:35.901  6000  7541 I NamespaceManager: Package com.google.android.apps.safetycore name not found! Using module version.
+10-14 10:48:35.901  6000  7541 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-14 10:48:35.901  6000  7541 I NamespaceManager: Package com.google.android.profiling name not found! Using module version.
+10-14 10:48:35.901  6000  7541 I NamespaceManager: Package com.google.android.bt name not found! Using module version.
+10-14 10:48:35.901  6000  7541 I NamespaceManager: Package com.google.android.nfcservices name not found! Using module version.
+10-14 10:48:35.901  6000  7541 I NamespaceManager: Package com.google.android.webapp name not found! Using module version.
+10-14 10:48:35.901  6000  7541 I NamespaceManager: Package com.google.android.telephonycore name not found! Using module version.
+10-14 10:48:35.902  6000  7541 I NamespaceManager: Package com.google.android.uprobestats name not found! Using module version.
+10-14 10:48:35.907  6073  7543 I ChimeraConfigurator: Detected pending changes for urgent request: [vision.ocr]. Pending module sets: container:2318189190800+mlkit.ocr.common,tflite_dynamite:2627305025100800+tflite_dynamite,vision_ocr:2316024025100000+vision.ocr
+10-14 10:48:35.910  6000  7233 V NFC     : this device does not have NFC support
+10-14 10:48:35.910  6000  6544 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.tapandpay.gcmtask.TapAndPayGcmTaskService started execution. cause:4 exec_start_elapsed_seconds: 322 [CONTEXT service_id=218 ]
+10-14 10:48:35.911  6000  7233 W TapAndPay: NfcAdapter is null while obtaining CardEmulation instance. [CONTEXT service_id=79 ]
+10-14 10:48:35.911  6000  7233 W TapAndPay: java.lang.NullPointerException: NfcAdapter is null
+10-14 10:48:35.911  6000  7233 W TapAndPay: 	at android.nfc.cardemulation.CardEmulation.getInstance(CardEmulation.java:152)
+10-14 10:48:35.911  6000  7233 W TapAndPay: 	at cdoy.<init>(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+10-14 10:48:35.911  6000  7233 W TapAndPay: 	at com.google.android.gms.tapandpay.hce.task.TapAndPayAidRegistrationTaskOperation.a(:com.google.android.gms@231818047@23.18.18 (190800-535401451):5)
+10-14 10:48:35.911  6000  7233 W TapAndPay: 	at com.google.android.gms.tapandpay.gcmtask.TapAndPayGcmTaskChimeraService.a(:com.google.android.gms@231818047@23.18.18 (190800-535401451):4)
+10-14 10:48:35.911  6000  7233 W TapAndPay: 	at avzs.call(:com.google.android.gms@231818047@23.18.18 (190800-535401451):4)
+10-14 10:48:35.911  6000  7233 W TapAndPay: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-14 10:48:35.911  6000  7233 W TapAndPay: 	at aced.c(:com.google.android.gms@231818047@23.18.18 (190800-535401451):6)
+10-14 10:48:35.911  6000  7233 W TapAndPay: 	at aced.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):7)
+10-14 10:48:35.911  6000  7233 W TapAndPay: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-14 10:48:35.911  6000  7233 W TapAndPay: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-14 10:48:35.911  6000  7233 W TapAndPay: 	at acjn.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+10-14 10:48:35.911  6000  7233 W TapAndPay: 	at java.lang.Thread.run(Thread.java:1012)
+10-14 10:48:35.914  6000  7233 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.tapandpay.gcmtask.TapAndPayGcmTaskService finished executing. cause:4 result: 3 elapsed_millis: 14 uptime_millis: 14 exec_start_elapsed_seconds: 322 [CONTEXT service_id=218 ]
+10-14 10:48:35.917  6073  7543 I GmsDebugLogger: [73] 1801
+10-14 10:48:35.919  6073  7543 W ZappDownloader: No successful module downloads for requested features [vision.ocr].
+10-14 10:48:35.919  6073  7543 I GmsDebugLogger: [30] [VisionOcrDynamite.integ:231602402100000],[TfliteDynamiteDynamite.integ:262730502100800],[MlkitOcrCommon.optional:231818100800]
+10-14 10:48:35.925  1610  1682 I TranscodeHelper: Empty transcode compat stale
+10-14 10:48:35.926  6073  7543 W ChimeraConfigService: Retry attempt was throttled. [CONTEXT service_id=264 ]
+10-14 10:48:35.926  6073  7543 I GmsDebugLogger: [83] 1 [vision.ocr]
+10-14 10:48:35.927  1610  1682 I TranscodeHelper: Parsed 0 packages from resource
+10-14 10:48:35.928  1610  1682 I TranscodeHelper: Parsed 8 packages from device config
+10-14 10:48:35.928  1610  1682 I MediaProvider: Changed PhotoPickerGetContentActivity component state to STATE_ENABLED ( 1 )
+10-14 10:48:35.930  1610  1682 I MediaProvider: Changed PhotoPickerUserSelectActivity component state to STATE_ENABLED ( 1 )
+10-14 10:48:35.931  6073  7540 W Vision  : Request for optional module download of ocr failed. Request again.
+10-14 10:48:35.931  6073  7540 W Vision  : Would have logged:
+10-14 10:48:35.931  6073  7540 W Vision  : # dsae@37884fe7
+10-14 10:48:35.931  6073  7540 I Vision  : Schedule retrying download ocr at 322469 with backoff 80 seconds
+10-14 10:48:35.934  1610  1682 I MediaApplication: PhotoPickerSettingsActivity is now disabled.
+10-14 10:48:35.961  6000  7541 I bwir    : updateFromConfigurations using legacy put method [CONTEXT service_id=204 ]
+10-14 10:48:35.963  6000  6544 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.auth.account.be.legacy.AuthCronService started execution. cause:5 exec_start_elapsed_seconds: 322 [CONTEXT service_id=218 ]
+10-14 10:48:35.973  6000  7541 I NamespaceManager: Package com.android.refreshratecontrol name not found! Using module version.
+10-14 10:48:35.974  6000  7541 I NamespaceManager: Package com.google.oslo name not found! Using module version.
+10-14 10:48:35.974  6000  7541 I NamespaceManager: Package com.android.media name not found! Using module version.
+10-14 10:48:35.974  6000  7541 I NamespaceManager: Package com.android.media.swcodec name not found! Using module version.
+10-14 10:48:35.974  6000  7541 I NamespaceManager: Package com.android.neuralnetworks name not found! Using module version.
+10-14 10:48:35.976  6000  7541 I NamespaceManager: Package com.android.media name not found! Using module version.
+10-14 10:48:35.976  6000  7541 I NamespaceManager: Package 1 name not found! Using module version.
+10-14 10:48:35.976  6000  7541 I NamespaceManager: Package rkpd name not found! Using module version.
+10-14 10:48:35.976  6000  7541 I NamespaceManager: Package android.companion name not found! Using module version.
+10-14 10:48:35.976  6000  7541 I NamespaceManager: Package com.google.android.aicore name not found! Using module version.
+10-14 10:48:35.976  6000  7541 I NamespaceManager: Package com.google.android.audioproxy name not found! Using module version.
+10-14 10:48:35.977  6000  7541 I NamespaceManager: Package com.google.android.apps.pixel.psi name not found! Using module version.
+10-14 10:48:35.977  6000  7541 I NamespaceManager: Package com.google.android.apps.safetycore name not found! Using module version.
+10-14 10:48:35.977  6000  7541 I NamespaceManager: Package com.google.android.crashrecovery name not found! Using module version.
+10-14 10:48:35.978  6000  7541 I NamespaceManager: Package com.google.android.profiling name not found! Using module version.
+10-14 10:48:35.978  6000  7541 I NamespaceManager: Package com.google.android.bt name not found! Using module version.
+10-14 10:48:35.978  6000  7541 I NamespaceManager: Package com.google.android.nfcservices name not found! Using module version.
+10-14 10:48:35.978  6000  7541 I NamespaceManager: Package com.google.android.webapp name not found! Using module version.
+10-14 10:48:35.978  6000  7541 I NamespaceManager: Package com.google.android.telephonycore name not found! Using module version.
+10-14 10:48:35.978  6000  7541 I NamespaceManager: Package com.google.android.uprobestats name not found! Using module version.
+10-14 10:48:36.050   335  7554 I resolv  : GetAddrInfoHandler::run: {100 786532 100 983140 10131 0}
+10-14 10:48:36.051  2992  7552 D TrafficStats: tagSocket(103) with statsTag=0x1809, statsUid=-1
+10-14 10:48:36.058  2992  7552 W libc    : Access denied finding property "persist.adb.tls_server.enable"
+10-14 10:48:36.059  2992  7552 W libc    : Access denied finding property "service.adb.tls.port"
+10-14 10:48:36.054  2992  2992 W binder:2992_C: type=1400 audit(0.0:215): avc:  denied  { read } for  name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=292 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+10-14 10:48:36.054  2992  2992 W binder:2992_C: type=1400 audit(0.0:216): avc:  denied  { read } for  name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=60 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+10-14 10:48:36.080  6000  6583 W GmsUrlRequestImpl: Content-Type header is overwritten.
+10-14 10:48:36.082   335  7557 I resolv  : GetAddrInfoHandler::run: {100 786532 100 983140 10131 0}
+10-14 10:48:36.083   335  7559 I resolv  : res_nmkquery: (QUERY, IN, A)
+10-14 10:48:36.083   335  7559 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x77915f4cfb30
+10-14 10:48:36.083   335  7559 I resolv  : doQuery: rcode=0, ancount=8, return value=168
+10-14 10:48:36.084   335  7558 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+10-14 10:48:36.084   335  7558 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7790cf4d47d0
+10-14 10:48:36.084   335  7558 I resolv  : doQuery: rcode=0, ancount=8, return value=264
+10-14 10:48:36.085  6000  6373 D TrafficStats: tagSocket(134) with statsTag=0x401, statsUid=10131
+10-14 10:48:36.131  6000  6583 W GLSUser : [AppCertManager] Exception while requesting key:
+10-14 10:48:36.131  6000  6583 W GLSUser : java.util.concurrent.ExecutionException: avvw: Parse Proto Exception.
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at dlnv.s(:com.google.android.gms@231818047@23.18.18 (190800-535401451):3)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at dlnv.get(:com.google.android.gms@231818047@23.18.18 (190800-535401451):7)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at oub.b(:com.google.android.gms@231818047@23.18.18 (190800-535401451):78)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at otz.b(:com.google.android.gms@231818047@23.18.18 (190800-535401451):4)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at otu.a(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at otx.a(:com.google.android.gms@231818047@23.18.18 (190800-535401451):6)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at lzq.call(:com.google.android.gms@231818047@23.18.18 (190800-535401451):14)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at aced.c(:com.google.android.gms@231818047@23.18.18 (190800-535401451):6)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at aced.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):7)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at acjn.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at java.lang.Thread.run(Thread.java:1012)
+10-14 10:48:36.131  6000  6583 W GLSUser : Caused by: avvw: Parse Proto Exception.
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at avwn.f(:com.google.android.gms@231818047@23.18.18 (190800-535401451):5)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at avxk.onSucceeded(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at jf.onSucceeded(:com.google.android.gms.dynamite_cronetdynamite@231818047@23.18.18 (190800-0):0)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at ie.run(:com.google.android.gms.dynamite_cronetdynamite@231818047@23.18.18 (190800-0):4)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	... 6 more
+10-14 10:48:36.131  6000  6583 W GLSUser : Caused by: dzfz: Protocol message contained an invalid tag (zero).
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at dzdb.k(:com.google.android.gms@231818047@23.18.18 (190800-535401451):13)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at dzha.c(:com.google.android.gms@231818047@23.18.18 (190800-535401451):47)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at dzha.h(:com.google.android.gms@231818047@23.18.18 (190800-535401451):45)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at dzfd.A(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at dzex.f(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at dzcx.d(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at dzcx.c(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at dzcx.n(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at avwn.h(:com.google.android.gms@231818047@23.18.18 (190800-535401451):7)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	at avwn.f(:com.google.android.gms@231818047@23.18.18 (190800-535401451):1)
+10-14 10:48:36.131  6000  6583 W GLSUser : 	... 9 more
+10-14 10:48:36.137  6000  7556 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.auth.account.be.legacy.AuthCronService finished executing. cause:5 result: 3 elapsed_millis: 193 uptime_millis: 193 exec_start_elapsed_seconds: 322 [CONTEXT service_id=218 ]
+10-14 10:48:36.172   836   870 D ShellTransitions: finishForSleep: already played sync transition (#43)android.os.BinderProxy@b0bded0@0
+10-14 10:48:36.212  4916  4937 W InteractionController: Timed out waiting 1000ms for command and events.
+10-14 10:48:36.213  4916  4937 I E2E     : | c22_teste_com_tela_bloqueada | passou | O botão "Testar bloqueado" tocou o alerta 3 s depois, por cima da tela bloqueada. |
+10-14 10:48:36.213  4916  4937 I TestRunner: finished: c22_teste_com_tela_bloqueada(com.plantaoseguro.e2e.CenariosTest)

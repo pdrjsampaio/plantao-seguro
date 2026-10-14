@@ -1,0 +1,94 @@
+--------- beginning of main
+10-14 10:44:49.935 I/TestRunner( 4916): run started: 21 tests
+10-14 10:44:49.950 I/E2E     ( 4916): # Testes no emulador
+10-14 10:44:49.950 I/E2E     ( 4916): 
+10-14 10:44:49.951 I/E2E     ( 4916): Aparelho: Google sdk_gphone64_x86_64, Android 14 (API 34).
+10-14 10:44:49.952 I/E2E     ( 4916): Tela cheia liberada por padrão para um app instalado fora da loja: sim.
+10-14 10:44:51.584 I/E2E     ( 4916): 
+10-14 10:44:51.585 I/E2E     ( 4916): | Teste | Resultado | Observado |
+10-14 10:44:51.586 I/E2E     ( 4916): |---|---|---|
+10-14 10:44:51.587 I/TestRunner( 4916): started: c01_mensagem_no_plantao_dispara(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:45:10.507 I/E2E     ( 4916): | c01_mensagem_no_plantao_dispara | passou | App em segundo plano, tela ligada: alerta tocou e a notificação do alerta apareceu. |
+10-14 10:45:10.507 I/TestRunner( 4916): finished: c01_mensagem_no_plantao_dispara(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:45:10.526 I/TestRunner( 4916): started: c02_irrelevantes_nao_disparam(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:45:23.997 I/E2E     ( 4916): | c02_irrelevantes_nao_disparam | passou | App não vigiado, mensagem de 13 h atrás, mensagem de antes do plantão e mensagem fora do plantão: nenhuma tocou. |
+10-14 10:45:23.999 I/TestRunner( 4916): finished: c02_irrelevantes_nao_disparam(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:45:24.041 I/TestRunner( 4916): started: c03_duplicadas_nao_duplicam(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:45:40.893 I/E2E     ( 4916): | c03_duplicadas_nao_duplicam | passou | Republicação igual não somou nem voltou a tocar depois de confirmada; mensagem nova na mesma conversa tocou. |
+10-14 10:45:40.894 I/TestRunner( 4916): finished: c03_duplicadas_nao_duplicam(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:45:40.905 I/TestRunner( 4916): started: c04_tocar_na_notificacao_original_para(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:45:52.108 I/E2E     ( 4916): | c04_tocar_na_notificacao_original_para | passou | Tocar na notificação do app de mensagens (motivo REASON_CLICK) parou o alerta e abriu a conversa. |
+10-14 10:45:52.108 I/TestRunner( 4916): finished: c04_tocar_na_notificacao_original_para(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:45:52.222 I/TestRunner( 4916): started: c05_parar_pela_notificacao_do_alerta(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:45:58.224 I/E2E     ( 4916): | c05_parar_pela_notificacao_do_alerta | passou | Alerta parou tocando no botão Parar da notificação. |
+10-14 10:45:58.224 I/TestRunner( 4916): finished: c05_parar_pela_notificacao_do_alerta(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:45:58.233 I/TestRunner( 4916): started: c06_varias_mensagens_um_alarme_so(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:04.322 I/E2E     ( 4916): | c06_varias_mensagens_um_alarme_so | passou | Três mensagens seguidas viraram um alerta só, com contador 3. |
+10-14 10:46:04.322 I/TestRunner( 4916): finished: c06_varias_mensagens_um_alarme_so(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:04.323 I/TestRunner( 4916): started: c07_tela_bloqueada_mostra_o_alerta(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:13.798 I/E2E     ( 4916): | c07_tela_bloqueada_mostra_o_alerta | passou | Tela apagada e bloqueada (bloqueio=true): a tela do alerta abriu por cima, tela acesa=true; Parar funcionou. |
+10-14 10:46:13.798 I/TestRunner( 4916): finished: c07_tela_bloqueada_mostra_o_alerta(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:13.800 I/TestRunner( 4916): started: c07b_botao_de_volume_para(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:24.464 I/E2E     ( 4916): | c07b_botao_de_volume_para | passou | Com a tela do alerta aberta, o botão de volume parou o alerta. |
+10-14 10:46:24.465 I/TestRunner( 4916): finished: c07b_botao_de_volume_para(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:24.470 I/TestRunner( 4916): started: c09_escuta_desligada_e_religada(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:32.557 I/E2E     ( 4916): | c09_escuta_desligada_e_religada | passou | Sem acesso às notificações: diagnóstico mostrou erro e o app publicou o aviso de problema; ao religar, voltou a tocar. |
+10-14 10:46:32.558 I/TestRunner( 4916): finished: c09_escuta_desligada_e_religada(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:32.560 I/TestRunner( 4916): started: c10_recalcula_depois_de_reiniciar(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:37.166 I/E2E     ( 4916): | c10_recalcula_depois_de_reiniciar | passou | Com os alarmes apagados, o receptor de sistema reagendou o início do plantão (2026-10-14T10:48:00Z). |
+10-14 10:46:37.166 I/TestRunner( 4916): finished: c10_recalcula_depois_de_reiniciar(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:37.168 I/TestRunner( 4916): started: c12_trocar_o_som_da_regra(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:40.982 I/E2E     ( 4916): | c12_trocar_o_som_da_regra | passou | A regra com a Sirene rápida tocou com esse som. |
+10-14 10:46:40.982 I/TestRunner( 4916): finished: c12_trocar_o_som_da_regra(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:40.983 I/TestRunner( 4916): started: c13_som_de_arquivo_e_arquivo_apagado(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): Não consegui preparar o som
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): java.io.IOException: setDataSource failed.: status=0x80000000
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at android.media.MediaPlayer.nativeSetDataSource(Native Method)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at android.media.MediaPlayer.setDataSource(MediaPlayer.java:1226)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at android.media.MediaPlayer.setDataSource(MediaPlayer.java:1213)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at android.media.MediaPlayer.setDataSource(MediaPlayer.java:1124)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at android.media.MediaPlayer.setDataSource(MediaPlayer.java:1049)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at com.plantaoseguro.sirene.Sirene.criarPlayer(Sirene.kt:260)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at com.plantaoseguro.sirene.Sirene.tocar(Sirene.kt:92)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at com.plantaoseguro.sirene.EfeitosAndroid.tocar(EfeitosAndroid.kt:19)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at com.plantaoseguro.nucleo.CentralDeAlertas.disparar(CentralDeAlertas.kt:120)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at com.plantaoseguro.sentinela.SentinelaService.onNotificationPosted(SentinelaService.kt:119)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at android.service.notification.NotificationListenerService.onNotificationPosted(NotificationListenerService.java:482)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at android.service.notification.NotificationListenerService$MyHandler.handleMessage(NotificationListenerService.java:2392)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at android.os.Handler.dispatchMessage(Handler.java:106)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at android.os.Looper.loopOnce(Looper.java:205)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at android.os.Looper.loop(Looper.java:294)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at java.lang.reflect.Method.invoke(Native Method)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+10-14 10:46:44.325 W/PlantaoSeguro( 4916): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+10-14 10:46:47.076 I/E2E     ( 4916): | c13_som_de_arquivo_e_arquivo_apagado | passou | Som de um arquivo (content://) tocou; depois de apagar o arquivo, o alerta tocou com o som padrão. |
+10-14 10:46:47.076 I/TestRunner( 4916): finished: c13_som_de_arquivo_e_arquivo_apagado(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:47.078 I/TestRunner( 4916): started: c14_silencioso_e_nao_perturbe(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:53.287 I/E2E     ( 4916): | c14_silencioso_e_nao_perturbe | passou | Antes: silencioso e Não Perturbe (2). No plantão: som normal e Não Perturbe desligado. No fim: tudo como antes. |
+10-14 10:46:53.287 I/TestRunner( 4916): finished: c14_silencioso_e_nao_perturbe(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:53.289 I/TestRunner( 4916): started: c16_sem_confirmacao_toca_de_novo(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:47:57.237 I/E2E     ( 4916): | c16_sem_confirmacao_toca_de_novo | passou | Tocou 5 s, ficou sem confirmação, voltou a tocar 1 min depois pelo AlarmManager; fechar a mensagem encerrou. |
+10-14 10:47:57.237 I/TestRunner( 4916): finished: c16_sem_confirmacao_toca_de_novo(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:47:57.238 I/TestRunner( 4916): started: c17_chamada_para_quando_encerrada(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:48:01.652 I/E2E     ( 4916): | c17_chamada_para_quando_encerrada | passou | Chamada (categoria call com tela cheia) tocou e parou quando o app fechou a notificação, mesmo com o ajuste de parar desligado. |
+10-14 10:48:01.652 I/TestRunner( 4916): finished: c17_chamada_para_quando_encerrada(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:48:01.654 I/TestRunner( 4916): started: c18_ajuste_desligado_continua_tocando(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:48:07.831 I/E2E     ( 4916): | c18_ajuste_desligado_continua_tocando | passou | Com "parar ao tocar na mensagem" desligado, o alerta continuou até alguém parar. |
+10-14 10:48:07.831 I/TestRunner( 4916): finished: c18_ajuste_desligado_continua_tocando(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:48:07.832 I/TestRunner( 4916): started: c19_filtro_por_palavra(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:48:13.863 I/E2E     ( 4916): | c19_filtro_por_palavra | passou | Regra com a palavra "urgente": rotina não tocou; "URGENTE" tocou. |
+10-14 10:48:13.863 I/TestRunner( 4916): finished: c19_filtro_por_palavra(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:48:13.864 I/TestRunner( 4916): started: c20_regra_silenciada_por_um_tempo(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:48:21.113 I/E2E     ( 4916): | c20_regra_silenciada_por_um_tempo | passou | Silenciada por 1 h não tocou; reativada tocou. |
+10-14 10:48:21.113 I/TestRunner( 4916): finished: c20_regra_silenciada_por_um_tempo(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:48:21.114 I/TestRunner( 4916): started: c21_teste_da_escuta_do_diagnostico(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:48:25.132 I/E2E     ( 4916): | c21_teste_da_escuta_do_diagnostico | passou | Teste ponta a ponta do diagnóstico: a escuta percebeu em 256 ms. |
+10-14 10:48:25.132 I/TestRunner( 4916): finished: c21_teste_da_escuta_do_diagnostico(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:48:25.133 I/TestRunner( 4916): started: c22_teste_com_tela_bloqueada(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:48:36.213 I/E2E     ( 4916): | c22_teste_com_tela_bloqueada | passou | O botão "Testar bloqueado" tocou o alerta 3 s depois, por cima da tela bloqueada. |
+10-14 10:48:36.213 I/TestRunner( 4916): finished: c22_teste_com_tela_bloqueada(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:48:36.214 I/TestRunner( 4916): started: c23_abrir_a_conversa_pelo_alerta(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:48:44.185 I/E2E     ( 4916): | c23_abrir_a_conversa_pelo_alerta | passou | "Abrir conversa" (pelo botão da notificação) parou o alerta e abriu a conversa usando o atalho da notificação original. |
+10-14 10:48:44.185 I/TestRunner( 4916): finished: c23_abrir_a_conversa_pelo_alerta(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:48:44.210 I/TestRunner( 4916): run finished: 21 tests, 0 failed, 0 ignored

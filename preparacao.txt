@@ -1,0 +1,8 @@
+Generating 2,048 bit RSA key pair and self-signed certificate (SHA256withRSA) with a validity of 2 days
+	for: CN=Teste do emulador
+From https://github.com/pdrjsampaio/plantao-seguro
+ * branch            publicacao -> FETCH_HEAD
+ * [new branch]      publicacao -> origin/publicacao
+Também será testado o APK publicado da v3.0.0-beta.1.
+-rw-r--r-- 1 runner runner 2668285 Oct 14 10:42 release-atual.apk
+-rw-r--r-- 1 runner runner 2672387 Oct 14 10:42 release-publicado.apk

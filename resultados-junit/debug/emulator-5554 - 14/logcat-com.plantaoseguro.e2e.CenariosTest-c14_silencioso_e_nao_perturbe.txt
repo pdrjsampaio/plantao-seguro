@@ -1,0 +1,596 @@
+10-14 10:46:47.078  4916  4937 I TestRunner: started: c14_silencioso_e_nao_perturbe(com.plantaoseguro.e2e.CenariosTest)
+10-14 10:46:47.081  4916  4937 D UiDevice: Executing shell command: cmd notification allow_listener com.plantaoseguro.debug/com.plantaoseguro.sentinela.SentinelaService
+10-14 10:46:47.103  4916  4937 D UiDevice: Executing shell command: am broadcast -n com.plantaoseguro.simulador/.Comando -f 32 --es acao cancelar_tudo
+10-14 10:46:47.147   836   908 D EGL_emulation: app_time_stats: avg=492.02ms min=141.07ms max=1388.33ms count=4
+10-14 10:46:47.155   836   908 D EGL_emulation: app_time_stats: avg=344.26ms min=66.74ms max=1292.28ms count=6
+10-14 10:46:47.163   520  2433 I ActivityManager: Broadcasting: Intent { flg=0x400020 cmp=com.plantaoseguro.simulador/.Comando (has extras) }
+10-14 10:46:47.184   520   537 I ActivityManager: Broadcast completed: result=0
+10-14 10:46:47.189   836  7047 W RingtonePlayer: STOP command without a player
+10-14 10:46:47.214  4916  4937 D UiDevice: Turning on screen.
+10-14 10:46:47.214  4916  4937 D UiDevice: Executing shell command: wm dismiss-keyguard
+10-14 10:46:47.282  1093  1680 D EGL_emulation: app_time_stats: avg=1948.54ms min=734.56ms max=3162.51ms count=2
+10-14 10:46:47.484   836   836 W TouchableRegionManager: onHeadsUpPinnedModeChanged
+10-14 10:46:47.938   836   836 D CentralSurfaces: Received new disable state: enaihbcrso.qingr (unchanged)
+10-14 10:46:48.014   836   906 D ControlsListingControllerImpl: Unsubscribing callback
+10-14 10:46:48.019   836   836 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@63b3176
+10-14 10:46:48.020   836   836 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@78a3377
+10-14 10:46:48.024   836   836 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@6905be4
+10-14 10:46:48.028   836   906 D ControlsListingControllerImpl: Unsubscribing callback
+10-14 10:46:48.037   836   836 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@dcec84d
+10-14 10:46:48.038   836   906 D ControlsListingControllerImpl: Unsubscribing callback
+10-14 10:46:48.039   836   836 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@aa0ef02
+10-14 10:46:48.040   836   836 D DLObserver: remove listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@ce49013
+10-14 10:46:48.088   520  2417 D WifiNl80211Manager: Scan result ready event
+10-14 10:46:48.090   520  2417 D WifiNative: Scan result ready event
+10-14 10:46:48.519  4916  4937 D UiDevice: Pressing home button.
+10-14 10:46:48.540   836  6550 D KeyguardService: setOccluded(false)
+10-14 10:46:48.540   836  6550 D KeyguardViewMediator: setOccluded(false)
+10-14 10:46:48.545  1093  1093 D TaplTarget: Launcher.onNewIntent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000100 cmp=com.google.android.apps.nexuslauncher/.NexusLauncherActivity (has extras) }
+10-14 10:46:48.550   520  1650 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+10-14 10:46:48.551  1093  1991 D OneSearchSuggestProvider: Established or reuse existing binder channel authority=com.google.android.googlequicksearchbox
+10-14 10:46:48.568  1093  1093 D SearchTargetUtil:  query= size=15
+10-14 10:46:48.568  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=costco younger demographic membership growth,group_id=web157696,response_id=cd29d078-d0f1-443a-8a1b-70f8e7330538,support_query_builder=false,} searchAction=costco younger demographic membership growth searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 704fe532-0480-4907-8b72-cfe1178c9f7d
+10-14 10:46:48.568  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=next gen buick lacrosse 2027,group_id=web157696,response_id=cd29d078-d0f1-443a-8a1b-70f8e7330538,support_query_builder=false,} searchAction=next gen buick lacrosse 2027 searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: ddbb73e0-e632-426a-8fe3-70cab8c0b2e8
+10-14 10:46:48.568  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=uswnt vs spain,group_id=web157696,response_id=cd29d078-d0f1-443a-8a1b-70f8e7330538,support_query_builder=false,} searchAction=uswnt vs spain searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 4968eb1e-ee09-449a-a6a1-87b7d6b89474
+10-14 10:46:48.568  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=elephant dies in south africa,group_id=web157696,response_id=cd29d078-d0f1-443a-8a1b-70f8e7330538,support_query_builder=false,} searchAction=elephant dies in south africa searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 3b049bd6-537b-4962-bc87-8576bd2e7b3e
+10-14 10:46:48.569  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=google fitbit edge fitness tracker,group_id=web157696,response_id=cd29d078-d0f1-443a-8a1b-70f8e7330538,support_query_builder=false,} searchAction=google fitbit edge fitness tracker searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: a192947d-27ee-4e2d-8ed5-291f4320be17
+10-14 10:46:48.569  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=spacex rocket launch falcon 9,group_id=web157696,response_id=cd29d078-d0f1-443a-8a1b-70f8e7330538,support_query_builder=false,} searchAction=spacex rocket launch falcon 9 searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 929284a3-097d-4783-8436-52a77d568dd3
+10-14 10:46:48.569  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=openai mathematical research impact,group_id=web157696,response_id=cd29d078-d0f1-443a-8a1b-70f8e7330538,support_query_builder=false,} searchAction=openai mathematical research impact searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 8462bae2-2e22-4461-bd05-59652bcc939e
+10-14 10:46:48.569  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=george strait 1987 country chart hit,group_id=web157696,response_id=cd29d078-d0f1-443a-8a1b-70f8e7330538,support_query_builder=false,} searchAction=george strait 1987 country chart hit searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: d10d70fa-244f-40a6-9ee6-1fbb9b71074a
+10-14 10:46:48.569  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=west nile virus north carolina,group_id=web157696,response_id=cd29d078-d0f1-443a-8a1b-70f8e7330538,support_query_builder=false,} searchAction=west nile virus north carolina searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 4383f85b-e9a7-48d4-93d7-360fc2436f6c
+10-14 10:46:48.569  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=great smoky mountains hiker sahil jilani,group_id=web157696,response_id=cd29d078-d0f1-443a-8a1b-70f8e7330538,support_query_builder=false,} searchAction=great smoky mountains hiker sahil jilani searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 6ad3f14c-ac3c-48e1-ba47-605373acfbde
+10-14 10:46:48.570  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=walmart express pickup service,group_id=web157696,response_id=cd29d078-d0f1-443a-8a1b-70f8e7330538,support_query_builder=false,} searchAction=walmart express pickup service searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 2f361dcc-69bf-4d28-849e-ac5b86d19e7e
+10-14 10:46:48.570  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=cleveland guardians tampa bay rays,group_id=web157696,response_id=cd29d078-d0f1-443a-8a1b-70f8e7330538,support_query_builder=false,} searchAction=cleveland guardians tampa bay rays searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: ea1230d3-596b-4253-9e4a-c84e97a37469
+10-14 10:46:48.570  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=nathan fielder elizabeth holmes film,group_id=web157696,response_id=cd29d078-d0f1-443a-8a1b-70f8e7330538,support_query_builder=false,} searchAction=nathan fielder elizabeth holmes film searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: b407ea71-17b1-4c9e-9fc2-0eeef25b933d
+10-14 10:46:48.570  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=golden retriever skylar wakes baby,group_id=web157696,response_id=cd29d078-d0f1-443a-8a1b-70f8e7330538,support_query_builder=false,} searchAction=golden retriever skylar wakes baby searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 73db6a15-51ce-4c97-8dfb-58f24fd927c0
+10-14 10:46:48.571  1093  1093 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=apple homeview,group_id=web157696,response_id=cd29d078-d0f1-443a-8a1b-70f8e7330538,support_query_builder=false,} searchAction=apple homeview searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: eae2390c-84c0-4f16-af9a-c555b60e58c3
+10-14 10:46:48.572   836   836 D KeyguardViewMediator: handleSetOccluded(false)
+10-14 10:46:48.575   836   836 I vol.VolumeDialogImpl: mDialog.dismiss() reason: volume_controller from: com.android.systemui.volume.VolumeDialogImpl$7.onDismissRequested:3
+10-14 10:46:48.576   836   836 I vol.VolumeDialogImpl: mDialog.dismiss() reason: volume_controller from: com.android.systemui.volume.VolumeDialogImpl$7.onDismissRequested:3
+10-14 10:46:48.576   836   836 D vol.VolumeDialogImpl: dismissH: skipping dismiss because isAnimatingDismiss is true and showingStateInconsistent is false
+10-14 10:46:48.577  1636  2096 I AiAiEcho: Predicting[0]:
+10-14 10:46:48.577  1636  2096 I AiAiEcho: EchoTargets:
+10-14 10:46:48.577  1636  2096 I AiAiEcho: Filtered by AiAi flag check:
+10-14 10:46:48.577  1636  2096 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+10-14 10:46:48.579  1636  2096 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-14 10:46:48.723  1038  1038 D CarrierSvcBindHelper: onPackageModified: com.google.android.contacts
+10-14 10:46:48.724  1024  1024 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-14 10:46:48.725  1024  1024 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-14 10:46:48.727   520   621 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+10-14 10:46:48.728   836   836 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-14 10:46:48.731  1038  1038 D CarrierSvcBindHelper: No carrier app for: 0
+10-14 10:46:48.733   838  5207 I PermissionControllerServiceImpl: Updating user sensitive for uid 10154
+10-14 10:46:48.738   836   906 D StylusManager: Stylus InputDevice changed: 10 virtio_input_multi_touch_7
+10-14 10:46:48.739   836   906 D StylusManager: Stylus InputDevice changed: 14 virtio_input_multi_touch_11
+10-14 10:46:48.742   836   906 D StylusManager: Stylus InputDevice changed: 8 virtio_input_multi_touch_5
+10-14 10:46:48.742   836   906 D StylusManager: Stylus InputDevice changed: 13 virtio_input_multi_touch_10
+10-14 10:46:48.745  1038  1382 D ImsResolver: maybeAddedImsService, packageName: com.google.android.contacts
+10-14 10:46:48.746   836   906 D StylusManager: Stylus InputDevice changed: 7 virtio_input_multi_touch_4
+10-14 10:46:48.748   836   906 D StylusManager: Stylus InputDevice changed: 6 virtio_input_multi_touch_3
+10-14 10:46:48.748   836   906 D StylusManager: Stylus InputDevice changed: 11 virtio_input_multi_touch_8
+10-14 10:46:48.749   836   906 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
+10-14 10:46:48.749   836   906 D StylusManager: Stylus InputDevice changed: 12 virtio_input_multi_touch_9
+10-14 10:46:48.750   836   906 D StylusManager: Stylus InputDevice changed: 5 virtio_input_multi_touch_2
+10-14 10:46:48.751   836   906 D StylusManager: Stylus InputDevice changed: 9 virtio_input_multi_touch_6
+10-14 10:46:48.752   520   546 E system_server: No package ID 7f found for resource ID 0x7f080107.
+10-14 10:46:48.753   520   546 E system_server: No package ID 7f found for resource ID 0x7f150560.
+10-14 10:46:48.756  1636  1636 I AiAiEcho: AppFetcherImpl onPackageChanged com.google.android.contacts.
+10-14 10:46:48.758  1636  3222 I AiAiEcho: AppIndexer Package:[com.google.android.contacts] UserProfile:[0] Enabled:[true].
+10-14 10:46:48.758  1636  3222 I AiAiEcho: AppFetcherImplV2 updateApps package:[com.google.android.contacts], userId:[0], reason:[package is updated.].
+10-14 10:46:48.786   474  5188 D BufferPoolAccessor2.0: bufferpool2 0x7bc7d5a6a348 : 0(0 size) total buffers - 0(0 size) used buffers - 30/38 (recycle/alloc) - 8/74 (fetch/transfer)
+10-14 10:46:48.787   474  5188 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+10-14 10:46:48.799   479   834 D BufferPoolAccessor2.0: bufferpool2 0x76bee85b87e8 : 0(0 size) total buffers - 0(0 size) used buffers - 31/35 (recycle/alloc) - 4/34 (fetch/transfer)
+10-14 10:46:48.800   479   834 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+10-14 10:46:48.814  1093  1680 D EGL_emulation: app_time_stats: avg=753.19ms min=9.06ms max=1497.32ms count=2
+10-14 10:46:48.847   836  1139 I vol.Events: writeEvent zen_mode_changed important_interruptions
+10-14 10:46:48.851   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:48.851   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:48.851   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:48.851   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:48.851   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:48.851   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:48.852   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:48.852   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:48.852   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:48.852   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:48.852   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:48.852   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:48.852   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:48.852   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:48.853   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:48.853   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:48.853   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:48.853   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:48.853   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:48.853   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:48.853   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:48.853   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:48.853   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:48.853   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:48.853   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:48.854   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:48.854   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:48.854   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:48.854   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:48.854   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:48.854   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:48.854   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:48.866   836   958 V WallpaperService: Setting wallpaper dimming: 0
+10-14 10:46:48.870  1636  1823 I AiAiEcho: Settings changed for uri: content://settings/secure/show_zen_settings_suggestion
+10-14 10:46:48.871  1636  2096 I AiAiEcho: Predicting[0]:
+10-14 10:46:48.872  1636  2096 I AiAiEcho: EchoTargets:
+10-14 10:46:48.872  1636  2096 I AiAiEcho: Filtered by AiAi flag check:
+10-14 10:46:48.872  1636  2096 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+10-14 10:46:48.873  1636  2096 I AiAiEcho: Predicting[0]:
+10-14 10:46:48.874  1636  2096 I AiAiEcho: EchoTargets:
+10-14 10:46:48.874  1636  2096 I AiAiEcho: Filtered by AiAi flag check:
+10-14 10:46:48.877  1636  2096 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+10-14 10:46:48.877  1636  2096 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-14 10:46:48.879  1636  2096 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-14 10:46:48.880   836   908 D EGL_emulation: app_time_stats: avg=430.27ms min=144.28ms max=955.37ms count=4
+10-14 10:46:48.884   836  1139 I vol.Events: writeEvent mute_changed STREAM_RING true
+10-14 10:46:48.884   836  1139 I vol.Events: writeEvent mute_changed STREAM_SYSTEM true
+10-14 10:46:48.898   836   836 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+10-14 10:46:48.898   836   836 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+10-14 10:46:48.898   836   836 D Tonal   : Gradients:
+10-14 10:46:48.898   836   836 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+10-14 10:46:48.898   836   836 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+10-14 10:46:48.898   836   836 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+10-14 10:46:48.900   836   836 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-14 10:46:48.904  6073  6561 D TrafficStats: tagSocket(85) with statsTag=0x10001803, statsUid=-1
+10-14 10:46:48.906   836  1139 I vol.Events: writeEvent external_ringer_mode_changed silent
+10-14 10:46:48.906   836  1139 I vol.Events: writeEvent internal_ringer_mode_changed silent
+10-14 10:46:48.940  1636  2096 I AiAiEcho: Predicting[0]:
+10-14 10:46:48.941  1636  2096 I AiAiEcho: EchoTargets:
+10-14 10:46:48.941  1636  2096 I AiAiEcho: Filtered by AiAi flag check:
+10-14 10:46:48.941  1636  2096 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+10-14 10:46:48.943  1636  2096 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-14 10:46:48.952   836   908 E OpenGLRenderer: Unable to match the desired swap behavior.
+10-14 10:46:48.984   836   836 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+10-14 10:46:48.985   836   836 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-14 10:46:49.027  1636  2193 W AiAiEcho: LyftNotificationParser Ridesharing ETA not enabled
+10-14 10:46:49.027  1636  2193 W AiAiEcho: SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+10-14 10:46:49.217  4269  4405 I Bugle   : BroadcastReceiverAsyncWorkTracker: Acknowledging broadcast of bdxy@a28f4e9
+10-14 10:46:49.234  6000  6514 I Fitness : OnPackageChangedOperation got intent: Intent { act=android.intent.action.PACKAGE_CHANGED dat=package: flg=0x45000010 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.PersistentIntentOperationService (has extras) } [CONTEXT service_id=17 ]
+10-14 10:46:49.239  6000  6195 I Fitness : FitCleanupIntentOperation received Intent android.intent.action.PACKAGE_CHANGED [CONTEXT service_id=17 ]
+10-14 10:46:49.242  6073  6566 I Icing   : Indexing com.google.android.gms-apps from com.google.android.gms
+10-14 10:46:49.247  6073  6566 I Icing   : Indexing done com.google.android.gms-apps
+10-14 10:46:49.252   836   906 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-14 10:46:49.253   836   906 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-14 10:46:49.267  6000  6583 W ChimeraUtils: Module com.google.android.gms.nearby_en missing resource null(0)
+10-14 10:46:49.268  6000  6583 W ChimeraUtils: Module com.google.android.gms.nearby_en missing resource null(0)
+10-14 10:46:49.276   341  5199 D android.hardware.audio@7.1-impl.ranchu: threadLoop: entering standby, frames: 4309568
+10-14 10:46:49.309  6073  6158 I Icing   : Indexing com.google.android.gms-internal.3p:MobileApplication from com.google.android.gms
+10-14 10:46:49.313  6073  6158 I Icing   : Indexing done com.google.android.gms-internal.3p:MobileApplication
+10-14 10:46:49.787   474  5188 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 0
+10-14 10:46:49.857   836  1139 I vol.Events: writeEvent external_ringer_mode_changed normal
+10-14 10:46:49.858   836  1139 I vol.Events: writeEvent zen_mode_changed off
+10-14 10:46:49.865   836  1139 I vol.Events: writeEvent mute_changed STREAM_RING false
+10-14 10:46:49.867   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:49.868   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:49.868   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:49.870   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:49.871   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:49.871   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:49.871   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:49.872   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:49.872   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:49.872   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:49.872   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:49.872   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:49.872   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:49.873   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:49.873   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:49.873   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:49.873   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:49.874   836  1139 I vol.Events: writeEvent mute_changed STREAM_SYSTEM false
+10-14 10:46:49.874   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:49.875   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:49.875   836  1139 I vol.Events: writeEvent internal_ringer_mode_changed normal
+10-14 10:46:49.882   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:49.882   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:49.885   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:49.886   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:49.887   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:49.893   836   908 D EGL_emulation: app_time_stats: avg=107.57ms min=6.75ms max=563.66ms count=9
+10-14 10:46:49.897   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:49.897   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:49.897   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:49.897   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:49.898   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:49.898   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:49.898   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:49.898   396  5197 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:49.958  4916  4937 D UiDevice: Executing shell command: am broadcast -n com.plantaoseguro.simulador/.Comando -f 32 --es acao postar --ei id 1401 --es texto Silencio_msg1401 --el quando 1791974809957 --es conversa Equipe_UTI --ez chamada false
+10-14 10:46:49.989   520  2056 I ActivityManager: Broadcasting: Intent { flg=0x400020 cmp=com.plantaoseguro.simulador/.Comando (has extras) }
+10-14 10:46:50.011   520   537 I ActivityManager: Broadcast completed: result=0
+10-14 10:46:50.018  1636  2766 D androidtc: Initializing SystemTextClassifier, type = System
+10-14 10:46:50.019  1636  2096 I AiAiEcho: Predicting[0]:
+10-14 10:46:50.019  1636  2096 I AiAiEcho: EchoTargets:
+10-14 10:46:50.019  1636  2096 I AiAiEcho: Filtered by AiAi flag check:
+10-14 10:46:50.019  1636  2096 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+10-14 10:46:50.021  1636  1636 I AiAiTextClassifier: onCreateTextClassificationSession = TextClassificationSessionId {7cb395fa-6e0f-4e46-891c-53820eee5da5}
+10-14 10:46:50.026   836   958 V WallpaperService: Setting wallpaper dimming: 0
+10-14 10:46:50.028   836   836 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+10-14 10:46:50.028   836   836 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+10-14 10:46:50.028   836   836 D Tonal   : Gradients:
+10-14 10:46:50.028   836   836 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+10-14 10:46:50.028   836   836 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+10-14 10:46:50.028   836   836 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+10-14 10:46:50.034  1636  2096 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-14 10:46:50.037  1636  1636 I AiAiTextClassifier: onDestroyTextClassificationSession = TextClassificationSessionId {7cb395fa-6e0f-4e46-891c-53820eee5da5}
+10-14 10:46:50.039   836   836 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-14 10:46:50.049   836   836 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+10-14 10:46:50.114  1636  2193 W AiAiEcho: LyftNotificationParser Ridesharing ETA not enabled
+10-14 10:46:50.115  1636  2193 W AiAiEcho: SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+10-14 10:46:50.124  1636  2193 W AiAiEcho: LyftNotificationParser Ridesharing ETA not enabled
+10-14 10:46:50.124  1636  2193 W AiAiEcho: SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+10-14 10:46:50.157  1636  2193 W AiAiEcho: LyftNotificationParser Ridesharing ETA not enabled
+10-14 10:46:50.157  1636  2193 W AiAiEcho: SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+10-14 10:46:50.182   836   906 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-14 10:46:50.188   836   906 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-14 10:46:50.212   520   520 D FlashNotifController: requestStartFlashNotification
+10-14 10:46:50.212   520   520 I FlashNotifController: startFlashNotification: type=1, tag=android
+10-14 10:46:50.212   520   520 D FlashNotifController: Flash notification is disabled
+10-14 10:46:50.218  1636  2193 W AiAiEcho: LyftNotificationParser Ridesharing ETA not enabled
+10-14 10:46:50.219  1636  2193 W AiAiEcho: SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+10-14 10:46:50.234  1093  1680 D EGL_emulation: app_time_stats: avg=1419.29ms min=1419.29ms max=1419.29ms count=1
+10-14 10:46:50.237   474  3394 D NuPlayerDriver: NuPlayerDriver(0x7bc6b5a6a190) created, clientPid(4916)
+10-14 10:46:50.241   134   134 I hwservicemanager: getTransport: Cannot find entry android.hardware.media.omx@1.0::IOmx/default in either framework or device VINTF manifest.
+10-14 10:46:50.242   474  3394 D MediaPlayerService: OMX service is not available
+10-14 10:46:50.250   474  7081 D GenericSource: FileSource remote
+10-14 10:46:50.277   474  3394 D NuPlayerDriver: NuPlayerDriver(0x7bc6b5a62550) created, clientPid(836)
+10-14 10:46:50.281   134   134 I hwservicemanager: getTransport: Cannot find entry android.hardware.media.omx@1.0::IOmx/default in either framework or device VINTF manifest.
+10-14 10:46:50.287   836  1139 I vol.Events: writeEvent level_changed STREAM_ALARM 1
+10-14 10:46:50.287   520  2056 I MediaFocusControl: requestAudioFocus() from uid/pid 10193/4916 AA=USAGE_ALARM/CONTENT_TYPE_SONIFICATION clientId=android.media.AudioManager@eb3745fcom.plantaoseguro.sirene.Sirene$$ExternalSyntheticLambda4@8e7d315 callingPack=com.plantaoseguro.debug req=2 flags=0x0 sdk=35
+10-14 10:46:50.288   520  2056 I AudioService.FadeOutManager: unfadeOutUid() uid:10193
+10-14 10:46:50.290   520   629 D FlashNotifController: alarm state changed: true
+10-14 10:46:50.290   520   629 D FlashNotifController: requestStartFlashNotification
+10-14 10:46:50.291   520   629 I FlashNotifController: startFlashNotification: type=2, tag=alarm
+10-14 10:46:50.291   520   629 D FlashNotifController: Flash notification is disabled
+10-14 10:46:50.291   474  7079 I GenericSource: start
+10-14 10:46:50.292   474  3394 D MediaPlayerService: OMX service is not available
+10-14 10:46:50.306   474  7087 D CCodec  : allocate(c2.android.vorbis.decoder)
+10-14 10:46:50.307   474  7087 I CCodec  : setting up 'default' as default (vendor) store
+10-14 10:46:50.308   474  7087 I CCodec  : Created component [c2.android.vorbis.decoder]
+10-14 10:46:50.308   474  7087 D CCodecConfig: read media type: audio/vorbis
+10-14 10:46:50.309   474  7087 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+10-14 10:46:50.309   474  7087 D ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+10-14 10:46:50.310   474  7087 D ReflectedParamUpdater: extent() != 1 for single value type: input.buffers.allocator-ids.values
+10-14 10:46:50.310   474  7087 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.allocator-ids.values
+10-14 10:46:50.310   474  7087 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+10-14 10:46:50.310   474  7087 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+10-14 10:46:50.311   474  7087 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values
+10-14 10:46:50.312   474  7087 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+10-14 10:46:50.312   474  7087 D CCodecConfig: c2 config diff is Dict {
+10-14 10:46:50.312   474  7087 D CCodecConfig:   c2::u32 coded.bitrate.value = 64000
+10-14 10:46:50.312   474  7087 D CCodecConfig:   c2::u32 input.buffers.max-size.value = 32768
+10-14 10:46:50.312   474  7087 D CCodecConfig:   c2::u32 input.delay.value = 0
+10-14 10:46:50.312   474  7087 D CCodecConfig:   string input.media-type.value = "audio/vorbis"
+10-14 10:46:50.312   474  7087 D CCodecConfig:   string output.media-type.value = "audio/raw"
+10-14 10:46:50.312   474  7087 D CCodecConfig:   c2::u32 raw.channel-count.value = 1
+10-14 10:46:50.312   474  7087 D CCodecConfig:   c2::u32 raw.sample-rate.value = 48000
+10-14 10:46:50.312   474  7087 D CCodecConfig: }
+10-14 10:46:50.317   474  7087 D MediaCodec: flushMediametrics
+10-14 10:46:50.317   474  7087 D CCodec  : [c2.android.vorbis.decoder] buffers are bound to CCodec for this session
+10-14 10:46:50.317   474  7087 D CCodecConfig: no c2 equivalents for durationUs
+10-14 10:46:50.317   474  7087 D CCodecConfig: no c2 equivalents for csd-1
+10-14 10:46:50.318   474  7087 D CCodecConfig: no c2 equivalents for flags
+10-14 10:46:50.318   474  7087 D CCodecConfig: c2 config diff is   c2::u32 coded.bitrate.value = 110000
+10-14 10:46:50.318   474  7087 D CCodecConfig:   c2::u32 raw.sample-rate.value = 44100
+10-14 10:46:50.318   474  7087 W Codec2Client: query -- param skipped: index = 1107298332.
+10-14 10:46:50.318   474  7087 D CCodec  : encoding statistics level = 0
+10-14 10:46:50.318   474  7087 D CCodec  : setup formats input: AMessage(what = 0x00000000) = {
+10-14 10:46:50.318   474  7087 D CCodec  :   int32_t bitrate = 110000
+10-14 10:46:50.318   474  7087 D CCodec  :   int32_t channel-count = 1
+10-14 10:46:50.318   474  7087 D CCodec  :   int32_t max-input-size = 32768
+10-14 10:46:50.318   474  7087 D CCodec  :   string mime = "audio/vorbis"
+10-14 10:46:50.318   474  7087 D CCodec  :   int32_t sample-rate = 44100
+10-14 10:46:50.318   474  7087 D CCodec  : }
+10-14 10:46:50.318   474  7087 D CCodec  : setup formats output: AMessage(what = 0x00000000) = {
+10-14 10:46:50.318   474  7087 D CCodec  :   int32_t channel-count = 1
+10-14 10:46:50.318   474  7087 D CCodec  :   string mime = "audio/raw"
+10-14 10:46:50.318   474  7087 D CCodec  :   int32_t sample-rate = 44100
+10-14 10:46:50.318   474  7087 D CCodec  :   int32_t channel-mask = 1
+10-14 10:46:50.318   474  7087 D CCodec  :   int32_t android._config-pcm-encoding = 2
+10-14 10:46:50.318   474  7087 D CCodec  : }
+10-14 10:46:50.318   474  7087 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+10-14 10:46:50.319   474  7087 I MediaCodec: MediaCodec will operate in async mode
+10-14 10:46:50.319   474  7086 D MediaCodec: keep callback message for reclaim
+10-14 10:46:50.319   474  7087 W Codec2Client: query -- param skipped: index = 1342179345.
+10-14 10:46:50.320   474  7087 W Codec2Client: query -- param skipped: index = 2415921170.
+10-14 10:46:50.323   479   880 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x76bee85b8c88 cached: 0/0M, 0/0% in use; allocs: 97, 96% recycled; transfers: 96, 96% unfetched
+10-14 10:46:50.324   479   880 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x76bee85b87e8 cached: 0/0M, 0/0% in use; allocs: 35, 89% recycled; transfers: 34, 88% unfetched
+10-14 10:46:50.324   479   880 D BufferPoolAccessor2.0: bufferpool2 0x76bee85baf38 : 0(0 size) total buffers - 0(0 size) used buffers - 1/4 (recycle/alloc) - 3/3 (fetch/transfer)
+10-14 10:46:50.325   479   880 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x76bee85baf38 cached: 0/0M, 0/0% in use; allocs: 4, 25% recycled; transfers: 3, 0% unfetched
+10-14 10:46:50.325   474  7087 D CCodecBufferChannel: [c2.android.vorbis.decoder#388] Created input block pool with allocatorID 16 => poolID 46 - OK (0)
+10-14 10:46:50.326   474  5203 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x7bc7d5a6f438 cached: 0/0M, 0/0% in use; allocs: 103, 92% recycled; transfers: 198, 96% unfetched
+10-14 10:46:50.327   474  5203 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x7bc7d5a6a348 cached: 0/0M, 0/0% in use; allocs: 38, 79% recycled; transfers: 74, 89% unfetched
+10-14 10:46:50.327   474  5203 D BufferPoolAccessor2.0: bufferpool2 0x7bc7d5a742d8 : 0(0 size) total buffers - 0(0 size) used buffers - 3/11 (recycle/alloc) - 5/12 (fetch/transfer)
+10-14 10:46:50.327   474  5203 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x7bc7d5a742d8 cached: 0/0M, 0/0% in use; allocs: 11, 27% recycled; transfers: 12, 58% unfetched
+10-14 10:46:50.328   474  7087 I CCodecBufferChannel: [c2.android.vorbis.decoder#388] Created output block pool with allocatorID 16 => poolID 55 - OK
+10-14 10:46:50.328   474  7087 D CCodecBufferChannel: [c2.android.vorbis.decoder#388] Configured output block pool ids 55 => OK
+10-14 10:46:50.330   479  7088 D SimpleC2Component: Using output block pool with poolID 55 => got 55 - 0
+10-14 10:46:50.336   396  5197 D AudioFlinger: Client defaulted notificationFrames to 11488 for frameCount 22977
+10-14 10:46:50.338   396  5197 D AF::TrackHandle: OpPlayAudio: track:85 usage:4 not muted
+10-14 10:46:50.346   396  5197 D audioserver: FGS Logger Transaction failed
+10-14 10:46:50.346   396  5197 D audioserver: -129
+10-14 10:46:50.350   474  7085 D AudioTrack: getTimestamp_l(45): device stall time corrected using current time 216887756587
+10-14 10:46:50.357   474  7090 D GenericSource: FileSource remote
+10-14 10:46:50.372   520  2056 I MediaFocusControl: requestAudioFocus() from uid/pid 10168/836 AA=USAGE_NOTIFICATION/CONTENT_TYPE_SONIFICATION clientId=android.media.AudioManager@99ff91e callingPack=com.android.systemui req=3 flags=0x0 sdk=34
+10-14 10:46:50.373   520  2056 I AS.PlaybackActivityMon: ducking player piid:359 uid/pid:10193/4916 skip ramp:false
+10-14 10:46:50.373   520  2056 I AudioService.FadeOutManager: unfadeOutUid() uid:10168
+10-14 10:46:50.374   474  7085 D AudioTrack: stop(45): called with 22050 frames delivered
+10-14 10:46:50.376   474   474 D NuPlayerDriver: stop(0x7bc6b5a6a190)
+10-14 10:46:50.376   520   629 D FlashNotifController: alarm state changed: false
+10-14 10:46:50.377   520   629 I FlashNotifController: stopFlashNotification: tag=alarm
+10-14 10:46:50.378  4916  4916 V MediaPlayer: resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+10-14 10:46:50.378  4916  4916 V MediaPlayer: cleanDrmObj: mDrmObj=null mDrmSessionId=null
+10-14 10:46:50.378   474   474 D NuPlayerDriver: reset(0x7bc6b5a6a190) at state 8
+10-14 10:46:50.381   474  7087 D MediaCodec: flushMediametrics
+10-14 10:46:50.382   474  7079 D NuPlayerDriver: notifyResetComplete(0x7bc6b5a6a190)
+10-14 10:46:50.382   474   474 W AMessage: failed to post message as target looper for handler 0 is gone.
+10-14 10:46:50.386   836  1139 I vol.Events: writeEvent level_changed STREAM_ALARM 6
+10-14 10:46:50.389   479   873 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+10-14 10:46:50.389   479   873 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+10-14 10:46:50.389   474  7093 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+10-14 10:46:50.391   520  2056 I MediaFocusControl: abandonAudioFocus() from uid/pid 10193/4916 clientId=android.media.AudioManager@eb3745fcom.plantaoseguro.sirene.Sirene$$ExternalSyntheticLambda4@8e7d315
+10-14 10:46:50.391   520  2056 I MediaFocusControl: AudioFocus  removeFocusStackEntry(): removing entry for android.media.AudioManager@eb3745fcom.plantaoseguro.sirene.Sirene$$ExternalSyntheticLambda4@8e7d315
+10-14 10:46:50.396  4916  4916 W MediaPlayer: mediaplayer went away with unhandled events
+10-14 10:46:50.397  4916  4916 W MediaPlayer: mediaplayer went away with unhandled events
+10-14 10:46:50.400  4916  4916 W MediaPlayer: mediaplayer went away with unhandled events
+10-14 10:46:50.411   836   836 W TouchableRegionManager: onHeadsUpPinnedModeChanged
+10-14 10:46:50.425   836   836 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-14 10:46:50.425   836   836 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-14 10:46:50.425   836   836 D CentralSurfaces: Received new disable state: enaihbcrso.qingr (unchanged)
+10-14 10:46:50.440   836  1139 I vol.Events: writeEvent mute_changed STREAM_RING true
+10-14 10:46:50.442   836  1139 I vol.Events: writeEvent mute_changed STREAM_SYSTEM true
+10-14 10:46:50.454   836  1139 I vol.Events: writeEvent level_changed STREAM_RING 0
+10-14 10:46:50.457   836  1139 I vol.Events: writeEvent level_changed STREAM_SYSTEM 0
+10-14 10:46:50.462   396   499 D audioserver: FGS Logger Transaction failed
+10-14 10:46:50.463   396   499 D audioserver: -129
+10-14 10:46:50.465   836  1139 I vol.Events: writeEvent zen_mode_changed important_interruptions
+10-14 10:46:50.471   396  6508 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.472   396   396 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.472   396  6508 D AF::TrackHandle: OpPlayAudio: track:85 usage:4 not muted
+10-14 10:46:50.473   396  6508 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.473   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.473   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.473   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.473   396  5197 D AF::TrackHandle: OpPlayAudio: track:85 usage:4 not muted
+10-14 10:46:50.474   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.474   396  5197 D AF::TrackHandle: OpPlayAudio: track:85 usage:4 not muted
+10-14 10:46:50.474   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.474   396  6508 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.474   396  5197 D AF::TrackHandle: OpPlayAudio: track:85 usage:4 not muted
+10-14 10:46:50.475   396  6508 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.475   396  6508 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.475   396   499 D audioserver: FGS Logger Transaction failed
+10-14 10:46:50.475   396   499 D audioserver: -129
+10-14 10:46:50.475   396  5197 D AF::TrackHandle: OpPlayAudio: track:85 usage:4 not muted
+10-14 10:46:50.476   396  6508 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.476   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.476   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.477   396  6508 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.477   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.477   396  6508 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.478   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.479   396  6508 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.479   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.479   396  6508 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.479   396  6508 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.479   396  6508 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.479   396  6508 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.479   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.480   396  6508 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.480   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.480   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.482   396   396 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.482   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.482   396   396 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.482   396   396 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.488  1636  1823 I AiAiEcho: Settings changed for uri: content://settings/secure/show_zen_settings_suggestion
+10-14 10:46:50.489  1636  2096 I AiAiEcho: Predicting[0]:
+10-14 10:46:50.489  1636  2096 I AiAiEcho: EchoTargets:
+10-14 10:46:50.489  1636  2096 I AiAiEcho: Filtered by AiAi flag check:
+10-14 10:46:50.489  1636  2096 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+10-14 10:46:50.489  1636  2096 I AiAiEcho: Predicting[0]:
+10-14 10:46:50.489  1636  2096 I AiAiEcho: EchoTargets:
+10-14 10:46:50.489  1636  2096 I AiAiEcho: Filtered by AiAi flag check:
+10-14 10:46:50.489  1636  2096 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+10-14 10:46:50.489  1636  2096 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-14 10:46:50.489  1636  2096 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-14 10:46:50.520   836  1139 I vol.Events: writeEvent internal_ringer_mode_changed vibrate
+10-14 10:46:50.520   836  1139 I vol.Events: writeEvent external_ringer_mode_changed silent
+10-14 10:46:50.523   836   906 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-14 10:46:50.523   836   906 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-14 10:46:50.539   396   837 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.539   396   837 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.539   396   837 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.539   396   837 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.539   396   837 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.539   396   837 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.539   396   837 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.539   396   837 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.539   396   837 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.539   396   837 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.539   396   837 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.540   396   837 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.540   396   837 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.540   396   837 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.540   396   837 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.540   396   837 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.540   396   837 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.540   396   837 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.540   396   837 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.540   396   837 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.540   396   837 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.540   396   837 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.545   396   837 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.545   396   837 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.552   396   837 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.554   396   837 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.554   396   837 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.554   396   837 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.554   396   837 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.554   396   837 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.554   396   837 D AF::TrackHandle: OpPlayAudio: track:66 usage:13 not muted
+10-14 10:46:50.554   396   837 D AF::TrackHandle: OpPlayAudio: track:78 usage:13 not muted
+10-14 10:46:50.560   836   958 V WallpaperService: Setting wallpaper dimming: 0
+10-14 10:46:50.565   836  1139 I vol.Events: writeEvent zen_mode_changed off
+10-14 10:46:50.652   836  1139 I vol.Events: writeEvent level_changed STREAM_SYSTEM 1
+10-14 10:46:50.653   836  1139 I vol.Events: writeEvent level_changed STREAM_RING 1
+10-14 10:46:50.653   836  1139 I vol.Events: writeEvent mute_changed STREAM_RING false
+10-14 10:46:50.653   836  1139 I vol.Events: writeEvent mute_changed STREAM_SYSTEM false
+10-14 10:46:50.688   836   836 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-14 10:46:50.703   836   906 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-14 10:46:50.705   836   906 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-14 10:46:50.766  1636  2193 W AiAiEcho: LyftNotificationParser Ridesharing ETA not enabled
+10-14 10:46:50.766  1636  2193 W AiAiEcho: SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+10-14 10:46:50.806   836   836 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+10-14 10:46:50.806   836   836 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+10-14 10:46:50.807   836   836 D Tonal   : Gradients:
+10-14 10:46:50.807   836   836 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+10-14 10:46:50.807   836   836 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+10-14 10:46:50.807   836   836 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+10-14 10:46:50.811   836  1139 I vol.Events: writeEvent external_ringer_mode_changed normal
+10-14 10:46:50.826   836  1139 I vol.Events: writeEvent internal_ringer_mode_changed normal
+10-14 10:46:50.830  1636  2096 I AiAiEcho: Predicting[0]:
+10-14 10:46:50.830  1636  2096 I AiAiEcho: EchoTargets:
+10-14 10:46:50.830  1636  2096 I AiAiEcho: Filtered by AiAi flag check:
+10-14 10:46:50.830  1636  2096 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+10-14 10:46:50.830  1636  2096 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-14 10:46:50.875   474  7083 I GenericSource: start
+10-14 10:46:50.889   474  7107 D CCodec  : allocate(c2.android.vorbis.decoder)
+10-14 10:46:50.890   474  7107 I CCodec  : setting up 'default' as default (vendor) store
+10-14 10:46:50.904   474  7107 I CCodec  : Created component [c2.android.vorbis.decoder]
+10-14 10:46:50.904   474  7107 D CCodecConfig: read media type: audio/vorbis
+10-14 10:46:50.908   474  7107 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+10-14 10:46:50.909   474  7107 D ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+10-14 10:46:50.909   474  7107 D ReflectedParamUpdater: extent() != 1 for single value type: input.buffers.allocator-ids.values
+10-14 10:46:50.909   474  7107 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.allocator-ids.values
+10-14 10:46:50.909   474  7107 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+10-14 10:46:50.909   474  7107 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+10-14 10:46:50.909   474  7107 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values
+10-14 10:46:50.911   474  7107 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+10-14 10:46:50.911   474  7107 D CCodecConfig: c2 config diff is Dict {
+10-14 10:46:50.911   474  7107 D CCodecConfig:   c2::u32 coded.bitrate.value = 64000
+10-14 10:46:50.911   474  7107 D CCodecConfig:   c2::u32 input.buffers.max-size.value = 32768
+10-14 10:46:50.911   474  7107 D CCodecConfig:   c2::u32 input.delay.value = 0
+10-14 10:46:50.911   474  7107 D CCodecConfig:   string input.media-type.value = "audio/vorbis"
+10-14 10:46:50.911   474  7107 D CCodecConfig:   string output.media-type.value = "audio/raw"
+10-14 10:46:50.911   474  7107 D CCodecConfig:   c2::u32 raw.channel-count.value = 1
+10-14 10:46:50.911   474  7107 D CCodecConfig:   c2::u32 raw.sample-rate.value = 48000
+10-14 10:46:50.911   474  7107 D CCodecConfig: }
+10-14 10:46:50.915   474  7107 D MediaCodec: flushMediametrics
+10-14 10:46:50.915   474  7107 D CCodec  : [c2.android.vorbis.decoder] buffers are bound to CCodec for this session
+10-14 10:46:50.915   474  7107 D CCodecConfig: no c2 equivalents for durationUs
+10-14 10:46:50.915   474  7107 D CCodecConfig: no c2 equivalents for csd-1
+10-14 10:46:50.915   474  7107 D CCodecConfig: no c2 equivalents for flags
+10-14 10:46:50.916   474  7107 D CCodecConfig: c2 config diff is   c2::u32 coded.bitrate.value = 70000
+10-14 10:46:50.918   474  7107 W Codec2Client: query -- param skipped: index = 1107298332.
+10-14 10:46:50.919   474  7107 D CCodec  : encoding statistics level = 0
+10-14 10:46:50.919   474  7107 D CCodec  : setup formats input: AMessage(what = 0x00000000) = {
+10-14 10:46:50.919   474  7107 D CCodec  :   int32_t bitrate = 70000
+10-14 10:46:50.919   474  7107 D CCodec  :   int32_t channel-count = 1
+10-14 10:46:50.919   474  7107 D CCodec  :   int32_t max-input-size = 32768
+10-14 10:46:50.919   474  7107 D CCodec  :   string mime = "audio/vorbis"
+10-14 10:46:50.919   474  7107 D CCodec  :   int32_t sample-rate = 48000
+10-14 10:46:50.919   474  7107 D CCodec  : }
+10-14 10:46:50.919   474  7107 D CCodec  : setup formats output: AMessage(what = 0x00000000) = {
+10-14 10:46:50.919   474  7107 D CCodec  :   int32_t channel-count = 1
+10-14 10:46:50.919   474  7107 D CCodec  :   string mime = "audio/raw"
+10-14 10:46:50.919   474  7107 D CCodec  :   int32_t sample-rate = 48000
+10-14 10:46:50.919   474  7107 D CCodec  :   int32_t channel-mask = 1
+10-14 10:46:50.919   474  7107 D CCodec  :   int32_t android._config-pcm-encoding = 2
+10-14 10:46:50.919   474  7107 D CCodec  : }
+10-14 10:46:50.919   474  7107 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+10-14 10:46:50.919   474  7107 I MediaCodec: MediaCodec will operate in async mode
+10-14 10:46:50.919   474  7106 D MediaCodec: keep callback message for reclaim
+10-14 10:46:50.925   474  7107 W Codec2Client: query -- param skipped: index = 1342179345.
+10-14 10:46:50.926   474  7107 W Codec2Client: query -- param skipped: index = 2415921170.
+10-14 10:46:50.927   474  7107 D CCodecBufferChannel: [c2.android.vorbis.decoder#504] Created input block pool with allocatorID 16 => poolID 47 - OK (0)
+10-14 10:46:50.935   474  7107 I CCodecBufferChannel: [c2.android.vorbis.decoder#504] Created output block pool with allocatorID 16 => poolID 56 - OK
+10-14 10:46:50.935   474  7107 D CCodecBufferChannel: [c2.android.vorbis.decoder#504] Configured output block pool ids 56 => OK
+10-14 10:46:50.935   479  7108 D SimpleC2Component: Using output block pool with poolID 56 => got 56 - 0
+10-14 10:46:50.946   396  7097 D AudioFlinger: Client defaulted notificationFrames to 12512 for frameCount 25024
+10-14 10:46:50.947   396  7097 D AF::TrackHandle: OpPlayAudio: track:86 usage:5 not muted
+10-14 10:46:50.954   836   836 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+10-14 10:46:50.957   836   836 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-14 10:46:50.958   396  7097 D audioserver: FGS Logger Transaction failed
+10-14 10:46:50.958   396  7097 D audioserver: -129
+10-14 10:46:50.997   474  7105 D AudioTrack: getTimestamp_l(46): device stall time corrected using current time 217534805491
+10-14 10:46:50.999   836   908 D EGL_emulation: app_time_stats: avg=89.48ms min=8.88ms max=239.10ms count=12
+10-14 10:46:51.093   836   836 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-14 10:46:51.093   836   836 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-14 10:46:51.138   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@b8e4c02
+10-14 10:46:51.139   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@24b2913
+10-14 10:46:51.140   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:46:51.140   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:46:51.143   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:46:51.143   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:46:51.145   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@8367750
+10-14 10:46:51.154   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@f6b5d49
+10-14 10:46:51.155   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:46:51.156   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:46:51.156   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:46:51.156   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:46:51.159   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@699264e
+10-14 10:46:51.160   836   836 D DLObserver: add listener: com.android.systemui.dock.DockManagerExtensionsKt$retrieveIsDocked$1$callback$1@735436f
+10-14 10:46:51.164   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:46:51.168   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:46:51.168   836   836 D BiometricsRepositoryImpl: currentUser authFlags changed, new value: AuthenticationFlags(userId=0, flag=0)
+10-14 10:46:51.169   836   836 D DLObserver: onDockEvent mDockState = 0
+10-14 10:46:51.212   836   906 E QuickAccessWalletKeyguardQuickAffordanceConfig: Wallet card retrieval error, message: "null"
+10-14 10:46:51.212   836   906 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+10-14 10:46:51.229  6000  6538 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.checkin.CheckinService started execution. cause:4 exec_start_elapsed_seconds: 217 [CONTEXT service_id=218 ]
+10-14 10:46:51.275  6000  6539 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.checkin.CheckinService finished executing. cause:4 result: 1 elapsed_millis: 119 uptime_millis: 119 exec_start_elapsed_seconds: 217 [CONTEXT service_id=218 ]
+10-14 10:46:51.296   836   906 E QuickAccessWalletKeyguardQuickAffordanceConfig: Wallet card retrieval error, message: "null"
+10-14 10:46:51.297   396   499 D AudioFlinger: mixer(0x7937fda79930) throttle end: throttle time(8)
+10-14 10:46:51.299   836   906 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+10-14 10:46:51.302   836   906 E QuickAccessWalletKeyguardQuickAffordanceConfig: Wallet card retrieval error, message: "null"
+10-14 10:46:51.302   836   906 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+10-14 10:46:51.306   836   906 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-14 10:46:51.307   836   906 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-14 10:46:51.332   396   499 D AudioFlinger: mixer(0x7937fda79930) throttle end: throttle time(1)
+10-14 10:46:51.446   396   499 D AudioFlinger: mixer(0x7937fda79930) throttle end: throttle time(11)
+10-14 10:46:51.735  4269  4269 W JobService: onNetworkChanged() not implemented in androidx.work.impl.background.systemjob.SystemJobService. Must override in a subclass.
+10-14 10:46:51.737   836   836 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-14 10:46:51.787   474  5188 D BufferPoolAccessor2.0: bufferpool2 0x7bc7d5a734f8 : 0(0 size) total buffers - 0(0 size) used buffers - 91/103 (recycle/alloc) - 16/198 (fetch/transfer)
+10-14 10:46:51.788   474  5188 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+10-14 10:46:51.804   479   834 D BufferPoolAccessor2.0: bufferpool2 0x76bee85ba848 : 0(0 size) total buffers - 0(0 size) used buffers - 91/97 (recycle/alloc) - 6/96 (fetch/transfer)
+10-14 10:46:51.804   479   834 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+10-14 10:46:52.134  6073  6073 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.ocr.service.internal.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalApiService }
+10-14 10:46:52.236  4916  4937 D UiDevice: Pressing back button.
+10-14 10:46:52.253  1539  1539 I GoogleInputMethodService: GoogleInputMethodService.onKeyDown():2444 Received KEYCODE_BACK. isAllViewsInvisible=false
+10-14 10:46:52.253  1093  1093 D TaplEvents: Main / Key event: KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x0, repeatCount=0, eventTime=218776000000, downTime=218776000000, deviceId=-1, source=0x101, displayId=-1 }
+10-14 10:46:52.260  6073  7059 I ChimeraConfigurator: Starting update, reason: 4 urgentFeatures: vision.ocr:-1
+10-14 10:46:52.264  1093  1093 D TaplEvents: Main / Key event: KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x0, repeatCount=0, eventTime=218776000000, downTime=218776000000, deviceId=-1, source=0x101, displayId=-1 }
+10-14 10:46:52.295  6073  7059 I ChimeraConfigurator: Detected pending changes for urgent request: [vision.ocr]. Pending module sets: container:2318189190800+mlkit.ocr.common,tflite_dynamite:2627305025100800+tflite_dynamite,vision_ocr:2316024025100000+vision.ocr
+10-14 10:46:52.308  6073  7059 I GmsDebugLogger: [73] 1801
+10-14 10:46:52.312  6073  7059 W ZappDownloader: No successful module downloads for requested features [vision.ocr].
+10-14 10:46:52.312  6073  7059 I GmsDebugLogger: [30] [VisionOcrDynamite.integ:231602402100000],[TfliteDynamiteDynamite.integ:262730502100800],[MlkitOcrCommon.optional:231818100800]
+10-14 10:46:52.313  6073  7059 W ChimeraConfigService: Retry attempt was throttled. [CONTEXT service_id=264 ]
+10-14 10:46:52.314  6073  7059 I GmsDebugLogger: [83] 1 [vision.ocr]
+10-14 10:46:52.315  6073  7066 W Vision  : Request for optional module download of ocr failed. Request again.
+10-14 10:46:52.316  6073  7066 W Vision  : Would have logged:
+10-14 10:46:52.316  6073  7066 W Vision  : # dsae@37884fe7
+10-14 10:46:52.316  6073  7066 I Vision  : Schedule retrying download ocr at 218853 with backoff 20 seconds
+10-14 10:46:52.614   474  7105 D AudioTrack: stop(46): called with 82980 frames delivered
+10-14 10:46:53.059   520  2387 I MediaFocusControl: abandonAudioFocus() from uid/pid 10168/836 clientId=android.media.AudioManager@99ff91e
+10-14 10:46:53.060   836  7080 V MediaPlayer: resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+10-14 10:46:53.060   836  7080 V MediaPlayer: cleanDrmObj: mDrmObj=null mDrmSessionId=null
+10-14 10:46:53.060   474   474 D NuPlayerDriver: reset(0x7bc6b5a62550) at state 6
+10-14 10:46:53.061   474  7107 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+10-14 10:46:53.062   479   880 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+10-14 10:46:53.062   479   880 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+10-14 10:46:53.063   474  7106 D MediaCodec: flushMediametrics
+10-14 10:46:53.064   474  7083 D NuPlayerDriver: notifyResetComplete(0x7bc6b5a62550)
+10-14 10:46:53.064   474   474 W AMessage: failed to post message as target looper for handler 0 is gone.
+10-14 10:46:53.120   396   499 D audioserver: FGS Logger Transaction failed
+10-14 10:46:53.121   396   499 D audioserver: -129
+10-14 10:46:53.133   396   499 D audioserver: FGS Logger Transaction failed
+10-14 10:46:53.134   396   499 D audioserver: -129
+10-14 10:46:53.286  4916  4937 W InteractionController: Timed out waiting 1000ms for command and events.
+10-14 10:46:53.287  4916  4937 I E2E     : | c14_silencioso_e_nao_perturbe | passou | Antes: silencioso e Não Perturbe (2). No plantão: som normal e Não Perturbe desligado. No fim: tudo como antes. |
+10-14 10:46:53.287  4916  4937 I TestRunner: finished: c14_silencioso_e_nao_perturbe(com.plantaoseguro.e2e.CenariosTest)

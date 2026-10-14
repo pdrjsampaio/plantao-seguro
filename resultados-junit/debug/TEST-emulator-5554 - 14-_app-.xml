@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.plantaoseguro.e2e.CenariosTest" tests="21" failures="0" errors="0" skipped="0" time="233.559" timestamp="2026-10-14T10:48:45" hostname="localhost">
+  <properties>
+    <property name="device" value="emulator-5554 - 14" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="c01_mensagem_no_plantao_dispara" classname="com.plantaoseguro.e2e.CenariosTest" time="18.888" />
+  <testcase name="c02_irrelevantes_nao_disparam" classname="com.plantaoseguro.e2e.CenariosTest" time="13.432" />
+  <testcase name="c03_duplicadas_nao_duplicam" classname="com.plantaoseguro.e2e.CenariosTest" time="16.841" />
+  <testcase name="c04_tocar_na_notificacao_original_para" classname="com.plantaoseguro.e2e.CenariosTest" time="11.246" />
+  <testcase name="c05_parar_pela_notificacao_do_alerta" classname="com.plantaoseguro.e2e.CenariosTest" time="5.998" />
+  <testcase name="c06_varias_mensagens_um_alarme_so" classname="com.plantaoseguro.e2e.CenariosTest" time="6.077" />
+  <testcase name="c07_tela_bloqueada_mostra_o_alerta" classname="com.plantaoseguro.e2e.CenariosTest" time="9.489" />
+  <testcase name="c07b_botao_de_volume_para" classname="com.plantaoseguro.e2e.CenariosTest" time="10.673" />
+  <testcase name="c09_escuta_desligada_e_religada" classname="com.plantaoseguro.e2e.CenariosTest" time="8.073" />
+  <testcase name="c10_recalcula_depois_de_reiniciar" classname="com.plantaoseguro.e2e.CenariosTest" time="4.606" />
+  <testcase name="c12_trocar_o_som_da_regra" classname="com.plantaoseguro.e2e.CenariosTest" time="3.824" />
+  <testcase name="c13_som_de_arquivo_e_arquivo_apagado" classname="com.plantaoseguro.e2e.CenariosTest" time="6.076" />
+  <testcase name="c14_silencioso_e_nao_perturbe" classname="com.plantaoseguro.e2e.CenariosTest" time="6.207" />
+  <testcase name="c16_sem_confirmacao_toca_de_novo" classname="com.plantaoseguro.e2e.CenariosTest" time="63.95" />
+  <testcase name="c17_chamada_para_quando_encerrada" classname="com.plantaoseguro.e2e.CenariosTest" time="4.432" />
+  <testcase name="c18_ajuste_desligado_continua_tocando" classname="com.plantaoseguro.e2e.CenariosTest" time="6.178" />
+  <testcase name="c19_filtro_por_palavra" classname="com.plantaoseguro.e2e.CenariosTest" time="6.022" />
+  <testcase name="c20_regra_silenciada_por_um_tempo" classname="com.plantaoseguro.e2e.CenariosTest" time="7.24" />
+  <testcase name="c21_teste_da_escuta_do_diagnostico" classname="com.plantaoseguro.e2e.CenariosTest" time="4.034" />
+  <testcase name="c22_teste_com_tela_bloqueada" classname="com.plantaoseguro.e2e.CenariosTest" time="11.081" />
+  <testcase name="c23_abrir_a_conversa_pelo_alerta" classname="com.plantaoseguro.e2e.CenariosTest" time="7.973" />
+</testsuite>

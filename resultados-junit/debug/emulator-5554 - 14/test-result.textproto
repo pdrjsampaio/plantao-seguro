@@ -1,0 +1,1197 @@
+# proto-message: google.testing.platform.proto.api.core.TestSuiteResult
+# 2026-10-14T10:48:45.466941084Z:
+test_suite_meta_data {
+  scheduled_test_case_count: 21
+  device {
+    id: "emulator-5554"
+    friendly_name: "primary"
+  }
+}
+test_status: PASSED
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c01_mensagem_no_plantao_dispara"
+    start_time {
+      seconds: 1791974691
+      nanos: 799000000
+    }
+    end_time {
+      seconds: 1791974710
+      nanos: 710000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c01_mensagem_no_plantao_dispara.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c02_irrelevantes_nao_disparam"
+    start_time {
+      seconds: 1791974710
+      nanos: 742000000
+    }
+    end_time {
+      seconds: 1791974724
+      nanos: 215000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c02_irrelevantes_nao_disparam.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c03_duplicadas_nao_duplicam"
+    start_time {
+      seconds: 1791974724
+      nanos: 274000000
+    }
+    end_time {
+      seconds: 1791974741
+      nanos: 113000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c03_duplicadas_nao_duplicam.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c04_tocar_na_notificacao_original_para"
+    start_time {
+      seconds: 1791974741
+      nanos: 118000000
+    }
+    end_time {
+      seconds: 1791974752
+      nanos: 364000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c04_tocar_na_notificacao_original_para.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c05_parar_pela_notificacao_do_alerta"
+    start_time {
+      seconds: 1791974752
+      nanos: 448000000
+    }
+    end_time {
+      seconds: 1791974758
+      nanos: 446000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c05_parar_pela_notificacao_do_alerta.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c06_varias_mensagens_um_alarme_so"
+    start_time {
+      seconds: 1791974758
+      nanos: 449000000
+    }
+    end_time {
+      seconds: 1791974764
+      nanos: 525000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c06_varias_mensagens_um_alarme_so.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c07_tela_bloqueada_mostra_o_alerta"
+    start_time {
+      seconds: 1791974764
+      nanos: 528000000
+    }
+    end_time {
+      seconds: 1791974774
+      nanos: 15000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c07_tela_bloqueada_mostra_o_alerta.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c07b_botao_de_volume_para"
+    start_time {
+      seconds: 1791974774
+      nanos: 18000000
+    }
+    end_time {
+      seconds: 1791974784
+      nanos: 686000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c07b_botao_de_volume_para.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c09_escuta_desligada_e_religada"
+    start_time {
+      seconds: 1791974784
+      nanos: 692000000
+    }
+    end_time {
+      seconds: 1791974792
+      nanos: 765000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c09_escuta_desligada_e_religada.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c10_recalcula_depois_de_reiniciar"
+    start_time {
+      seconds: 1791974792
+      nanos: 772000000
+    }
+    end_time {
+      seconds: 1791974797
+      nanos: 375000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c10_recalcula_depois_de_reiniciar.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c12_trocar_o_som_da_regra"
+    start_time {
+      seconds: 1791974797
+      nanos: 378000000
+    }
+    end_time {
+      seconds: 1791974801
+      nanos: 200000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c12_trocar_o_som_da_regra.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c13_som_de_arquivo_e_arquivo_apagado"
+    start_time {
+      seconds: 1791974801
+      nanos: 203000000
+    }
+    end_time {
+      seconds: 1791974807
+      nanos: 279000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c13_som_de_arquivo_e_arquivo_apagado.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c14_silencioso_e_nao_perturbe"
+    start_time {
+      seconds: 1791974807
+      nanos: 281000000
+    }
+    end_time {
+      seconds: 1791974813
+      nanos: 485000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c14_silencioso_e_nao_perturbe.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c16_sem_confirmacao_toca_de_novo"
+    start_time {
+      seconds: 1791974813
+      nanos: 488000000
+    }
+    end_time {
+      seconds: 1791974877
+      nanos: 437000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c16_sem_confirmacao_toca_de_novo.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c17_chamada_para_quando_encerrada"
+    start_time {
+      seconds: 1791974877
+      nanos: 440000000
+    }
+    end_time {
+      seconds: 1791974881
+      nanos: 870000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c17_chamada_para_quando_encerrada.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c18_ajuste_desligado_continua_tocando"
+    start_time {
+      seconds: 1791974881
+      nanos: 872000000
+    }
+    end_time {
+      seconds: 1791974888
+      nanos: 51000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c18_ajuste_desligado_continua_tocando.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c19_filtro_por_palavra"
+    start_time {
+      seconds: 1791974888
+      nanos: 53000000
+    }
+    end_time {
+      seconds: 1791974894
+      nanos: 75000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c19_filtro_por_palavra.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c20_regra_silenciada_por_um_tempo"
+    start_time {
+      seconds: 1791974894
+      nanos: 78000000
+    }
+    end_time {
+      seconds: 1791974901
+      nanos: 319000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c20_regra_silenciada_por_um_tempo.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c21_teste_da_escuta_do_diagnostico"
+    start_time {
+      seconds: 1791974901
+      nanos: 321000000
+    }
+    end_time {
+      seconds: 1791974905
+      nanos: 353000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c21_teste_da_escuta_do_diagnostico.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c22_teste_com_tela_bloqueada"
+    start_time {
+      seconds: 1791974905
+      nanos: 355000000
+    }
+    end_time {
+      seconds: 1791974916
+      nanos: 432000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c22_teste_com_tela_bloqueada.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "CenariosTest"
+    test_package: "com.plantaoseguro.e2e"
+    test_method: "c23_abrir_a_conversa_pelo_alerta"
+    start_time {
+      seconds: 1791974916
+      nanos: 435000000
+    }
+    end_time {
+      seconds: 1791974924
+      nanos: 403000000
+    }
+    device {
+      id: "emulator-5554"
+      friendly_name: "primary"
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-com.plantaoseguro.e2e.CenariosTest-c23_abrir_a_conversa_pelo_alerta.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+output_artifact {
+  label {
+    label: "test-results.log"
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  source_path {
+    path: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/testlog/test-results.log"
+  }
+  type: TEST_DATA
+  mime_type: "text/plain"
+}

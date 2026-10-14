@@ -1,0 +1,55 @@
+INFO: Constructing runner from config.
+INFO: Configuring Android Instrumentation driver: android_instrumentation_runtime {
+  instrumentation_info {
+    app_package: "com.plantaoseguro.debug"
+    test_package: "com.plantaoseguro.debug.test"
+    test_runner_class: "androidx.test.runner.AndroidJUnitRunner"
+  }
+  instrumentation_args {
+    args_map {
+      key: "additionalTestOutputDir"
+      value: "/sdcard/Android/media/com.plantaoseguro.debug/additional_test_output"
+    }
+  }
+}
+am_instrument_timeout: 31536000
+
+INFO: Configuring AndroidTestApkInstallerPlugin: apks_to_install {
+  apk_paths: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/apk/debug/app-debug.apk"
+  install_options {
+  }
+}
+apks_to_install {
+  apk_paths: "/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk"
+  install_options {
+  }
+}
+
+INFO: No installables found in test fixture. Nothing to install.
+INFO: Installing [/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/apk/debug/app-debug.apk] on device emulator-5554.
+INFO: Installing [/home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk] on device emulator-5554.
+INFO: Start logcat streaming.
+INFO: Running Android Instrumentation driver.
+INFO: Copying files from device to host: /sdcard/Android/media/com.plantaoseguro.debug/additional_test_output to /home/runner/work/plantao-seguro/plantao-seguro/app/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14
+INFO: Stop logcat streaming.
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c01_mensagem_no_plantao_dispara: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c02_irrelevantes_nao_disparam: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c03_duplicadas_nao_duplicam: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c04_tocar_na_notificacao_original_para: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c05_parar_pela_notificacao_do_alerta: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c06_varias_mensagens_um_alarme_so: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c07_tela_bloqueada_mostra_o_alerta: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c07b_botao_de_volume_para: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c09_escuta_desligada_e_religada: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c10_recalcula_depois_de_reiniciar: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c12_trocar_o_som_da_regra: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c13_som_de_arquivo_e_arquivo_apagado: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c14_silencioso_e_nao_perturbe: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c16_sem_confirmacao_toca_de_novo: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c17_chamada_para_quando_encerrada: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c18_ajuste_desligado_continua_tocando: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c19_filtro_por_palavra: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c20_regra_silenciada_por_um_tempo: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c21_teste_da_escuta_do_diagnostico: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c22_teste_com_tela_bloqueada: PASSED
+INFO: Execute com.plantaoseguro.e2e.CenariosTest.c23_abrir_a_conversa_pelo_alerta: PASSED
