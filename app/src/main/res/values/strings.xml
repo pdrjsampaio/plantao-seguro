@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Plantão Seguro</string>
+    <string name="escuta_rotulo">Plantão Seguro (detecta mensagens de trabalho)</string>
+    <string name="tile_rotulo">Plantão</string>
+</resources>

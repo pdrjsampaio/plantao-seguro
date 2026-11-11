@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Giroflex (luz de viatura): o símbolo do plantão armado. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- brilho -->
+    <path android:pathData="M54,50m-31,0a31,31 0,1 1,62 0a31,31 0,1 1,-62 0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:centerX="54"
+                android:centerY="50"
+                android:gradientRadius="31"
+                android:type="radial">
+                <item android:offset="0" android:color="#85FF8A2A" />
+                <item android:offset="1" android:color="#00FF8A2A" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- raios de luz -->
+    <path
+        android:pathData="M32,39L27,35.5M29.5,49.5L23.5,49.5M76,39L81,35.5M78.5,49.5L84.5,49.5"
+        android:strokeWidth="3.2"
+        android:strokeColor="#FFFFB21A"
+        android:strokeLineCap="round" />
+    <!-- cúpula -->
+    <path android:pathData="M39,61L39,47A15,14 0,0 1,69 47L69,61Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="54"
+                android:endY="61"
+                android:startX="54"
+                android:startY="33"
+                android:type="linear">
+                <item android:offset="0" android:color="#FFFFC94D" />
+                <item android:offset="1" android:color="#FFFF5A0F" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- reflexo do vidro -->
+    <path
+        android:fillColor="#6BFFFFFF"
+        android:pathData="M44,57L44,46.5A4,4 0,0 1,48 43.3L48,57Z" />
+    <!-- base -->
+    <path
+        android:fillColor="#FFEEF2F8"
+        android:pathData="M36.5,61L71.5,61A3.5,3.5 0,0 1,75 64.5L75,66.5A3.5,3.5 0,0 1,71.5 70L36.5,70A3.5,3.5 0,0 1,33 66.5L33,64.5A3.5,3.5 0,0 1,36.5 61Z" />
+    <path
+        android:fillColor="#FFC9D3E3"
+        android:pathData="M33,64.5A3.5,3.5 0,0 1,36.5 61L71.5,61A3.5,3.5 0,0 1,75 64.5L75,63.5L33,63.5Z" />
+</vector>

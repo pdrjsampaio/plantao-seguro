@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fundo_janela">#FFF0F3F7</color>
+    <color name="fundo_alarme">#FF1A0608</color>
+</resources>
