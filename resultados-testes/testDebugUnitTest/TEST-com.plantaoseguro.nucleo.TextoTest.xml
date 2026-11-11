@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.plantaoseguro.nucleo.TextoTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-11T04:03:48.285Z" hostname="runnervmwuk1x" time="0.009">
+  <properties/>
+  <testcase name="palavra tambem casa no nome da conversa" classname="com.plantaoseguro.nucleo.TextoTest" time="0.003"/>
+  <testcase name="filtros vazios ou em branco nao casam nada" classname="com.plantaoseguro.nucleo.TextoTest" time="0.001"/>
+  <testcase name="simbolos na palavra nao quebram a busca" classname="com.plantaoseguro.nucleo.TextoTest" time="0.0"/>
+  <testcase name="normalizar tira acentos maiusculas e espacos extras" classname="com.plantaoseguro.nucleo.TextoTest" time="0.0"/>
+  <testcase name="palavra precisa aparecer inteira" classname="com.plantaoseguro.nucleo.TextoTest" time="0.001"/>
+  <testcase name="contato casa por trecho no titulo na conversa ou no remetente" classname="com.plantaoseguro.nucleo.TextoTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
