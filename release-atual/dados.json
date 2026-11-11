@@ -1,0 +1,6 @@
+{"versao":3,
+ "regras":[{"id":"fumaca","nome":"Fumaça","apps":["com.plantaoseguro.simulador"],
+            "toque":{"som":{"type":"embutido","id":"curto_ping"},"volume":10,"vibracao":"NENHUMA","duracaoSeg":60}}],
+ "plantoes":[{"id":"agora","nome":"Plantão de teste","tipo":"UNICO","inicioMs":1794370071000,"fimMs":1794373731000,
+              "tirarDoSilencioso":false,"desligarNaoPerturbe":false}],
+ "ajustes":{"boasVindasConcluida":true}}
