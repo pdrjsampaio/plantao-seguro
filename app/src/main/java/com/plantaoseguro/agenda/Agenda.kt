@@ -13,6 +13,13 @@ data class Ocorrencia(val plantao: Plantao, val inicio: Long, val fim: Long) {
     val chave: String get() = "${plantao.id}@$inicio"
 }
 
+enum class MomentoPonto { ENTRADA, SAIDA }
+
+/** Um aviso para bater o ponto na entrada ou na saída de uma ocorrência. */
+data class LembretePonto(val ocorrencia: Ocorrencia, val momento: MomentoPonto, val quando: Long) {
+    val chave: String get() = "${ocorrencia.chave}#${momento.name}"
+}
+
 /**
  * Cálculo puro da agenda: dado o relógio, diz quais plantões estão valendo e
  * quando a situação muda. Nada aqui guarda estado — por isso um alarme
@@ -97,6 +104,39 @@ object Agenda {
             }
         }
         return melhor
+    }
+
+    /**
+     * Avisos de ponto com horário em [de, ate), em ordem. Folgas não têm aviso;
+     * plantões do "Começar agora" também não.
+     */
+    fun lembretesPonto(plantoes: List<Plantao>, de: Long, ate: Long, zona: ZoneId, pulos: List<Pulo>): List<LembretePonto> =
+        plantoes.asSequence()
+            .filter { it.lembrarPonto && !it.rapido }
+            .flatMap { p -> (ocorrencias(p, de - DIA_MS, ate + DIA_MS, zona) + unicosFuturos(p, de)).asSequence() }
+            .distinctBy { it.chave }
+            .filter { !pulada(it, pulos) }
+            .flatMap { lembretesDe(it).asSequence() }
+            .filter { it.quando >= de && it.quando < ate }
+            .sortedBy { it.quando }
+            .toList()
+
+    /** Horário do próximo aviso de ponto depois de agora, mesmo que falte mais de uma semana. */
+    fun proximoLembretePonto(plantoes: List<Plantao>, agora: Long, zona: ZoneId, pulos: List<Pulo>): Long? =
+        lembretesPonto(plantoes, agora + 1, agora + 8 * DIA_MS, zona, pulos).firstOrNull()?.quando
+            ?: plantoes.filter { it.lembrarPonto && !it.rapido }
+                .flatMap { unicosFuturos(it, agora) }
+                .filter { !pulada(it, pulos) }
+                .flatMap { lembretesDe(it) }
+                .map { it.quando }
+                .filter { it > agora }
+                .minOrNull()
+
+    /** Os avisos de uma ocorrência: entrada (com antecedência) e, se pedido, saída. */
+    fun lembretesDe(o: Ocorrencia): List<LembretePonto> = buildList {
+        val antes = o.plantao.pontoAntesMin.coerceIn(0, 120) * 60_000L
+        add(LembretePonto(o, MomentoPonto.ENTRADA, o.inicio - antes))
+        if (o.plantao.pontoSaida) add(LembretePonto(o, MomentoPonto.SAIDA, o.fim))
     }
 
     /** Ocorrências de um dia do calendário, para desenhar a escala da semana. */

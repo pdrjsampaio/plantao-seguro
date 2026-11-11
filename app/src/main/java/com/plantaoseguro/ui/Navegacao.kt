@@ -25,6 +25,11 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import com.plantaoseguro.modelo.Toque
+import com.plantaoseguro.ui.apps.AppPontoTela
+import com.plantaoseguro.ui.som.SomPadraoTela
+import com.plantaoseguro.ui.som.AcoesToque
+import com.plantaoseguro.ui.som.AcoesSomPadrao
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -167,6 +172,8 @@ fun AppPlantao(destino: String?, onDestinoAberto: () -> Unit) {
                     RegraRota(nav, e.arguments?.getString("id")?.takeIf { it != "nova" }, e.savedStateHandle)
                 }
                 composable("escolher-apps") { AppsRota(nav) }
+                composable(ROTA_SOM_PADRAO) { e -> SomPadraoRota(nav, e.savedStateHandle) }
+                composable(MainActivity.DESTINO_APP_PONTO) { AppPontoRota(nav) }
                 composable("escolher-som") { SonsRota(nav) }
                 composable(MainActivity.DESTINO_PERMISSOES) { PermissoesRota(nav) }
                 composable(MainActivity.DESTINO_DIAGNOSTICO) { DiagnosticoRota(nav) }
@@ -183,6 +190,8 @@ fun AppPlantao(destino: String?, onDestinoAberto: () -> Unit) {
         }
     }
 }
+
+private const val ROTA_SOM_PADRAO = "som-padrao"
 
 /** As abas não têm barra de topo própria: só precisam desviar da barra de status. */
 private fun NavGraphBuilder.aba(aba: Aba, conteudo: @Composable () -> Unit) {
@@ -214,7 +223,12 @@ private fun InicioRota(nav: NavController) {
             encerrar = vm::encerrar,
             testar = vm::testar,
             parar = vm::confirmar,
-            resolver = { nav.navigate(MainActivity.DESTINO_DIAGNOSTICO) }
+            resolver = { nav.navigate(MainActivity.DESTINO_DIAGNOSTICO) },
+            abrirPonto = {
+                // Se o app do ponto foi desinstalado, cai na escolha de outro.
+                val pacote = e.ponto?.appPonto
+                if (pacote == null || !Apps.abrir(app, pacote)) nav.navigate(MainActivity.DESTINO_APP_PONTO)
+            }
         )
     )
 }
@@ -225,13 +239,62 @@ private fun RegrasRota(nav: NavController) {
     val contexto = LocalContext.current
     val escopo = rememberCoroutineScope()
     val dados by grafo.repo.dados.collectAsStateWithLifecycle()
+    val previa by grafo.sirene.previa.collectAsStateWithLifecycle()
     val nomes = remember { HashMap<String, String>() }
     val agora = System.currentTimeMillis()
+    val padrao = dados.ajustes.toquePadrao
+    DisposableEffect(Unit) { onDispose { grafo.sirene.pararPrevia() } }
     RegrasTela(
-        regras = dados.regras.map { r -> resumir(r, { p -> nomes.getOrPut(p) { Apps.nome(contexto, p) } }, agora) },
+        regras = dados.regras.map { r -> resumir(r, { p -> nomes.getOrPut(p) { Apps.nome(contexto, p) } }, agora, padrao) },
         onNova = { nav.navigate("regra/nova") },
         onEditar = { nav.navigate("regra/$it") },
-        onLigar = { id, v -> escopo.launch { grafo.coordenador.ligarDesligarRegra(id, v) } }
+        onLigar = { id, v -> escopo.launch { grafo.coordenador.ligarDesligarRegra(id, v) } },
+        somPadrao = padrao,
+        ouvindo = previa != null && previa == padrao.som,
+        onOuvirPadrao = { if (previa == padrao.som) grafo.sirene.pararPrevia() else grafo.sirene.previa(padrao.som, padrao.volume) },
+        onSomPadrao = { nav.navigate(ROTA_SOM_PADRAO) }
+    )
+}
+
+/** O som padrão do app: muda na hora, sem botão de salvar. */
+@Composable
+private fun SomPadraoRota(nav: NavController, estado: androidx.lifecycle.SavedStateHandle) {
+    val grafo = LocalGrafo.current
+    val escopo = rememberCoroutineScope()
+    val dados by grafo.repo.dados.collectAsStateWithLifecycle()
+    val previa by grafo.sirene.previa.collectAsStateWithLifecycle()
+    val t = dados.ajustes.toquePadrao
+    val mudar: ((Toque) -> Toque) -> Unit = { f ->
+        escopo.launch { grafo.repo.atualizar { d -> d.copy(ajustes = d.ajustes.copy(toquePadrao = f(d.ajustes.toquePadrao))) } }
+    }
+    val somDevolvido by estado.getStateFlow<String?>(CHAVE_SOM, null).collectAsStateWithLifecycle()
+    LaunchedEffect(somDevolvido) {
+        somDevolvido?.let {
+            runCatching { Repositorio.JSON.decodeFromString(EscolhaSom.serializer(), it) }.getOrNull()?.let { e ->
+                mudar { tq -> tq.copy(som = e.som, volume = e.volume, tocarSom = true) }
+            }
+            estado[CHAVE_SOM] = null
+        }
+    }
+    DisposableEffect(Unit) { onDispose { grafo.sirene.pararPrevia() } }
+    SomPadraoTela(
+        t = t,
+        ouvindo = previa != null && previa == t.som,
+        regrasComPadrao = dados.regras.count { !it.somProprio },
+        regrasTotal = dados.regras.size,
+        acoes = AcoesSomPadrao(
+            toque = AcoesToque(
+                mudar = mudar,
+                escolherSom = {
+                    estado[CHAVE_SOM_ATUAL] = Repositorio.JSON.encodeToString(EscolhaSom.serializer(), EscolhaSom(t.som, t.volume))
+                    nav.navigate("escolher-som")
+                },
+                previaVibracao = { v -> grafo.sirene.previaVibracao(v) }
+            ),
+            ouvir = { if (previa == t.som) grafo.sirene.pararPrevia() else grafo.sirene.previa(t.som, t.volume) },
+            testar = { grafo.coordenador.testar(null) },
+            voltar = { nav.popBackStack() }
+        )
     )
 }
 
@@ -294,7 +357,10 @@ private fun AjustesRota(nav: NavController) {
             }
         }
     }
+    val appPonto = dados.ajustes.appPonto
+    val appPontoNome = remember(appPonto) { appPonto?.takeIf { Apps.instalado(contexto, it) }?.let { Apps.nome(contexto, it) } }
     AjustesTela(
+        appPontoNome = appPontoNome,
         a = dados.ajustes,
         pendencias = pendencias,
         versao = versao,
@@ -303,6 +369,8 @@ private fun AjustesRota(nav: NavController) {
             permissoes = { nav.navigate(MainActivity.DESTINO_PERMISSOES) },
             diagnostico = { nav.navigate(MainActivity.DESTINO_DIAGNOSTICO) },
             testar = { grafo.coordenador.testar(null) },
+            somPadrao = { nav.navigate(ROTA_SOM_PADRAO) },
+            appPonto = { nav.navigate(MainActivity.DESTINO_APP_PONTO) },
             exportar = { exportar.launch("plantao-seguro-configuracoes.json") },
             importar = { importar.launch(arrayOf("application/json", "text/plain", "*/*")) },
             ajuda = { nav.navigate("ajuda") },
@@ -319,7 +387,14 @@ private fun EditorPlantaoRota(nav: NavController, id: String?) {
     val vm = vm(chave = "plantao-$id") { g -> EditorViewModel(g, id) }
     val p by vm.plantao.collectAsStateWithLifecycle()
     val erro by vm.erro.collectAsStateWithLifecycle()
+    val grafo = LocalGrafo.current
+    val contexto = LocalContext.current
+    val dados by grafo.repo.dados.collectAsStateWithLifecycle()
+    val appPonto = dados.ajustes.appPonto
+    val appPontoNome = remember(appPonto) { appPonto?.takeIf { Apps.instalado(contexto, it) }?.let { Apps.nome(contexto, it) } }
     EditorTela(
+        appPontoNome = appPontoNome,
+        onEscolherAppPonto = { nav.navigate(MainActivity.DESTINO_APP_PONTO) },
         p = p,
         novo = vm.novo,
         erro = erro,
@@ -354,7 +429,9 @@ private fun RegraRota(nav: NavController, id: String?, estado: androidx.lifecycl
         }
     }
 
+    val dadosAtuais by grafo.repo.dados.collectAsStateWithLifecycle()
     RegraEditorTela(
+        padrao = dadosAtuais.ajustes.toquePadrao,
         r = r,
         nova = vm.nova,
         erro = erro,
@@ -364,6 +441,8 @@ private fun RegraRota(nav: NavController, id: String?, estado: androidx.lifecycl
         acoes = AcoesRegra(
             mudar = vm::mudar,
             mudarToque = vm::mudarToque,
+            usarSomProprio = vm::usarSomProprio,
+            abrirSomPadrao = { nav.navigate(ROTA_SOM_PADRAO) },
             escolherApps = {
                 estado[CHAVE_APPS_ATUAIS] = Repositorio.JSON.encodeToString(ListSerializer(String.serializer()), r.apps.toList())
                 nav.navigate("escolher-apps")
@@ -382,6 +461,31 @@ private fun RegraRota(nav: NavController, id: String?, estado: androidx.lifecycl
                 nav.popBackStack()
             }
         )
+    )
+}
+
+/** Escolha de um app só: o que abre para bater o ponto. */
+@Composable
+private fun AppPontoRota(nav: NavController) {
+    val grafo = LocalGrafo.current
+    val contexto = LocalContext.current
+    val escopo = rememberCoroutineScope()
+    val dados by grafo.repo.dados.collectAsStateWithLifecycle()
+    val todos by produceState<List<ItemApp>?>(initialValue = null) {
+        value = withContext(Dispatchers.IO) {
+            Apps.comIcone(contexto).map { ItemApp(it.pacote, it.nome, Apps.icone(contexto, it.pacote)) }
+        }
+    }
+    AppPontoTela(
+        todos = todos,
+        escolhido = dados.ajustes.appPonto,
+        onEscolher = { pacote ->
+            escopo.launch {
+                grafo.repo.atualizar { d -> d.copy(ajustes = d.ajustes.copy(appPonto = pacote)) }
+                nav.popBackStack()
+            }
+        },
+        onVoltar = { nav.popBackStack() }
     )
 }
 
@@ -615,14 +719,16 @@ private fun BoasVindasRota() {
         permissoes = status,
         fabricante = fabricante,
         dicas = remember { Permissoes.dicas(contexto, fabricante) },
-        som = regraPadrao.toque.som,
+        som = dados.ajustes.toquePadrao.som,
         acoes = AcoesBoasVindas(
             alternarApp = { pkg, v -> escolhidos = (escolhidos ?: emptySet()).let { if (v) it + pkg else it - pkg } },
             permitir = { r -> if (r == Requisito.NOTIFICACOES) pedirNotificacoes() else Permissoes.abrir(contexto, r) },
             dica = { d -> Permissoes.abrirPrimeiro(contexto, d.atalhos) },
             escolherSom = { s ->
-                salvarRegra { it.copy(toque = it.toque.copy(som = s, tocarSom = true)) }
-                grafo.sirene.previa(s, regraPadrao.toque.volume)
+                escopo.launch {
+                    grafo.repo.atualizar { d -> d.copy(ajustes = d.ajustes.copy(toquePadrao = d.ajustes.toquePadrao.copy(som = s, tocarSom = true))) }
+                }
+                grafo.sirene.previa(s, dados.ajustes.toquePadrao.volume)
             },
             testar = { grafo.coordenador.testar(regraPadrao.id) },
             testarBloqueado = {

@@ -18,9 +18,11 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.rounded.OpenInNew
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.MoreVert
 import androidx.compose.material.icons.rounded.NotificationImportant
+import androidx.compose.material.icons.rounded.Schedule
 import androidx.compose.material.icons.rounded.Warning
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -75,7 +77,8 @@ class AcoesInicio(
     val encerrar: () -> Unit = {},
     val testar: () -> Unit = {},
     val parar: () -> Unit = {},
-    val resolver: () -> Unit = {}
+    val resolver: () -> Unit = {},
+    val abrirPonto: () -> Unit = {}
 )
 
 @Composable
@@ -94,6 +97,9 @@ fun InicioTela(e: InicioEstado, acoes: AcoesInicio, animar: Boolean = true) {
             item { Palco(e, animar, { mostrarComecar = true }, acoes) }
             if (e.alerta == null && e.pendente != null) {
                 item { AvisoPendente(e, acoes) }
+            }
+            if (e.ponto != null && e.alerta == null) {
+                item { CartaoDoPonto(e.ponto, acoes.abrirPonto) }
             }
             if (!e.escutaLigada) {
                 item {
@@ -302,6 +308,41 @@ private fun AvisoPendente(e: InicioEstado, acoes: AcoesInicio) {
                 modifier = Modifier.padding(top = 4.dp)
             )
             TextButton(onClick = acoes.parar, modifier = Modifier.align(Alignment.End)) { Text("Já vi") }
+        }
+    }
+}
+
+@Composable
+private fun CartaoDoPonto(c: CartaoPonto, onAbrir: () -> Unit) {
+    Surface(
+        modifier = Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp, top = 12.dp),
+        shape = MaterialTheme.shapes.large,
+        color = MaterialTheme.colorScheme.secondaryContainer
+    ) {
+        Column(Modifier.padding(16.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(Icons.Rounded.Schedule, contentDescription = null, tint = MaterialTheme.colorScheme.onSecondaryContainer)
+                Spacer(Modifier.width(10.dp))
+                Text(c.titulo, style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onSecondaryContainer)
+            }
+            Text(
+                c.texto,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSecondaryContainer,
+                modifier = Modifier.padding(top = 4.dp)
+            )
+            Spacer(Modifier.height(10.dp))
+            if (c.appNome != null) {
+                Button(onClick = onAbrir, modifier = Modifier.fillMaxWidth().height(48.dp)) {
+                    Icon(Icons.AutoMirrored.Rounded.OpenInNew, contentDescription = null)
+                    Spacer(Modifier.width(8.dp))
+                    Text("Abrir ${c.appNome}", maxLines = 1)
+                }
+            } else {
+                OutlinedButton(onClick = onAbrir, modifier = Modifier.fillMaxWidth().height(48.dp)) {
+                    Text("Escolher o app do ponto")
+                }
+            }
         }
     }
 }

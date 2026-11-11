@@ -15,6 +15,7 @@ import com.plantaoseguro.modelo.TipoEvento
 import com.plantaoseguro.nucleo.CentralDeAlertas
 import com.plantaoseguro.sentinela.SentinelaService
 import com.plantaoseguro.servico.PlantaoService
+import com.plantaoseguro.sistema.Apps
 import com.plantaoseguro.som.ControleSom
 import com.plantaoseguro.util.Formato
 import kotlinx.coroutines.sync.Mutex
@@ -112,12 +113,39 @@ class Coordenador(
             }
         }
 
+        // Lembretes de ponto que chegaram. O alarme pode atrasar um pouco (ou o
+        // celular estava desligado): até 15 minutos de atraso o aviso ainda vale.
+        val devidos = Agenda.lembretesPonto(dados.plantoes, agora - JANELA_PONTO_MS, agora + 1, zona, dados.execucao.pulos)
+            .filter { it.chave !in exec.pontoAvisados }
+        if (devidos.isNotEmpty()) {
+            devidos.forEach { avisarPonto(it, dados.ajustes.appPonto, agora) }
+            exec = exec.copy(pontoAvisados = (exec.pontoAvisados + devidos.map { it.chave }).takeLast(MAX_PONTO_AVISADOS))
+        }
+
         exec = exec.copy(ocorrenciasAplicadas = chaves)
         val final = exec
         val atualizados = repo.atualizar { it.copy(execucao = final) }
+        // Um alarme só: o que vier primeiro entre começo/fim de plantão e aviso de ponto.
         agendador.agendarTransicao(
-            Agenda.proximaTransicao(atualizados.plantoes, agora, zona, atualizados.execucao.pulos)
+            listOfNotNull(
+                Agenda.proximaTransicao(atualizados.plantoes, agora, zona, atualizados.execucao.pulos),
+                Agenda.proximoLembretePonto(atualizados.plantoes, agora, zona, atualizados.execucao.pulos)
+            ).minOrNull()
         )
+    }
+
+    private fun avisarPonto(l: LembretePonto, appPonto: String?, agora: Long) {
+        val p = l.ocorrencia.plantao
+        val entrada = l.momento == MomentoPonto.ENTRADA
+        val nomeApp = appPonto?.takeIf { Apps.instalado(context, it) }?.let { Apps.nome(context, it) }
+        val titulo = if (entrada) "Hora de bater o ponto de entrada" else "Hora de bater o ponto de saída"
+        val texto = when {
+            !entrada -> "${p.nome} terminou."
+            l.ocorrencia.inicio > agora -> "${p.nome} começa ${Formato.quando(l.ocorrencia.inicio, agora)}."
+            else -> "${p.nome} começou ${Formato.quando(l.ocorrencia.inicio, agora)}."
+        }
+        notificador.lembrarPonto(entrada, titulo, texto, if (nomeApp != null) appPonto else null, nomeApp)
+        historico.registrar(TipoEvento.PONTO, Nivel.INFO, titulo, p.nome)
     }
 
     private fun aplicarInicio(o: Ocorrencia) {
@@ -228,6 +256,12 @@ class Coordenador(
         val d = repo.dados.value
         val ativas = Agenda.ativas(d.plantoes, agora, zona, d.execucao.pulos)
         if (ativas.isEmpty()) return@withLock
+        // Saiu antes da hora: o aviso de saída do ponto vem agora, não no horário previsto.
+        val saidas = ativas
+            .filter { it.plantao.lembrarPonto && it.plantao.pontoSaida && !it.plantao.rapido }
+            .map { LembretePonto(it, MomentoPonto.SAIDA, agora) }
+            .filter { it.chave !in d.execucao.pontoAvisados }
+        saidas.forEach { avisarPonto(it, d.ajustes.appPonto, agora) }
         repo.atualizar { dd ->
             val pulos = dd.execucao.pulos + ativas
                 .filter { it.plantao.tipo == TipoAgenda.SEMANAL }
@@ -235,7 +269,10 @@ class Coordenador(
             val idsUnicos = ativas.filter { it.plantao.tipo == TipoAgenda.UNICO }.map { it.plantao.id }.toSet()
             dd.copy(
                 plantoes = dd.plantoes.map { if (it.id in idsUnicos) it.copy(fimMs = agora) else it },
-                execucao = dd.execucao.copy(pulos = pulos)
+                execucao = dd.execucao.copy(
+                    pulos = pulos,
+                    pontoAvisados = (dd.execucao.pontoAvisados + saidas.map { it.chave }).takeLast(MAX_PONTO_AVISADOS)
+                )
             )
         }
         sincronizarSemTrava("encerrado por você")
@@ -313,11 +350,12 @@ class Coordenador(
 
     // ---------------------------------------------------------------- testes e alertas
 
-    /** Toca o alerta de teste com o toque de uma regra (ou da primeira ligada). */
+    /** Toca o alerta de teste com o toque de uma regra (ou o som padrão do app). */
     fun testar(regraId: String?): Boolean {
-        val regras = repo.dados.value.regras
-        val r = regras.firstOrNull { it.id == regraId } ?: regras.firstOrNull { it.ligada } ?: Regra.padrao()
-        return central.testar(r.toque, r.nome)
+        val d = repo.dados.value
+        val r = d.regras.firstOrNull { it.id == regraId }
+            ?: return central.testar(d.ajustes.toquePadrao, "Som padrão")
+        return central.testar(r.toqueEfetivo(d.ajustes.toquePadrao), r.nome)
     }
 
     fun testarComTelaBloqueada(segundos: Int) {
@@ -382,5 +420,7 @@ class Coordenador(
     private companion object {
         const val DIA_MS = 24L * 60 * 60 * 1000
         const val VERIFICACAO_MS = 30L * 60 * 1000
+        const val JANELA_PONTO_MS = 15L * 60 * 1000
+        const val MAX_PONTO_AVISADOS = 40
     }
 }

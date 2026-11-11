@@ -19,6 +19,7 @@ import androidx.compose.material.icons.rounded.EventBusy
 import androidx.compose.material.icons.rounded.Info
 import androidx.compose.material.icons.rounded.NotificationImportant
 import androidx.compose.material.icons.rounded.NotificationsActive
+import androidx.compose.material.icons.rounded.Schedule
 import androidx.compose.material.icons.rounded.Science
 import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material.icons.rounded.Share
@@ -59,7 +60,7 @@ enum class FiltroHistorico(val rotulo: String) { TUDO("Tudo"), ALERTAS("Alertas"
 private fun FiltroHistorico.aceita(e: Evento): Boolean = when (this) {
     FiltroHistorico.TUDO -> true
     FiltroHistorico.ALERTAS -> e.tipo in setOf(TipoEvento.ALERTA, TipoEvento.ALERTA_CONFIRMADO, TipoEvento.ALERTA_NAO_CONFIRMADO, TipoEvento.TESTE)
-    FiltroHistorico.PLANTOES -> e.tipo == TipoEvento.PLANTAO_INICIO || e.tipo == TipoEvento.PLANTAO_FIM
+    FiltroHistorico.PLANTOES -> e.tipo == TipoEvento.PLANTAO_INICIO || e.tipo == TipoEvento.PLANTAO_FIM || e.tipo == TipoEvento.PONTO
     FiltroHistorico.PROBLEMAS -> e.nivel == Nivel.ERRO || e.nivel == Nivel.AVISO
 }
 
@@ -189,6 +190,7 @@ private fun visual(e: Evento, sinal: Color, ok: Color, aviso: Color, erro: Color
     e.tipo == TipoEvento.TESTE -> Icons.Rounded.Science to ok
     e.tipo == TipoEvento.PLANTAO_INICIO -> Icons.Rounded.Event to (if (e.nivel == Nivel.AVISO) aviso else ok)
     e.tipo == TipoEvento.PLANTAO_FIM -> Icons.Rounded.EventBusy to neutro
+    e.tipo == TipoEvento.PONTO -> Icons.Rounded.Schedule to neutro
     e.nivel == Nivel.AVISO -> Icons.Rounded.ErrorOutline to aviso
     else -> Icons.Rounded.Info to neutro
 }

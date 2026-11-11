@@ -18,21 +18,15 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.rounded.TrendingUp
-import androidx.compose.material.icons.automirrored.rounded.VolumeUp
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.Apps
 import androidx.compose.material.icons.rounded.Call
 import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material.icons.rounded.Delete
-import androidx.compose.material.icons.rounded.FlashlightOn
 import androidx.compose.material.icons.rounded.LowPriority
 import androidx.compose.material.icons.rounded.MusicNote
 import androidx.compose.material.icons.rounded.NotificationsPaused
 import androidx.compose.material.icons.rounded.PriorityHigh
-import androidx.compose.material.icons.rounded.Repeat
-import androidx.compose.material.icons.rounded.Timer
-import androidx.compose.material.icons.rounded.Vibration
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -48,26 +42,22 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SegmentedButton
 import androidx.compose.material3.SegmentedButtonDefaults
 import androidx.compose.material3.SingleChoiceSegmentedButtonRow
-import androidx.compose.material3.Slider
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
-import com.plantaoseguro.modelo.ModoDuracao
 import com.plantaoseguro.modelo.QuandoVale
 import com.plantaoseguro.modelo.Regra
 import com.plantaoseguro.modelo.Toque
 import com.plantaoseguro.modelo.Vibracao
-import com.plantaoseguro.sirene.Catalogo
 import com.plantaoseguro.ui.comum.BarraTopo
 import com.plantaoseguro.ui.comum.Bloco
 import com.plantaoseguro.ui.comum.Divisoria
@@ -76,13 +66,17 @@ import com.plantaoseguro.ui.comum.LinhaAjuste
 import com.plantaoseguro.ui.comum.LinhaComConteudo
 import com.plantaoseguro.ui.comum.LinhaInterruptor
 import com.plantaoseguro.ui.comum.TituloSecao
+import com.plantaoseguro.ui.som.AcoesToque
+import com.plantaoseguro.ui.som.OpcoesToque
+import com.plantaoseguro.ui.som.resumoToque
 import com.plantaoseguro.ui.tema.Extras
 import com.plantaoseguro.util.Formato
-import kotlin.math.roundToInt
 
 class AcoesRegra(
     val mudar: ((Regra) -> Regra) -> Unit = {},
     val mudarToque: ((Toque) -> Toque) -> Unit = {},
+    val usarSomProprio: (Boolean) -> Unit = {},
+    val abrirSomPadrao: () -> Unit = {},
     val escolherApps: () -> Unit = {},
     val escolherSom: () -> Unit = {},
     val previaVibracao: (Vibracao) -> Unit = {},
@@ -102,10 +96,10 @@ fun RegraEditorTela(
     nomesApps: List<String>,
     plantoes: List<Pair<String, String>>,
     agora: Long,
-    acoes: AcoesRegra
+    acoes: AcoesRegra,
+    padrao: Toque = Toque()
 ) {
     var confirmarExclusao by remember { mutableStateOf(false) }
-    val t = r.toque
 
     Scaffold(
         topBar = {
@@ -202,66 +196,37 @@ fun RegraEditorTela(
             }
 
             TituloSecao("Como toca")
+            Column(Modifier.padding(horizontal = 20.dp)) {
+                SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth()) {
+                    SegmentedButton(
+                        selected = !r.somProprio,
+                        onClick = { acoes.usarSomProprio(false) },
+                        shape = SegmentedButtonDefaults.itemShape(0, 2)
+                    ) { Text("Som padrão") }
+                    SegmentedButton(
+                        selected = r.somProprio,
+                        onClick = { acoes.usarSomProprio(true) },
+                        shape = SegmentedButtonDefaults.itemShape(1, 2)
+                    ) { Text("Som próprio") }
+                }
+                Text(
+                    if (r.somProprio) "Esta regra toca do jeito abaixo, mesmo que o som padrão mude."
+                    else "Esta regra toca o som padrão do app. Mudar o som padrão muda o de todas as regras que usam ele.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 8.dp, bottom = 10.dp)
+                )
+            }
             Bloco {
-                LinhaInterruptor(
-                    Icons.Rounded.MusicNote, "Tocar som",
-                    if (t.tocarSom) Catalogo.nome(t.som) else "Desligado: só vibra",
-                    t.tocarSom, { v -> acoes.mudarToque { it.copy(tocarSom = v) } }, corIcone = Extras.cores.sinal
-                )
-                if (t.tocarSom) {
-                    LinhaAjuste(Icons.Rounded.MusicNote, "Escolher som", "${Catalogo.nome(t.som)}, volume ${t.volume}%", onClick = acoes.escolherSom)
-                    Divisoria()
-                    Volume(t.volume) { v -> acoes.mudarToque { it.copy(volume = v) } }
-                    LinhaInterruptor(
-                        Icons.AutoMirrored.Rounded.TrendingUp, "Volume crescente", "Começa baixo e chega ao volume escolhido em 20 segundos.",
-                        t.crescente, { v -> acoes.mudarToque { it.copy(crescente = v) } }
-                    )
-                }
-                Divisoria()
-                LinhaComConteudo(Icons.Rounded.Vibration, "Vibração", "Toque para sentir o padrão.") {
-                    Fichas(
-                        Vibracao.entries.map { it to it.rotulo },
-                        t.vibracao,
-                        { v -> acoes.mudarToque { it.copy(vibracao = v) }; acoes.previaVibracao(v) }
-                    )
-                }
-                Divisoria()
-                LinhaInterruptor(
-                    Icons.Rounded.FlashlightOn, "Piscar a lanterna", "Ajuda em lugar barulhento.",
-                    t.lanterna, { v -> acoes.mudarToque { it.copy(lanterna = v) } }
-                )
-                Divisoria()
-                LinhaComConteudo(Icons.Rounded.Timer, "Por quanto tempo", null) {
-                    Fichas(
-                        listOf(ModoDuracao.TEMPO to "Por tempo", ModoDuracao.REPETICOES to "Repetições", ModoDuracao.ATE_PARAR to "Até eu parar"),
-                        t.modoDuracao,
-                        { v -> acoes.mudarToque { it.copy(modoDuracao = v) } }
-                    )
-                    Spacer(Modifier.height(8.dp))
-                    when (t.modoDuracao) {
-                        ModoDuracao.TEMPO -> Fichas(
-                            listOf(30 to "30 s", 60 to "1 min", 120 to "2 min", 300 to "5 min", 600 to "10 min"),
-                            t.duracaoSeg,
-                            { v -> acoes.mudarToque { it.copy(duracaoSeg = v) } }
-                        )
-                        ModoDuracao.REPETICOES -> Fichas(
-                            listOf(1 to "1 vez", 3 to "3 vezes", 5 to "5 vezes", 10 to "10 vezes"),
-                            t.repeticoes,
-                            { v -> acoes.mudarToque { it.copy(repeticoes = v) } }
-                        )
-                        ModoDuracao.ATE_PARAR -> Text(
-                            "Toca até você parar ou abrir a mensagem (no máximo 20 minutos, para não gastar a bateria se ninguém ouvir).",
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    }
-                }
-                Divisoria()
-                LinhaComConteudo(Icons.Rounded.Repeat, "Tocar de novo se ninguém parar", "Enquanto a mensagem continuar sem ser aberta.") {
-                    Fichas(
-                        listOf(0 to "Não", 2 to "2 min", 5 to "5 min", 10 to "10 min", 15 to "15 min"),
-                        t.insistirMin,
-                        { v -> acoes.mudarToque { it.copy(insistirMin = v) } }
+                if (r.somProprio) {
+                    OpcoesToque(r.toque, AcoesToque(acoes.mudarToque, acoes.escolherSom, acoes.previaVibracao))
+                } else {
+                    LinhaAjuste(
+                        Icons.Rounded.MusicNote,
+                        "Som padrão do app",
+                        resumoToque(padrao),
+                        corIcone = Extras.cores.sinal,
+                        onClick = acoes.abrirSomPadrao
                     )
                 }
             }
@@ -311,20 +276,6 @@ fun RegraEditorTela(
                 }
             },
             dismissButton = { TextButton(onClick = { confirmarExclusao = false }) { Text("Cancelar") } }
-        )
-    }
-}
-
-@Composable
-private fun Volume(volume: Int, onMudar: (Int) -> Unit) {
-    var valor by remember(volume) { mutableFloatStateOf(volume.toFloat()) }
-    LinhaComConteudo(Icons.AutoMirrored.Rounded.VolumeUp, "Volume do alerta: ${valor.roundToInt()}%", "Usa o volume de alarme: toca mesmo no silencioso.") {
-        Slider(
-            value = valor,
-            onValueChange = { valor = it },
-            onValueChangeFinished = { onMudar(valor.roundToInt()) },
-            valueRange = 10f..100f,
-            steps = 8
         )
     }
 }

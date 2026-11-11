@@ -61,7 +61,10 @@ class Notificador(private val context: Context) {
             setSound(null, null)
             setShowBadge(false)
         }
-        nm.createNotificationChannels(listOf(alerta, pendente, plantao, avisos, problemas, teste))
+        val ponto = NotificationChannel(CANAL_PONTO, "Lembrete do ponto", NotificationManager.IMPORTANCE_HIGH).apply {
+            description = "Avisa na entrada e na saída do plantão para bater o ponto."
+        }
+        nm.createNotificationChannels(listOf(alerta, pendente, plantao, avisos, problemas, teste, ponto))
     }
 
     // ---------------------------------------------------------------- intents
@@ -223,6 +226,36 @@ class Notificador(private val context: Context) {
 
     // ---------------------------------------------------------------- avisos
 
+    /**
+     * Aviso para bater o ponto. Tocar abre o app do ponto (o Android não deixa
+     * um app abrir outro sozinho, em segundo plano); sem app escolhido, abre o
+     * Plantão Seguro na escolha do app.
+     */
+    fun lembrarPonto(entrada: Boolean, titulo: String, texto: String, pacoteApp: String?, nomeApp: String?) {
+        val abrirPonto = pacoteApp?.let { abrirOutroApp(it, if (entrada) 31 else 32) }
+        val corpo = if (abrirPonto != null) "$texto Toque para abrir o $nomeApp."
+        else "$texto Escolha o app do ponto no Plantão Seguro para abrir direto daqui."
+        val b = NotificationCompat.Builder(context, CANAL_PONTO)
+            .setSmallIcon(R.drawable.ic_stat_ponto)
+            .setColor(COR_SINAL)
+            .setContentTitle(titulo)
+            .setContentText(corpo)
+            .setStyle(NotificationCompat.BigTextStyle().bigText(corpo))
+            .setCategory(NotificationCompat.CATEGORY_REMINDER)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setAutoCancel(true)
+            .setTimeoutAfter(2 * 60 * 60 * 1000L)
+            .setContentIntent(abrirPonto ?: abrirApp(MainActivity.DESTINO_APP_PONTO))
+        if (abrirPonto != null) b.addAction(0, "Abrir $nomeApp", abrirPonto)
+        nm.notify(if (entrada) ID_PONTO_ENTRADA else ID_PONTO_SAIDA, b.build())
+    }
+
+    private fun abrirOutroApp(pacote: String, codigo: Int): PendingIntent? {
+        val i = context.packageManager.getLaunchIntentForPackage(pacote) ?: return null
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        return PendingIntent.getActivity(context, codigo, i, FLAGS)
+    }
+
     fun aviso(titulo: String, texto: String) {
         val n = NotificationCompat.Builder(context, CANAL_AVISOS)
             .setSmallIcon(R.drawable.ic_stat_sirene)
@@ -274,6 +307,7 @@ class Notificador(private val context: Context) {
         const val CANAL_AVISOS = "avisos"
         const val CANAL_PROBLEMAS = "problemas"
         const val CANAL_TESTE = "teste"
+        const val CANAL_PONTO = "ponto"
 
         const val ID_PLANTAO = 2001
         const val ID_ALERTA = 2002
@@ -282,6 +316,8 @@ class Notificador(private val context: Context) {
         const val ID_PENDENTE = 2005
         const val ID_VOLUME = 2006
         const val ID_TESTE_ESCUTA = 2007
+        const val ID_PONTO_ENTRADA = 2008
+        const val ID_PONTO_SAIDA = 2009
         const val TAG_TESTE_ESCUTA = "teste-escuta"
 
         const val ACAO_CONFIRMAR = "com.plantaoseguro.CONFIRMAR"

@@ -4,6 +4,7 @@ import com.plantaoseguro.agenda.Ocorrencia
 import com.plantaoseguro.modelo.Ajustes
 import com.plantaoseguro.modelo.QuandoVale
 import com.plantaoseguro.modelo.Regra
+import com.plantaoseguro.modelo.Toque
 
 /**
  * Uma notificação recebida, já reduzida ao que importa para decidir.
@@ -40,7 +41,13 @@ enum class MotivoIgnorar {
 
 sealed interface Decisao {
     data class Ignorar(val motivo: MotivoIgnorar) : Decisao
-    data class Alertar(val regra: Regra, val chamada: Boolean, val plantao: Ocorrencia?) : Decisao
+    /** [toque] é como vai tocar: o som próprio da regra ou o padrão do app. */
+    data class Alertar(
+        val regra: Regra,
+        val chamada: Boolean,
+        val plantao: Ocorrencia?,
+        val toque: Toque = regra.toque
+    ) : Decisao
 }
 
 /**
@@ -164,7 +171,7 @@ object Motor {
                     continue
                 }
             }
-            return Decisao.Alertar(r, chamada, emPlantao)
+            return Decisao.Alertar(r, chamada, emPlantao, r.toqueEfetivo(ajustes.toquePadrao))
         }
         return Decisao.Ignorar(motivo)
     }

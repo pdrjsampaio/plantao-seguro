@@ -7,7 +7,10 @@ import kotlinx.serialization.Serializable
 const val PKG_WHATSAPP_BUSINESS = "com.whatsapp.w4b"
 
 /** Versão do formato salvo. Campos novos sempre têm valor padrão, então versões antigas continuam legíveis. */
-const val VERSAO_DADOS = 3
+const val VERSAO_DADOS = 4
+
+/** Som usado quando nenhum outro foi escolhido (ou quando o escolhido sumiu). */
+const val SOM_PADRAO = "sirene_classica"
 
 @Serializable
 enum class TipoAgenda { SEMANAL, UNICO }
@@ -54,7 +57,7 @@ enum class ModoDuracao { TEMPO, REPETICOES, ATE_PARAR }
 data class Toque(
     /** Desligado = só vibra. */
     val tocarSom: Boolean = true,
-    val som: SomRef = SomRef.Embutido("sirene_classica"),
+    val som: SomRef = SomRef.Embutido(SOM_PADRAO),
     /** Volume do alarme durante o alerta, de 10 a 100 (%). */
     val volume: Int = 100,
     val crescente: Boolean = false,
@@ -98,7 +101,10 @@ data class Regra(
      * estiver numa ligação.
      */
     val critica: Boolean = false,
+    /** Som próprio desta regra; só vale quando [somProprio] está ligado. */
     val toque: Toque = Toque(),
+    /** Desligado: a regra toca o som padrão do app (Ajustes > som padrão). */
+    val somProprio: Boolean = false,
     /** Silenciada temporariamente até este instante. */
     val silenciadaAte: Long = 0L,
     val criadaEm: Long = 0L
@@ -106,6 +112,9 @@ data class Regra(
     val usaConteudo: Boolean get() = contatos.isNotEmpty() || palavras.isNotEmpty() || ignorar.isNotEmpty()
 
     fun silenciada(agora: Long): Boolean = silenciadaAte > agora
+
+    /** Como esta regra toca: o som próprio ou o padrão do app. */
+    fun toqueEfetivo(padrao: Toque): Toque = if (somProprio) toque else padrao
 
     companion object {
         const val ID_PADRAO = "padrao"
@@ -143,6 +152,12 @@ data class Plantao(
     /** Volume mínimo de toque e notificação vigiado (%). */
     val volumeMinimo: Int = 70,
     val aoTerminar: AoTerminar = AoTerminar.RESTAURAR,
+    /** Avisa na entrada e na saída para bater o ponto, com atalho para o app do ponto. */
+    val lembrarPonto: Boolean = false,
+    /** Minutos antes do início para o aviso de entrada (0 = na hora). */
+    val pontoAntesMin: Int = 10,
+    /** Também avisa na hora de terminar. */
+    val pontoSaida: Boolean = true,
     /** Criado pelo botão "Começar agora". */
     val rapido: Boolean = false,
     val criadoEm: Long = 0L
@@ -159,7 +174,11 @@ data class Ajustes(
     /** Duração do "Começar agora". */
     val duracaoRapidoMin: Int = 12 * 60,
     val diasHistorico: Int = 30,
-    val boasVindasConcluida: Boolean = false
+    val boasVindasConcluida: Boolean = false,
+    /** Pacote do app usado para bater o ponto (abre pelo lembrete e pela tela inicial). */
+    val appPonto: String? = null,
+    /** Som padrão do app: vale para toda regra que não tem som próprio. */
+    val toquePadrao: Toque = Toque()
 )
 
 /** Uma ocorrência de plantão semanal encerrada antes da hora (ou folga). */
@@ -185,7 +204,9 @@ data class Execucao(
     val restaurarAoFim: Boolean = true,
     /** Volume reduzido de propósito até este instante (vigia de volume). */
     val volumeReduzidoAte: Long = 0L,
-    val migracao25Feita: Boolean = false
+    val migracao25Feita: Boolean = false,
+    /** Lembretes de ponto já mostrados (para não repetir). */
+    val pontoAvisados: List<String> = emptyList()
 )
 
 @Serializable
@@ -198,7 +219,7 @@ data class Dados(
 )
 
 @Serializable
-enum class TipoEvento { ALERTA, ALERTA_CONFIRMADO, ALERTA_NAO_CONFIRMADO, PLANTAO_INICIO, PLANTAO_FIM, TESTE, PROBLEMA, SISTEMA }
+enum class TipoEvento { ALERTA, ALERTA_CONFIRMADO, ALERTA_NAO_CONFIRMADO, PLANTAO_INICIO, PLANTAO_FIM, TESTE, PROBLEMA, SISTEMA, PONTO }
 
 @Serializable
 enum class Nivel { OK, INFO, AVISO, ERRO }

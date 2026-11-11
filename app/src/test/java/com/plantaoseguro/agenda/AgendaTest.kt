@@ -145,4 +145,54 @@ class AgendaTest {
         // Noite com uma hora a menos: 7 h em vez de 8 h.
         assertEquals(7L * 3_600_000L, ativas[0].fim - ativas[0].inicio)
     }
+
+    // ------------------------------------------------------------ lembrete do ponto
+
+    private val comPonto = noturno.copy(lembrarPonto = true, pontoAntesMin = 10)
+
+    @Test
+    fun `lembrete de ponto na entrada com antecedencia e na saida`() {
+        val l = Agenda.lembretesPonto(listOf(comPonto), ms(13, 0), ms(14, 0), sp, emptyList())
+        // Terça: saída às 07:00 (do plantão de segunda) e entrada às 18:50.
+        assertEquals(
+            listOf(ms(13, 7) to MomentoPonto.SAIDA, ms(13, 18, 50) to MomentoPonto.ENTRADA),
+            l.map { it.quando to it.momento }
+        )
+    }
+
+    @Test
+    fun `sem aviso de saida quando desligado e nada em plantao sem ponto`() {
+        val semSaida = comPonto.copy(pontoSaida = false)
+        val l = Agenda.lembretesPonto(listOf(semSaida, diurno), ms(13, 0), ms(14, 0), sp, emptyList())
+        assertEquals(listOf(ms(13, 18, 50)), l.map { it.quando })
+    }
+
+    @Test
+    fun `folga nao tem lembrete de ponto`() {
+        val pulos = listOf(Pulo("noite", ms(13, 19)))
+        assertTrue(Agenda.lembretesPonto(listOf(comPonto), ms(13, 12), ms(14, 12), sp, pulos).isEmpty())
+    }
+
+    @Test
+    fun `proximo lembrete de ponto`() {
+        assertEquals(ms(13, 18, 50), Agenda.proximoLembretePonto(listOf(comPonto), ms(13, 8), sp, emptyList()))
+        // No exato horário de um aviso, o próximo é o seguinte.
+        assertEquals(ms(14, 7), Agenda.proximoLembretePonto(listOf(comPonto), ms(13, 18, 50), sp, emptyList()))
+        // Plantão de uma vez daqui a um mês.
+        val mutirao = Plantao(
+            id = "m", nome = "Mutirão", tipo = TipoAgenda.UNICO, inicioMs = ms(14, 8, mes = 11), fimMs = ms(14, 18, mes = 11),
+            lembrarPonto = true, pontoAntesMin = 0
+        )
+        assertEquals(mutirao.inicioMs, Agenda.proximoLembretePonto(listOf(mutirao), ms(14, 0), sp, emptyList()))
+        assertNull(Agenda.proximoLembretePonto(listOf(noturno), ms(13, 8), sp, emptyList()))
+    }
+
+    @Test
+    fun `comecar agora nao lembra de ponto`() {
+        val rapido = Plantao(
+            id = "r", nome = "Agora", tipo = TipoAgenda.UNICO, inicioMs = ms(13, 10), fimMs = ms(13, 22),
+            rapido = true, lembrarPonto = true
+        )
+        assertTrue(Agenda.lembretesPonto(listOf(rapido), ms(13, 0), ms(14, 0), sp, emptyList()).isEmpty())
+    }
 }

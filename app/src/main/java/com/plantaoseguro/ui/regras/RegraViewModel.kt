@@ -43,6 +43,14 @@ class RegraViewModel(private val grafo: Grafo, idInicial: String?) : ViewModel()
 
     fun mudarToque(f: (Toque) -> Toque) = mudar { it.copy(toque = f(it.toque)) }
 
+    /** O som padrão do app agora (pode mudar enquanto a regra está aberta). */
+    private val padrao: Toque get() = grafo.repo.dados.value.ajustes.toquePadrao
+
+    /** Ao passar para som próprio pela primeira vez, começa com uma cópia do padrão. */
+    fun usarSomProprio(v: Boolean) = mudar {
+        if (v && !it.somProprio) it.copy(somProprio = true, toque = padrao) else it.copy(somProprio = v)
+    }
+
     fun aplicarSom(e: EscolhaSom) = mudarToque { it.copy(som = e.som, volume = e.volume, tocarSom = true) }
 
     fun aplicarApps(apps: Set<String>) = mudar { it.copy(apps = apps) }
@@ -51,14 +59,15 @@ class RegraViewModel(private val grafo: Grafo, idInicial: String?) : ViewModel()
 
     fun testar() {
         val r = _regra.value
-        grafo.central.testar(r.toque, r.nome.ifBlank { "Nova regra" })
+        grafo.central.testar(r.toqueEfetivo(padrao), r.nome.ifBlank { "Nova regra" })
     }
 
     fun salvar(aoTerminar: () -> Unit) {
         val r = _regra.value
         val problema = when {
             r.apps.isEmpty() -> "Escolha pelo menos um app."
-            !r.toque.tocarSom && r.toque.vibracao == Vibracao.NENHUMA -> "Escolha um som ou uma vibração; do jeito que está, o alerta não faria nada."
+            r.somProprio && !r.toque.tocarSom && r.toque.vibracao == Vibracao.NENHUMA ->
+                "Escolha um som ou uma vibração; do jeito que está, o alerta não faria nada."
             else -> null
         }
         if (problema != null) {

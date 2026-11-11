@@ -4,7 +4,10 @@ import com.plantaoseguro.modelo.Ajustes
 import com.plantaoseguro.modelo.Dados
 import com.plantaoseguro.modelo.Plantao
 import com.plantaoseguro.modelo.Regra
+import com.plantaoseguro.modelo.SOM_PADRAO
 import com.plantaoseguro.modelo.SomRef
+import com.plantaoseguro.modelo.Toque
+import com.plantaoseguro.modelo.VERSAO_DADOS
 import kotlinx.serialization.Serializable
 
 /**
@@ -20,7 +23,9 @@ data class CopiaConfiguracoes(
     val criadaEm: Long = 0L,
     val regras: List<Regra> = emptyList(),
     val plantoes: List<Plantao> = emptyList(),
-    val ajustes: Ajustes = Ajustes()
+    val ajustes: Ajustes = Ajustes(),
+    /** Formato dos dados dentro da cópia. Cópias da 3.0.0-beta.1 não têm o campo (formato 3). */
+    val versaoDados: Int = 3
 )
 
 const val FORMATO = "plantao-seguro/configuracoes"
@@ -35,7 +40,8 @@ object Backup {
                 criadaEm = agora,
                 regras = d.regras.map { it.copy(silenciadaAte = 0L) },
                 plantoes = d.plantoes.filterNot { it.rapido },
-                ajustes = d.ajustes
+                ajustes = d.ajustes,
+                versaoDados = VERSAO_DADOS
             )
         )
 
@@ -55,17 +61,21 @@ object Backup {
             return null to Resultado.Erro("O arquivo não é uma cópia de configurações do Plantão Seguro.")
         }
         var trocados = 0
-        val regras = copia.regras.map { r ->
-            if (r.toque.som is SomRef.Arquivo) {
+        fun semArquivo(t: Toque): Toque =
+            if (t.som is SomRef.Arquivo) {
                 trocados++
-                r.copy(toque = r.toque.copy(som = SomRef.Embutido("sirene_classica")))
-            } else r
-        }
+                t.copy(som = SomRef.Embutido(SOM_PADRAO))
+            } else t
+        // Cópias antigas: o som de cada regra vira som padrão / som próprio como no app.
+        var dados = Dados(regras = copia.regras, plantoes = copia.plantoes, ajustes = copia.ajustes)
+        if (copia.versaoDados < 4) dados = Repositorio.migrarParaSomPadrao(dados)
+        val regras = dados.regras.map { r -> if (r.somProprio) r.copy(toque = semArquivo(r.toque)) else r }
+        val ajustes = dados.ajustes.copy(toquePadrao = semArquivo(dados.ajustes.toquePadrao), boasVindasConcluida = true)
         val novo = Repositorio.corrigir(
             atual.copy(
                 regras = regras,
                 plantoes = copia.plantoes,
-                ajustes = copia.ajustes.copy(boasVindasConcluida = true),
+                ajustes = ajustes,
                 execucao = atual.execucao.copy(pulos = emptyList())
             )
         )

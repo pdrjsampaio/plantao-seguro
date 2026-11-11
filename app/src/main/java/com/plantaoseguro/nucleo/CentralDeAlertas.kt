@@ -106,7 +106,7 @@ class CentralDeAlertas(
             id = proximoId++,
             regraId = d.regra.id,
             regraNome = d.regra.nome,
-            toque = d.regra.toque,
+            toque = d.toque,
             pacote = n.pacote,
             appNome = appNome,
             chaves = mapOf(n.chave to n.quando) + (pendente?.chaves ?: emptyMap()),
@@ -142,7 +142,7 @@ class CentralDeAlertas(
     }
 
     private fun agendarInsistenciaSePreciso(d: Decisao.Alertar, n: Recebida, agora: Long) {
-        val min = d.regra.toque.insistirMin
+        val min = d.toque.insistirMin
         if (min > 0 && !d.chamada) efeitos.agendarInsistencia(n.chave, n.pacote, agora + min * 60_000L)
     }
 

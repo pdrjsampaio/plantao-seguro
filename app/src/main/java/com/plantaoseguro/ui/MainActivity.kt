@@ -55,7 +55,8 @@ class MainActivity : ComponentActivity() {
         const val EXTRA_DESTINO = "com.plantaoseguro.extra.DESTINO"
         const val DESTINO_PERMISSOES = "permissoes"
         const val DESTINO_DIAGNOSTICO = "diagnostico"
-        private val DESTINOS_EXTERNOS = setOf(DESTINO_PERMISSOES, DESTINO_DIAGNOSTICO)
+        const val DESTINO_APP_PONTO = "escolher-app-ponto"
+        private val DESTINOS_EXTERNOS = setOf(DESTINO_PERMISSOES, DESTINO_DIAGNOSTICO, DESTINO_APP_PONTO)
 
         /** Tela a abrir assim que as abas aparecerem (notificação ou fim dos primeiros passos). */
         var destinoPendente by mutableStateOf<String?>(null)

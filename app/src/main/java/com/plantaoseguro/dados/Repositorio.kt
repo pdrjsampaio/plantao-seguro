@@ -88,8 +88,22 @@ class Repositorio(private val arquivoDados: File) {
         fun corrigir(d: Dados): Dados {
             var r = d
             if (r.regras.isEmpty()) r = r.copy(regras = listOf(Regra.padrao()))
+            if (r.versao < 4) r = migrarParaSomPadrao(r)
             if (r.versao < VERSAO_DADOS) r = r.copy(versao = VERSAO_DADOS)
             return r
+        }
+
+        /**
+         * Até o formato 3 cada regra tinha o próprio som. O som da regra padrão
+         * (ou da primeira) vira o som padrão do app, e só as regras com som
+         * diferente dele ficam com som próprio. Nada muda no que toca.
+         */
+        fun migrarParaSomPadrao(d: Dados): Dados {
+            val base = (d.regras.firstOrNull { it.id == Regra.ID_PADRAO } ?: d.regras.firstOrNull())?.toque ?: return d
+            return d.copy(
+                ajustes = d.ajustes.copy(toquePadrao = base),
+                regras = d.regras.map { it.copy(somProprio = it.toque != base) }
+            )
         }
     }
 }

@@ -22,6 +22,10 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.rounded.Logout
+import androidx.compose.material.icons.automirrored.rounded.Login
+import androidx.compose.material.icons.rounded.Apps
+import androidx.compose.material.icons.rounded.Schedule
 import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material.icons.rounded.Delete
 import androidx.compose.material.icons.rounded.DoNotDisturbOn
@@ -74,6 +78,7 @@ import com.plantaoseguro.ui.comum.BarraTopo
 import com.plantaoseguro.ui.comum.Bloco
 import com.plantaoseguro.ui.comum.Divisoria
 import com.plantaoseguro.ui.comum.Fichas
+import com.plantaoseguro.ui.comum.LinhaAjuste
 import com.plantaoseguro.ui.comum.LinhaComConteudo
 import com.plantaoseguro.ui.comum.LinhaInterruptor
 import com.plantaoseguro.ui.comum.TituloSecao
@@ -113,7 +118,9 @@ fun EditorTela(
     onMudar: ((Plantao) -> Plantao) -> Unit,
     onSalvar: () -> Unit,
     onExcluir: () -> Unit,
-    onVoltar: () -> Unit
+    onVoltar: () -> Unit,
+    appPontoNome: String? = null,
+    onEscolherAppPonto: () -> Unit = {}
 ) {
     var confirmarExclusao by remember { mutableStateOf(false) }
 
@@ -253,6 +260,42 @@ fun EditorTela(
                             { v -> onMudar { it.copy(volumeMinimo = v) } }
                         )
                     }
+                }
+            }
+
+            TituloSecao("Ponto")
+            Bloco {
+                LinhaInterruptor(
+                    Icons.Rounded.Schedule,
+                    "Lembrar de bater o ponto",
+                    "Um aviso na entrada e na saída que abre o app do ponto quando você toca nele.",
+                    p.lembrarPonto,
+                    { v -> onMudar { it.copy(lembrarPonto = v) } }
+                )
+                if (p.lembrarPonto) {
+                    LinhaComConteudo(Icons.AutoMirrored.Rounded.Login, "Aviso de entrada", "Quanto tempo antes do início.") {
+                        Fichas(
+                            listOf(0 to "Na hora", 5 to "5 min", 10 to "10 min", 15 to "15 min", 30 to "30 min"),
+                            p.pontoAntesMin,
+                            { v -> onMudar { it.copy(pontoAntesMin = v) } }
+                        )
+                    }
+                    Divisoria()
+                    LinhaInterruptor(
+                        Icons.AutoMirrored.Rounded.Logout,
+                        "Aviso de saída",
+                        "Na hora em que o plantão termina, ou quando você encerra antes.",
+                        p.pontoSaida,
+                        { v -> onMudar { it.copy(pontoSaida = v) } }
+                    )
+                    Divisoria()
+                    LinhaAjuste(
+                        Icons.Rounded.Apps,
+                        "App do ponto",
+                        appPontoNome ?: "Escolher o app que abre pelo aviso",
+                        corIcone = if (appPontoNome == null) Extras.cores.aviso else MaterialTheme.colorScheme.primary,
+                        onClick = onEscolherAppPonto
+                    )
                 }
             }
 

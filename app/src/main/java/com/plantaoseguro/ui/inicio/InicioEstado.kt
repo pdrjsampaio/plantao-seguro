@@ -2,6 +2,7 @@ package com.plantaoseguro.ui.inicio
 
 import androidx.compose.runtime.Immutable
 import com.plantaoseguro.agenda.Agenda
+import com.plantaoseguro.agenda.MomentoPonto
 import com.plantaoseguro.agenda.Ocorrencia
 import com.plantaoseguro.modelo.Dados
 import com.plantaoseguro.modelo.Plantao
@@ -15,6 +16,7 @@ import com.plantaoseguro.ui.tema.Paleta
 import com.plantaoseguro.util.Formato
 import java.time.Instant
 import java.time.ZoneId
+import kotlin.math.abs
 
 @Immutable
 data class ResumoPlantao(
@@ -25,6 +27,17 @@ data class ResumoPlantao(
     val situacao: String?,
     val temFolga: Boolean
 )
+
+/** Cartão "bater o ponto" da tela inicial, perto do horário de um lembrete. */
+@Immutable
+data class CartaoPonto(
+    val entrada: Boolean,
+    val texto: String,
+    val appPonto: String?,
+    val appNome: String?
+) {
+    val titulo: String get() = if (entrada) "Ponto de entrada" else "Ponto de saída"
+}
 
 @Immutable
 data class InicioEstado(
@@ -40,7 +53,8 @@ data class InicioEstado(
     val regrasLigadas: Int = 0,
     val regrasSempre: Int = 0,
     val escutaLigada: Boolean = true,
-    val duracaoRapidoMin: Int = 12 * 60
+    val duracaoRapidoMin: Int = 12 * 60,
+    val ponto: CartaoPonto? = null
 ) {
     val emPlantao: Boolean get() = ativas.isNotEmpty()
 
@@ -115,6 +129,22 @@ fun montarInicio(
         )
     }
 
+    // O cartão do ponto aparece de uma hora antes até uma hora depois do lembrete.
+    val lembrete = Agenda.lembretesPonto(dados.plantoes, agora - JANELA_CARTAO_PONTO, agora + JANELA_CARTAO_PONTO, zona, pulos)
+        .minByOrNull { abs(it.quando - agora) }
+    val ponto = lembrete?.let { l ->
+        val o = l.ocorrencia
+        val entrada = l.momento == MomentoPonto.ENTRADA
+        val texto = when {
+            entrada && o.inicio > agora -> "${o.plantao.nome} começa ${Formato.quando(o.inicio, agora, zona)}."
+            entrada -> "${o.plantao.nome} começou ${Formato.quando(o.inicio, agora, zona)}."
+            o.fim > agora -> "${o.plantao.nome} termina ${Formato.quando(o.fim, agora, zona)}."
+            else -> "${o.plantao.nome} terminou ${Formato.quando(o.fim, agora, zona)}."
+        }
+        val app = dados.ajustes.appPonto
+        CartaoPonto(entrada, texto, app, app?.let(nomeDoApp))
+    }
+
     return InicioEstado(
         agora = agora,
         ativas = ativas,
@@ -128,6 +158,9 @@ fun montarInicio(
         regrasLigadas = regrasLigadas.count { it.quando == QuandoVale.NO_PLANTAO },
         regrasSempre = regrasLigadas.count { it.quando == QuandoVale.SEMPRE },
         escutaLigada = escutaLigada,
-        duracaoRapidoMin = dados.ajustes.duracaoRapidoMin
+        duracaoRapidoMin = dados.ajustes.duracaoRapidoMin,
+        ponto = ponto
     )
 }
+
+private const val JANELA_CARTAO_PONTO = 60 * 60_000L

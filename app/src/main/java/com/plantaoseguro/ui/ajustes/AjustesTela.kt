@@ -12,6 +12,7 @@ import androidx.compose.material.icons.rounded.Bolt
 import androidx.compose.material.icons.rounded.FileDownload
 import androidx.compose.material.icons.rounded.FileUpload
 import androidx.compose.material.icons.rounded.History
+import androidx.compose.material.icons.rounded.LibraryMusic
 import androidx.compose.material.icons.rounded.MedicalServices
 import androidx.compose.material.icons.rounded.NotificationsActive
 import androidx.compose.material.icons.rounded.PhoneInTalk
@@ -34,6 +35,7 @@ import com.plantaoseguro.ui.comum.LinhaComConteudo
 import com.plantaoseguro.ui.comum.LinhaInterruptor
 import com.plantaoseguro.ui.comum.TituloSecao
 import com.plantaoseguro.ui.tema.Extras
+import com.plantaoseguro.ui.som.resumoToque
 import com.plantaoseguro.util.Formato
 
 class AcoesAjustes(
@@ -45,11 +47,13 @@ class AcoesAjustes(
     val importar: () -> Unit = {},
     val ajuda: () -> Unit = {},
     val privacidade: () -> Unit = {},
-    val compartilhar: () -> Unit = {}
+    val compartilhar: () -> Unit = {},
+    val somPadrao: () -> Unit = {},
+    val appPonto: () -> Unit = {}
 )
 
 @Composable
-fun AjustesTela(a: Ajustes, pendencias: Int, versao: String, acoes: AcoesAjustes) {
+fun AjustesTela(a: Ajustes, pendencias: Int, versao: String, acoes: AcoesAjustes, appPontoNome: String? = null) {
     LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 32.dp)) {
         item {
             Text(
@@ -57,6 +61,26 @@ fun AjustesTela(a: Ajustes, pendencias: Int, versao: String, acoes: AcoesAjustes
                 style = MaterialTheme.typography.titleLarge,
                 modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 18.dp, bottom = 4.dp)
             )
+        }
+
+        item {
+            TituloSecao("Som e ponto")
+            Bloco {
+                LinhaAjuste(
+                    Icons.Rounded.LibraryMusic,
+                    "Som padrão do alerta",
+                    resumoToque(a.toquePadrao),
+                    corIcone = Extras.cores.sinal,
+                    onClick = acoes.somPadrao
+                )
+                Divisoria()
+                LinhaAjuste(
+                    Icons.Rounded.Schedule,
+                    "App do ponto",
+                    appPontoNome ?: "Nenhum escolhido. Ligue o lembrete de ponto em cada plantão.",
+                    onClick = acoes.appPonto
+                )
+            }
         }
 
         item {
@@ -80,7 +104,7 @@ fun AjustesTela(a: Ajustes, pendencias: Int, versao: String, acoes: AcoesAjustes
                 LinhaAjuste(
                     Icons.Rounded.NotificationsActive,
                     "Testar o alerta",
-                    "Toca o alerta da primeira regra ligada.",
+                    "Toca o som padrão do alerta, do jeito que vai tocar de verdade.",
                     corIcone = Extras.cores.sinal,
                     onClick = acoes.testar
                 )

@@ -66,6 +66,19 @@ object Catalogo {
         is SomRef.Arquivo -> som.nome
     }
 
+    /** De onde vem o som, para mostrar acima do nome. */
+    fun origem(som: SomRef): String = when (som) {
+        is SomRef.Embutido -> (porId(som.id) ?: padrao).categoria.titulo
+        is SomRef.Sistema -> "Toque de alarme do celular"
+        is SomRef.Arquivo -> "Arquivo seu"
+    }
+
+    fun descricao(som: SomRef): String = when (som) {
+        is SomRef.Embutido -> (porId(som.id) ?: padrao).descricao
+        is SomRef.Sistema -> "Instalado no celular. Em outro aparelho, toca o som padrão."
+        is SomRef.Arquivo -> "Se o arquivo for apagado, toca o som padrão."
+    }
+
     /** Toques de alarme instalados no celular. Rode fora da thread principal. */
     fun alarmesDoCelular(context: Context): List<SomRef.Sistema> = try {
         val rm = RingtoneManager(context).apply { setType(RingtoneManager.TYPE_ALARM) }

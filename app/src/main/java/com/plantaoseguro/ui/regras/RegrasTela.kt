@@ -29,12 +29,15 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.plantaoseguro.modelo.ModoDuracao
 import com.plantaoseguro.modelo.QuandoVale
 import com.plantaoseguro.modelo.Regra
+import com.plantaoseguro.modelo.Toque
 import com.plantaoseguro.sirene.Catalogo
 import com.plantaoseguro.ui.comum.Divisoria
 import com.plantaoseguro.ui.comum.IconeRedondo
+import com.plantaoseguro.ui.comum.TituloSecao
+import com.plantaoseguro.ui.som.CartaoSom
+import com.plantaoseguro.ui.som.resumoToque
 import com.plantaoseguro.util.Formato
 
 @Immutable
@@ -46,7 +49,7 @@ data class ResumoRegra(
     val silenciada: String?
 )
 
-fun resumir(r: Regra, nomeDoApp: (String) -> String, agora: Long): ResumoRegra {
+fun resumir(r: Regra, nomeDoApp: (String) -> String, agora: Long, padrao: Toque = Toque()): ResumoRegra {
     val apps = r.apps.map(nomeDoApp).sorted().let {
         when (it.size) {
             0 -> "Nenhum app escolhido"
@@ -60,23 +63,31 @@ fun resumir(r: Regra, nomeDoApp: (String) -> String, agora: Long): ResumoRegra {
     }
     val filtro = (if (partes.isEmpty()) "Qualquer mensagem" else "Só mensagens " + partes.joinToString(" e ")) +
         if (r.quando == QuandoVale.SEMPRE) ", a qualquer hora" else ", no plantão"
-    val som = if (r.toque.tocarSom) Catalogo.nome(r.toque.som) else "Só vibração"
-    val duracao = when (r.toque.modoDuracao) {
-        ModoDuracao.TEMPO -> Formato.duracao(r.toque.duracaoSeg * 1000L)
-        ModoDuracao.REPETICOES -> "${r.toque.repeticoes} vezes"
-        ModoDuracao.ATE_PARAR -> "até você parar"
+    val toque = if (r.somProprio) {
+        "Som próprio: " + resumoToque(r.toque)
+    } else {
+        "Som padrão (" + (if (padrao.tocarSom) Catalogo.nome(padrao.som) else "só vibração") + ")"
     }
     return ResumoRegra(
         regra = r,
         apps = apps,
         filtro = filtro,
-        toque = "$som, $duracao",
+        toque = toque,
         silenciada = if (r.silenciada(agora)) "Silenciada até ${Formato.quando(r.silenciadaAte, agora)}" else null
     )
 }
 
 @Composable
-fun RegrasTela(regras: List<ResumoRegra>, onNova: () -> Unit, onEditar: (String) -> Unit, onLigar: (String, Boolean) -> Unit) {
+fun RegrasTela(
+    regras: List<ResumoRegra>,
+    onNova: () -> Unit,
+    onEditar: (String) -> Unit,
+    onLigar: (String, Boolean) -> Unit,
+    somPadrao: Toque = Toque(),
+    ouvindo: Boolean = false,
+    onOuvirPadrao: () -> Unit = {},
+    onSomPadrao: () -> Unit = {}
+) {
     Box(Modifier.fillMaxSize()) {
         LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 96.dp)) {
             item {
@@ -85,11 +96,24 @@ fun RegrasTela(regras: List<ResumoRegra>, onNova: () -> Unit, onEditar: (String)
                     style = MaterialTheme.typography.titleLarge,
                     modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 18.dp)
                 )
+            }
+            item {
+                TituloSecao("Som padrão")
+                CartaoSom(somPadrao, ouvindo, onOuvir = onOuvirPadrao, onTrocar = onSomPadrao, rotuloTrocar = "Mudar o som")
                 Text(
-                    "Cada regra diz o que dispara o alerta e como ele toca. As regras são conferidas de cima para baixo; as de prioridade máxima primeiro.",
+                    "Vale para todas as regras, menos as que têm som próprio.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 4.dp, bottom = 14.dp)
+                    modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 8.dp)
+                )
+            }
+            item {
+                TituloSecao("Regras")
+                Text(
+                    "Cada regra diz o que dispara o alerta. São conferidas de cima para baixo; as de prioridade máxima primeiro.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(start = 20.dp, end = 20.dp, bottom = 10.dp)
                 )
             }
             item {
